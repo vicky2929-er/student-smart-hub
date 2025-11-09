@@ -83,14 +83,18 @@ const FacultyReviews = () => {
 
   const handleReview = async (achievementId, studentId, status, comment) => {
     try {
-      await facultyService.reviewAchievement(id, achievementId, {
+      console.log("Submitting review:", { achievementId, studentId, status, comment });
+      const response = await facultyService.reviewAchievement(id, achievementId, {
         status,
         comment,
         studentId,
       });
+      console.log("Review response:", response.data);
       fetchReviews(); // Refresh the list
     } catch (error) {
       console.error("Review error:", error);
+      const errorMessage = error.response?.data?.error || "Failed to submit review";
+      alert(`Error: ${errorMessage}`);
     }
   };
 

@@ -17,6 +17,10 @@ const FacultyDashboard = () => {
   const [showEventForm, setShowEventForm] = useState(false);
   const [showBulkUpload, setShowBulkUpload] = useState(false);
   const [showAddStudent, setShowAddStudent] = useState(false);
+  const [showReviewModal, setShowReviewModal] = useState(false);
+  const [selectedReview, setSelectedReview] = useState(null);
+  const [reviewComment, setReviewComment] = useState("");
+  const [reviewStatus, setReviewStatus] = useState("");
   const [eventForm, setEventForm] = useState({
     title: "",
     description: "",
@@ -149,6 +153,54 @@ const FacultyDashboard = () => {
     } catch {
       return "Date not available";
     }
+  };
+
+  const handleReview = async (achievementId, studentId, status, comment) => {
+    try {
+      console.log("Submitting review:", { achievementId, studentId, status, comment });
+      await facultyService.reviewAchievement(id, achievementId, {
+        status,
+        comment,
+        studentId,
+      });
+      setShowReviewModal(false);
+      setSelectedReview(null);
+      setReviewComment("");
+      setReviewStatus("");
+      fetchDashboardData(); // Refresh dashboard data
+    } catch (error) {
+      console.error("Review error:", error);
+      const errorMessage = error.response?.data?.error || "Failed to submit review";
+      alert(`Error: ${errorMessage}`);
+    }
+  };
+
+  const handleSubmitReview = (status) => {
+    if (!selectedReview) return;
+    
+    // Check if comment is required for rejection
+    if (status === "Rejected" && !reviewComment.trim()) {
+      alert("Comment is required when rejecting an achievement.");
+      return;
+    }
+
+    if (!status) {
+      return;
+    }
+
+    handleReview(
+      selectedReview.achievement._id,
+      selectedReview.student._id,
+      status,
+      reviewComment
+    );
+  };
+
+  const handleCloseReviewModal = () => {
+    setShowReviewModal(false);
+    setSelectedReview(null);
+    setReviewComment("");
+    setReviewStatus("");
   };
 
   const getStatusColor = (status) => {
@@ -495,7 +547,7 @@ const FacultyDashboard = () => {
             <div className="activities-list">
               {pendingReviews && pendingReviews.length > 0 ? (
                 pendingReviews.slice(0, 5).map((review, index) => (
-                  <div key={index} className="activity-item">
+                  <div key={index} className="activity-item clickable-review">
                     <div className="activity-icon">
                       <i className="fas fa-file-alt"></i>
                     </div>
@@ -510,9 +562,16 @@ const FacultyDashboard = () => {
                         {formatDate(review.achievement?.dateCompleted)}
                       </p>
                     </div>
-                    <span className="activity-status status-pending">
+                    <button
+                      className="review-quick-btn"
+                      onClick={() => {
+                        setSelectedReview(review);
+                        setShowReviewModal(true);
+                      }}
+                    >
+                      <i className="fas fa-clipboard-check"></i>
                       Review
-                    </span>
+                    </button>
                   </div>
                 ))
               ) : (
@@ -567,6 +626,40 @@ const FacultyDashboard = () => {
                         </div>
                       </div>
                     ))}
+                    
+                    {/* Add static meetings */}
+                    <div className="event-item">
+                      <div className="event-indicator meeting-indicator"></div>
+                      <div className="event-content">
+                        <h3>Department Meeting</h3>
+                        <p>
+                          <i className="fas fa-calendar"></i>
+                          Mon, Nov 11, 2025 • 2:00 PM
+                        </p>
+                        <p>
+                          <i className="fas fa-map-marker-alt"></i>
+                          Conference Room A
+                        </p>
+                        <span className="event-type meeting-type">Meeting</span>
+                      </div>
+                    </div>
+
+                    <div className="event-item">
+                      <div className="event-indicator meeting-indicator"></div>
+                      <div className="event-content">
+                        <h3>Faculty Review Session</h3>
+                        <p>
+                          <i className="fas fa-calendar"></i>
+                          Thu, Nov 14, 2025 • 4:00 PM
+                        </p>
+                        <p>
+                          <i className="fas fa-map-marker-alt"></i>
+                          Faculty Lounge
+                        </p>
+                        <span className="event-type meeting-type">Meeting</span>
+                      </div>
+                    </div>
+
                     {upcomingEvents.length > 2 && (
                       <div className="show-more-container">
                         <button
@@ -580,14 +673,124 @@ const FacultyDashboard = () => {
                     )}
                   </>
                 ) : (
-                  <div className="empty-events">
-                    <div className="event-indicator"></div>
-                    <div className="event-content">
-                      <h3>No upcoming events</h3>
-                      <p>Create an event to get started</p>
+                  <>
+                    {/* Show meetings even when no events */}
+                    <div className="event-item">
+                      <div className="event-indicator meeting-indicator"></div>
+                      <div className="event-content">
+                        <h3>Department Meeting</h3>
+                        <p>
+                          <i className="fas fa-calendar"></i>
+                          Mon, Nov 11, 2025 • 2:00 PM
+                        </p>
+                        <p>
+                          <i className="fas fa-map-marker-alt"></i>
+                          Conference Room A
+                        </p>
+                        <span className="event-type meeting-type">Meeting</span>
+                      </div>
                     </div>
-                  </div>
+
+                    <div className="event-item">
+                      <div className="event-indicator meeting-indicator"></div>
+                      <div className="event-content">
+                        <h3>Faculty Review Session</h3>
+                        <p>
+                          <i className="fas fa-calendar"></i>
+                          Thu, Nov 14, 2025 • 4:00 PM
+                        </p>
+                        <p>
+                          <i className="fas fa-map-marker-alt"></i>
+                          Faculty Lounge
+                        </p>
+                        <span className="event-type meeting-type">Meeting</span>
+                      </div>
+                    </div>
+                  </>
                 )}
+              </div>
+            </div>
+
+            {/* Upcoming Academic Events */}
+            <div className="content-card academic-events-card">
+              <div className="card-header">
+                <h2>Academic Calendar</h2>
+              </div>
+              <div className="academic-events-list">
+                {/* Classes */}
+                <div className="academic-event-item">
+                  <div className="academic-icon class-icon">
+                    <i className="fas fa-chalkboard-teacher"></i>
+                  </div>
+                  <div className="academic-content">
+                    <h4>Data Structures Lab</h4>
+                    <p className="academic-time">
+                      <i className="fas fa-clock"></i>
+                      Tomorrow, 10:00 AM - 12:00 PM
+                    </p>
+                    <span className="academic-badge class-badge">Class</span>
+                  </div>
+                </div>
+
+                {/* Class */}
+                <div className="academic-event-item">
+                  <div className="academic-icon class-icon">
+                    <i className="fas fa-laptop-code"></i>
+                  </div>
+                  <div className="academic-content">
+                    <h4>Advanced Algorithms</h4>
+                    <p className="academic-time">
+                      <i className="fas fa-clock"></i>
+                      Nov 12, 2025 - 9:00 AM - 11:00 AM
+                    </p>
+                    <span className="academic-badge class-badge">Class</span>
+                  </div>
+                </div>
+
+                {/* Examination */}
+                <div className="academic-event-item">
+                  <div className="academic-icon exam-icon">
+                    <i className="fas fa-file-alt"></i>
+                  </div>
+                  <div className="academic-content">
+                    <h4>Mid-Term Examination</h4>
+                    <p className="academic-time">
+                      <i className="fas fa-clock"></i>
+                      Nov 15-20, 2025
+                    </p>
+                    <span className="academic-badge exam-badge">Exam</span>
+                  </div>
+                </div>
+
+                {/* Deadline */}
+                <div className="academic-event-item">
+                  <div className="academic-icon deadline-icon">
+                    <i className="fas fa-exclamation-triangle"></i>
+                  </div>
+                  <div className="academic-content">
+                    <h4>Grade Submission Deadline</h4>
+                    <p className="academic-time">
+                      <i className="fas fa-clock"></i>
+                      Nov 25, 2025 - 11:59 PM
+                    </p>
+                    <span className="academic-badge deadline-badge">Deadline</span>
+                  </div>
+                </div>
+
+                {/* Class */}
+                <div className="academic-event-item">
+                  <div className="academic-icon class-icon">
+                    <i className="fas fa-chalkboard"></i>
+                  </div>
+                  <div className="academic-content">
+                    <h4>Database Systems</h4>
+                    <p className="academic-time">
+                      <i className="fas fa-clock"></i>
+                      Nov 13, 2025 - 2:00 PM - 4:00 PM
+                    </p>
+                    <span className="academic-badge class-badge">Class</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1090,6 +1293,93 @@ const FacultyDashboard = () => {
                 </button>
               </div>
             </form>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Review Modal */}
+      {showReviewModal && selectedReview && (
+        <div className="modal-overlay" onClick={handleCloseReviewModal}>
+          <div className="review-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>Review Achievement</h2>
+              <button className="close-btn" onClick={handleCloseReviewModal}>
+                <i className="fas fa-times"></i>
+              </button>
+            </div>
+
+            <div className="modal-content">
+              <div className="achievement-details">
+                <h3>{selectedReview.achievement?.title}</h3>
+                <p>
+                  <strong>Student:</strong> {selectedReview.student?.name?.first}{" "}
+                  {selectedReview.student?.name?.last}
+                </p>
+                <p>
+                  <strong>Type:</strong> {selectedReview.achievement?.type}
+                </p>
+                <p>
+                  <strong>Description:</strong>{" "}
+                  {selectedReview.achievement?.description}
+                </p>
+                <p>
+                  <strong>Completed:</strong>{" "}
+                  {formatDate(selectedReview.achievement?.dateCompleted)}
+                </p>
+
+                {/* Certificate Image */}
+                {selectedReview.achievement?.fileUrl && (
+                  <div className="certificate-image-container">
+                    <div className="certificate-image-label">
+                      Certificate/Document
+                    </div>
+                    <img
+                      src={selectedReview.achievement.fileUrl}
+                      alt="Achievement Certificate"
+                      className="certificate-image"
+                      onError={(e) => {
+                        e.target.style.display = "none";
+                        e.target.nextSibling.style.display = "block";
+                      }}
+                    />
+                    <div className="no-certificate" style={{ display: "none" }}>
+                      Certificate image could not be loaded
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Review Actions */}
+              <div className="review-actions">
+                <div className="form-group">
+                  <label htmlFor="reviewComment">Comment (optional for approval, required for rejection)</label>
+                  <textarea
+                    id="reviewComment"
+                    value={reviewComment}
+                    onChange={(e) => setReviewComment(e.target.value)}
+                    placeholder="Add your review comments here..."
+                    rows="4"
+                  ></textarea>
+                </div>
+
+                <div className="review-buttons">
+                  <button
+                    className="faculty-review-approve-btn"
+                    onClick={() => handleSubmitReview("Approved")}
+                  >
+                    <i className="fas fa-check"></i>
+                    Approve
+                  </button>
+                  <button
+                    className="faculty-review-reject-btn"
+                    onClick={() => handleSubmitReview("Rejected")}
+                  >
+                    <i className="fas fa-times"></i>
+                    Reject
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

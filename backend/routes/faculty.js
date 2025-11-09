@@ -296,11 +296,19 @@ router.post(
       const { facultyId, achievementId } = req.params;
       const { status, comment, studentId } = req.body;
 
+      console.log("=== Review Achievement Request ===");
+      console.log("Faculty ID:", facultyId);
+      console.log("Achievement ID:", achievementId);
+      console.log("Student ID:", studentId);
+      console.log("Status:", status);
+      console.log("Comment:", comment);
+
       // Security check: Ensure the logged-in user is the faculty making the review
       if (
         req.user.role !== "faculty" ||
         req.user._id.toString() !== facultyId
       ) {
+        console.log("Access denied - user role:", req.user.role, "user ID:", req.user._id);
         return res
           .status(403)
           .json({ error: "Access denied. You can only review as yourself." });
@@ -309,19 +317,26 @@ router.post(
       // Get student and achievement details before updating
       const student = await Student.findById(studentId);
       if (!student) {
+        console.log("Student not found:", studentId);
         return res.status(404).json({ error: "Student not found" });
       }
+
+      console.log("Student found:", student.name.first, student.name.last);
 
       const achievement = student.achievements.find(
         (ach) => ach._id.toString() === achievementId
       );
       if (!achievement) {
+        console.log("Achievement not found in student's achievements");
         return res.status(404).json({ error: "Achievement not found" });
       }
 
+      console.log("Achievement found:", achievement.title);
+      console.log("Current status:", achievement.status);
+
       // Update student's achievement status
       const reviewedAt = new Date();
-      await Student.updateOne(
+      const updateResult = await Student.updateOne(
         { _id: studentId, "achievements._id": achievementId },
         {
           $set: {
@@ -331,6 +346,8 @@ router.post(
           },
         }
       );
+
+      console.log("Update result:", updateResult);
 
       // Add to faculty's reviewed achievements
       await Faculty.updateOne(
@@ -518,20 +535,20 @@ router.get("/analytics/:id", requireAuth, async (req, res) => {
 
     // Calculate date range based on period
     const now = new Date();
-    let startDate;
+    let startDate = new Date();
 
     switch (period) {
       case "week":
-        startDate = new Date(now.setDate(now.getDate() - 7));
+        startDate.setDate(startDate.getDate() - 7);
         break;
       case "semester":
-        startDate = new Date(now.setMonth(now.getMonth() - 6));
+        startDate.setMonth(startDate.getMonth() - 6);
         break;
       case "year":
-        startDate = new Date(now.setFullYear(now.getFullYear() - 1));
+        startDate.setFullYear(startDate.getFullYear() - 1);
         break;
       default: // month
-        startDate = new Date(now.setMonth(now.getMonth() - 1));
+        startDate.setMonth(startDate.getMonth() - 1);
     }
 
     // Get submission trend data
@@ -590,13 +607,27 @@ router.get("/analytics/:id", requireAuth, async (req, res) => {
       coordinator: new mongoose.Types.ObjectId(id),
     }).select("name gpa achievements");
 
-    // Get top performers
+    // Get top performers based on achievement count and approval rate
     const topPerformers = studentPerformance
-      .map((student) => ({
-        name: `${student.name.first} ${student.name.last}`,
-        achievements: student.achievements?.length || 0,
-        score: Math.round(((student.gpa || 0) / 10) * 100),
-      }))
+      .map((student) => {
+        const achievementCount = student.achievements?.length || 0;
+        const approvedAchievements = student.achievements?.filter(
+          a => a.status === "Approved"
+        ).length || 0;
+        
+        // Calculate score based on achievements (50%), GPA (30%), and attendance (20%)
+        const achievementScore = achievementCount > 0 
+          ? Math.min((achievementCount / 10) * 50, 50) // Max 50 points for 10+ achievements
+          : 0;
+        const gpaScore = ((student.gpa || 0) / 10) * 30; // Max 30 points from GPA
+        const attendanceScore = ((student.attendance || 0) / 100) * 20; // Max 20 points from attendance
+        
+        return {
+          name: `${student.name.first} ${student.name.last}`,
+          achievements: achievementCount,
+          score: Math.round(achievementScore + gpaScore + attendanceScore),
+        };
+      })
       .sort((a, b) => b.score - a.score)
       .slice(0, 5);
 
@@ -653,20 +684,119 @@ router.get("/analytics/:id", requireAuth, async (req, res) => {
       },
     ]);
 
+    // Calculate previous period submissions for growth comparison
+    const timeDiff = now.getTime() - startDate.getTime();
+    const previousPeriodDate = new Date(startDate.getTime() - timeDiff);
+    
+    const previousSubmissions = await Student.aggregate([
+      {
+        $match: {
+          coordinator: new mongoose.Types.ObjectId(id),
+        },
+      },
+      {
+        $unwind: "$achievements",
+      },
+      {
+        $match: {
+          "achievements.dateCompleted": { 
+            $gte: previousPeriodDate,
+            $lt: startDate 
+          },
+        },
+      },
+      {
+        $count: "total",
+      },
+    ]);
+
+    const currentTotal = totalSubmissions[0]?.total || 0;
+    const previousTotal = previousSubmissions[0]?.total || 0;
+    const submissionGrowth = previousTotal > 0 
+      ? Math.round(((currentTotal - previousTotal) / previousTotal) * 100)
+      : 0;
+
     const activeStudents = await Student.countDocuments({
       coordinator: new mongoose.Types.ObjectId(id),
       updatedAt: { $gte: startDate },
     });
 
+    // Calculate actual approval rate from achievements
+    const allAchievements = await Student.aggregate([
+      {
+        $match: {
+          coordinator: new mongoose.Types.ObjectId(id),
+        },
+      },
+      {
+        $unwind: "$achievements",
+      },
+      {
+        $group: {
+          _id: null,
+          total: { $sum: 1 },
+          approved: {
+            $sum: {
+              $cond: [{ $eq: ["$achievements.status", "Approved"] }, 1, 0]
+            }
+          }
+        }
+      }
+    ]);
+
+    const totalAchievements = allAchievements[0]?.total || 0;
+    const approvedCount = allAchievements[0]?.approved || 0;
+    const approvalRate = totalAchievements > 0 
+      ? Math.round((approvedCount / totalAchievements) * 100) 
+      : 0;
+
+    // Calculate previous period approval rate
+    const previousApprovals = await Student.aggregate([
+      {
+        $match: {
+          coordinator: new mongoose.Types.ObjectId(id),
+        },
+      },
+      {
+        $unwind: "$achievements",
+      },
+      {
+        $match: {
+          "achievements.dateCompleted": {
+            $gte: previousPeriodDate,
+            $lt: startDate
+          }
+        }
+      },
+      {
+        $group: {
+          _id: null,
+          total: { $sum: 1 },
+          approved: {
+            $sum: {
+              $cond: [{ $eq: ["$achievements.status", "Approved"] }, 1, 0]
+            }
+          }
+        }
+      }
+    ]);
+
+    const prevTotal = previousApprovals[0]?.total || 0;
+    const prevApproved = previousApprovals[0]?.approved || 0;
+    const prevApprovalRate = prevTotal > 0 ? (prevApproved / prevTotal) * 100 : 0;
+    const approvalRateChange = prevApprovalRate > 0 
+      ? Math.round(approvalRate - prevApprovalRate) 
+      : 0;
+
     const overview = {
-      totalSubmissions: totalSubmissions[0]?.total || 0,
-      submissionGrowth: 12, // Mock data - calculate based on previous period
+      totalSubmissions: currentTotal,
+      submissionGrowth,
       activeStudents,
       totalStudents: studentPerformance.length,
-      avgReviewTime: 24, // Mock data - calculate from review timestamps
-      reviewTimeImprovement: 15, // Mock data
-      approvalRate: 85, // Mock data - calculate from approved vs total reviews
-      approvalRateChange: 5, // Mock data
+      avgReviewTime: 24, // TODO: Calculate from actual review timestamps when review schema includes timing
+      reviewTimeImprovement: 15, // TODO: Calculate when review timing is tracked
+      approvalRate,
+      approvalRateChange,
     };
 
     // Format data for charts
@@ -682,27 +812,29 @@ router.get("/analytics/:id", requireAuth, async (req, res) => {
       },
       studentPerformance: {
         labels: studentPerformance.map((s) => `${s.name.first} ${s.name.last}`),
-        data: studentPerformance.map((s) =>
-          Math.round(((s.gpa || 0) / 10) * 100)
-        ),
+        data: studentPerformance.map((s) => {
+          const achievementCount = s.achievements?.length || 0;
+          const gpa = s.gpa || 0;
+          const attendance = s.attendance || 0;
+          // Combined score: 50% from achievements, 30% from GPA, 20% from attendance
+          const achievementScore = Math.min((achievementCount / 10) * 50, 50);
+          const gpaScore = (gpa / 10) * 30;
+          const attendanceScore = (attendance / 100) * 20;
+          return Math.round(achievementScore + gpaScore + attendanceScore);
+        }),
       },
       topPerformers,
       recentActivity,
       monthlyStats: {
         currentMonth: {
-          submissions: totalSubmissions[0]?.total || 0,
-          reviews: faculty.achievementsReviewed.filter(
-            (r) => new Date(r.reviewedAt) >= startDate
-          ).length,
-          approvals: faculty.achievementsReviewed.filter(
-            (r) =>
-              r.status === "Approved" && new Date(r.reviewedAt) >= startDate
-          ).length,
+          submissions: currentTotal,
+          reviews: approvedCount + (totalAchievements - approvedCount), // Total reviewed
+          approvals: approvedCount,
         },
         lastMonth: {
-          submissions: 45, // Mock data
-          reviews: 42, // Mock data
-          approvals: 38, // Mock data
+          submissions: previousTotal,
+          reviews: prevTotal,
+          approvals: prevApproved,
         },
       },
     };
