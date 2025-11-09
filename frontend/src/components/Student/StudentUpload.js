@@ -14,7 +14,7 @@ const StudentUpload = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [formData, setFormData] = useState({
-    description: "",
+    category: "",
     file: null,
   });
 
@@ -98,9 +98,21 @@ const StudentUpload = () => {
     setSuccess("");
 
     try {
+      // Validate required fields
+      if (!formData.category) {
+        setError("Please select a category");
+        setSubmitting(false);
+        return;
+      }
+      if (!formData.file) {
+        setError("Please upload a file");
+        setSubmitting(false);
+        return;
+      }
+
       // Create FormData for file upload
       const uploadData = new FormData();
-      uploadData.append("description", ""); // Empty description since field removed from UI
+      uploadData.append("category", formData.category);
 
       if (formData.file) {
         uploadData.append("certificate", formData.file);
@@ -112,7 +124,7 @@ const StudentUpload = () => {
 
       // Reset form
       setFormData({
-        description: "",
+        category: "",
         file: null,
       });
 
@@ -184,8 +196,8 @@ const StudentUpload = () => {
             <div className="form-header">
               <h1>Upload New Activity</h1>
               <p>
-                Add your achievements, certifications, and activities to your
-                portfolio
+                Upload your certificate or document. Select a category and upload the file. 
+                Our AI will automatically extract details from your document.
               </p>
               {student && (
                 <p className="student-info">
@@ -212,7 +224,34 @@ const StudentUpload = () => {
             )}
 
             <form onSubmit={handleSubmit} className="upload-form">
-              {/* Removed: ACTIVITY CATEGORY, DATE COMPLETED, ACTIVITY TITLE, ORGANIZATION/INSTITUTION, INSTITUTE/ADMIN EMAIL, DESCRIPTION */}
+              {/* Activity Category */}
+              <div className="form-group">
+                <label htmlFor="category">
+                  Activity Category <span className="required">*</span>
+                </label>
+                <select
+                  id="category"
+                  name="category"
+                  value={formData.category}
+                  onChange={handleInputChange}
+                  required
+                  disabled={submitting}
+                  className="category-select"
+                >
+                  <option value="">Select Category</option>
+                  <option value="Workshop">Workshop</option>
+                  <option value="Conference">Conference</option>
+                  <option value="Hackathon">Hackathon</option>
+                  <option value="Internship">Internship</option>
+                  <option value="Course">Certificate/Course</option>
+                  <option value="Competition">Competition</option>
+                  <option value="CommunityService">Community Service</option>
+                  <option value="Leadership">Leadership</option>
+                  <option value="Clubs">Clubs</option>
+                  <option value="Volunteering">Volunteering</option>
+                  <option value="Others">Others</option>
+                </select>
+              </div>
 
               <div className="form-group">
                 <label>UPLOAD CERTIFICATE/DOCUMENT</label>

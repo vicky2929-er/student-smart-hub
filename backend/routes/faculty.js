@@ -396,7 +396,7 @@ router.post(
 
           console.log("Flask API response:", response.data);
           
-          // Save parsed data to OcrOutput collection
+          // Save parsed data to OcrOutput collection and update achievement
           if (response.data && response.data.parsed_data) {
             try {
               const parsedData = response.data.parsed_data;
@@ -421,6 +421,16 @@ router.post(
                 { $push: { ocrOutputs: ocrOutput._id } }
               );
               console.log("OCR output reference added to student");
+              
+              // Update achievement with OCR extracted data
+              achievement.title = parsedData.course || achievement.title || "Certificate";
+              achievement.organization = parsedData.issuer && parsedData.issuer !== "Not found" ? parsedData.issuer : achievement.organization;
+              achievement.description = parsedData.course ? `${parsedData.category || 'Certificate'} - ${parsedData.course}` : achievement.description;
+              if (parsedData.date && parsedData.date !== "Not found") {
+                achievement.dateCompleted = new Date(parsedData.date);
+              }
+              await student.save();
+              console.log("Achievement updated with OCR data");
               
             } catch (saveError) {
               console.error("Error saving OCR output:", saveError.message);
@@ -1038,7 +1048,7 @@ router.get("/student/:studentId/ocr-outputs", requireAuth, async (req, res) => {
     }
     
     // If user is faculty, verify they are the coordinator
-    if (req.user.role === 'faculty' && student.facultyCoordinator.toString() !== req.user._id) {
+    if (req.user.role === 'faculty' && student.coordinator && student.coordinator.toString() !== req.user._id) {
       return res.status(403).json({ error: "Access denied. You are not this student's coordinator." });
     }
     

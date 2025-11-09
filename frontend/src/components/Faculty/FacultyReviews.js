@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { facultyService } from "../../services/authService";
+import axios from "axios";
 import "./Faculty.css";
 
 const FacultyReviews = () => {
@@ -266,6 +267,36 @@ const ReviewRow = ({ review, onReview, formatDate, getActivityIcon }) => {
   const [showModal, setShowModal] = useState(false);
   const [comment, setComment] = useState("");
   const [reviewStatus, setReviewStatus] = useState("");
+  const [ocrData, setOcrData] = useState([]);
+  const [loadingOcr, setLoadingOcr] = useState(false);
+
+  // Fetch OCR data when modal opens
+  useEffect(() => {
+    if (showModal && review.student?._id) {
+      fetchOcrData();
+    }
+  }, [showModal, review.student?._id]);
+
+  const fetchOcrData = async () => {
+    try {
+      setLoadingOcr(true);
+      const token = localStorage.getItem('token');
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL || 'http://localhost:3030/api'}/faculty/student/${review.student._id}/ocr-outputs`,
+        {
+          headers: { Authorization: `Bearer ${token}` }
+        }
+      );
+      if (response.data.success) {
+        setOcrData(response.data.data || []);
+      }
+    } catch (error) {
+      console.error('Error fetching OCR data:', error);
+      setOcrData([]);
+    } finally {
+      setLoadingOcr(false);
+    }
+  };
 
   const handleSubmitReview = () => {
     // Check if comment is required for rejection
@@ -347,6 +378,17 @@ const ReviewRow = ({ review, onReview, formatDate, getActivityIcon }) => {
           <div className="activity-title">
             {review.achievement?.title || "Untitled Achievement"}
           </div>
+          {/* Show AI extracted info if available */}
+          {ocrData.length > 0 && ocrData[0] && (
+            <div className="ai-extracted-info">
+              <i className="fas fa-robot"></i>
+              <span className="ai-label">AI Detected:</span>
+              <span className="ai-category">{ocrData[0].category}</span>
+              {ocrData[0].course && (
+                <span className="ai-course">• {ocrData[0].course}</span>
+              )}
+            </div>
+          )}
         </div>
 
         <div className="table-cell type-col">
@@ -522,6 +564,75 @@ const ReviewRow = ({ review, onReview, formatDate, getActivityIcon }) => {
                     Certificate image could not be loaded
                   </div>
                 </div>
+
+                {/* AI OCR Analysis - Integrated */}
+                {ocrData.length > 0 && ocrData[0] && (
+                  <div className="ocr-analysis-section">
+                    <h4 className="ocr-section-title">
+                      <i className="fas fa-robot"></i> AI Certificate Analysis
+                    </h4>
+                    <div className="ocr-details-grid">
+                      <div className="ocr-detail-item">
+                        <label>AI Detected Category:</label>
+                        <span className={`ocr-value-badge ${ocrData[0].category?.toLowerCase()}`}>
+                          {ocrData[0].category || 'Not detected'}
+                        </span>
+                      </div>
+                      
+                      {ocrData[0].course && (
+                        <div className="ocr-detail-item">
+                          <label>Certificate Title:</label>
+                          <span className="ocr-value">{ocrData[0].course}</span>
+                        </div>
+                      )}
+                      
+                      {ocrData[0].issuer && ocrData[0].issuer !== 'Not found' && (
+                        <div className="ocr-detail-item">
+                          <label>Issuing Organization:</label>
+                          <span className="ocr-value">{ocrData[0].issuer}</span>
+                        </div>
+                      )}
+                      
+                      {ocrData[0].name && ocrData[0].name !== 'Not found' && (
+                        <div className="ocr-detail-item">
+                          <label>Name on Certificate:</label>
+                          <span className="ocr-value">{ocrData[0].name}</span>
+                        </div>
+                      )}
+                      
+                      {ocrData[0].date && (
+                        <div className="ocr-detail-item">
+                          <label>Certificate Date:</label>
+                          <span className="ocr-value">{new Date(ocrData[0].date).toLocaleDateString()}</span>
+                        </div>
+                      )}
+                      
+                      {ocrData[0].skills && ocrData[0].skills.length > 0 && (
+                        <div className="ocr-detail-item full-width">
+                          <label>Extracted Skills:</label>
+                          <div className="ocr-skills-list">
+                            {ocrData[0].skills.map((skill, idx) => (
+                              <span key={idx} className="ocr-skill-chip">{skill}</span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                    {ocrData.length > 1 && (
+                      <div className="ocr-more-info">
+                        <i className="fas fa-info-circle"></i>
+                        {ocrData.length - 1} more certificate{ocrData.length - 1 !== 1 ? 's' : ''} analyzed for this student
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {loadingOcr && (
+                  <div className="ocr-loading-state">
+                    <i className="fas fa-spinner fa-spin"></i>
+                    <span>Analyzing certificate with AI...</span>
+                  </div>
+                )}
               </div>
 
               {(!review.achievement?.status ||

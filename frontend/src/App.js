@@ -15,6 +15,7 @@ import StudentAnalytics from "./components/Student/StudentAnalytics";
 import StudentAllEvents from "./components/Student/StudentAllEvents";
 import StudentProfile from "./components/Student/StudentProfile";
 import PDFViewer from "./components/Student/PDFViewer";
+import OCROutputs from "./components/Student/OCROutputs";
 import FacultyDashboard from "./components/Faculty/FacultyDashboard";
 import FacultyProfile from "./components/Faculty/FacultyProfile";
 import FacultyReviews from "./components/Faculty/FacultyReviews";
@@ -143,6 +144,17 @@ function App() {
                   <ProtectedRoute>
                     <div className="page-transition">
                       <StudentAnalytics />
+                    </div>
+                  </ProtectedRoute>
+                }
+              />
+
+              <Route
+                path="/students/ocr-outputs/:id"
+                element={
+                  <ProtectedRoute>
+                    <div className="page-transition">
+                      <OCROutputs />
                     </div>
                   </ProtectedRoute>
                 }

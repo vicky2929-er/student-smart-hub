@@ -3599,6 +3599,10 @@
   gap: 8px;
 }
 
+.activity-detail-item.full-width {
+  grid-column: 1 / -1;
+}
+
 .activity-detail-item label {
   font-size: 14px;
   font-weight: 600;
@@ -3611,6 +3615,22 @@
   margin: 0;
   color: #6b7280;
   line-height: 1.6;
+}
+
+.activity-detail-item .faculty-comment {
+  background: #e8f5e9;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #4caf50;
+  color: #2e7d32;
+}
+
+.activity-detail-item .rejection-comment {
+  background: #ffebee;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #f44336;
+  color: #c62828;
 }
 
 .skills-tags {
@@ -5933,4 +5953,129 @@
 
 .ocr-summary {
   margin-top: 8px;
+}
+
+/* OCR Analysis Section in Student Modal */
+.ocr-analysis-section {
+  margin-top: 24px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  border: 2px solid #667eea;
+}
+
+.ocr-section-title {
+  margin: 0 0 16px 0;
+  color: #667eea;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.ocr-section-title i {
+  font-size: 1.3rem;
+}
+
+.ocr-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.ocr-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ocr-detail-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.ocr-detail-item label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ocr-value {
+  font-size: 1rem;
+  color: #2d3748;
+  font-weight: 500;
+  padding: 8px 12px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.ocr-value-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.ocr-value-badge.workshop { background: #34d399; color: white; }
+.ocr-value-badge.conference { background: #fbbf24; color: white; }
+.ocr-value-badge.hackathon { background: #ef4444; color: white; }
+.ocr-value-badge.internship { background: #6366f1; color: white; }
+.ocr-value-badge.course { background: #a855f7; color: white; }
+.ocr-value-badge.competition { background: #f97316; color: white; }
+.ocr-value-badge.communityservice { background: #3b82f6; color: white; }
+.ocr-value-badge.leadership { background: #ec4899; color: white; }
+.ocr-value-badge.certificate { background: #8b5cf6; color: white; }
+
+.ocr-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ocr-skill-chip {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.ocr-more-info {
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 8px;
+  color: #667eea;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ocr-more-info i {
+  font-size: 1rem;
+}
+
+.ocr-loading-state {
+  margin-top: 20px;
+  padding: 24px;
+  text-align: center;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  color: #667eea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 1rem;
+}
+
+.ocr-loading-state i {
+  font-size: 1.3rem;
 }

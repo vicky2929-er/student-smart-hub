@@ -7321,3 +7321,315 @@
   background: linear-gradient(135deg, #f093fb, #f5576c);
   color: white;
 }
+
+/* AI Insights Section in Faculty Reviews Modal */
+.ai-insights-section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 2px solid #e2e8f0;
+}
+
+.ai-insights-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.ai-insights-header h4 {
+  margin: 0;
+  color: #667eea;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-insights-header h4 i {
+  font-size: 1.2rem;
+}
+
+.insights-count {
+  font-size: 0.85rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+.ocr-insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.ocr-insight-card {
+  background: linear-gradient(135deg, #667eea10, #764ba210);
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.ocr-insight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.ocr-insight-header {
+  margin-bottom: 12px;
+}
+
+.ocr-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.ocr-badge.workshop { background: #34d39933; color: #10b981; }
+.ocr-badge.conference { background: #fbbf2433; color: #f59e0b; }
+.ocr-badge.hackathon { background: #ef444433; color: #dc2626; }
+.ocr-badge.internship { background: #6366f133; color: #4f46e5; }
+.ocr-badge.course { background: #a855f733; color: #9333ea; }
+.ocr-badge.competition { background: #f9731633; color: #ea580c; }
+.ocr-badge.communityservice { background: #3b82f633; color: #2563eb; }
+.ocr-badge.leadership { background: #ec489133; color: #db2777; }
+.ocr-badge.default { background: #e2e8f0; color: #64748b; }
+
+.ocr-course-title {
+  margin: 8px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.ocr-field {
+  font-size: 0.85rem;
+  color: #4a5568;
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ocr-field i {
+  color: #667eea;
+  font-size: 0.8rem;
+}
+
+.ocr-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.ocr-skill-tag {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.ocr-skill-tag.more {
+  background: #e2e8f0;
+  color: #64748b;
+}
+
+.view-all-ocr {
+  text-align: center;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.view-all-ocr small {
+  color: #718096;
+  font-size: 0.85rem;
+}
+
+.ai-insights-loading {
+  text-align: center;
+  padding: 24px;
+  color: #667eea;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ai-insights-loading i {
+  font-size: 1.2rem;
+}
+
+/* AI Extracted Info in Table Row */
+.ai-extracted-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: #667eea;
+  background: linear-gradient(135deg, #667eea10, #764ba210);
+  padding: 4px 8px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.ai-extracted-info i {
+  font-size: 0.85rem;
+}
+
+.ai-label {
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.ai-category {
+  font-weight: 600;
+  color: #667eea;
+}
+
+.ai-course {
+  color: #718096;
+  font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+/* OCR Analysis Section in Modal */
+.ocr-analysis-section {
+  margin-top: 24px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  border: 2px solid #667eea;
+}
+
+.ocr-section-title {
+  margin: 0 0 16px 0;
+  color: #667eea;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.ocr-section-title i {
+  font-size: 1.3rem;
+}
+
+.ocr-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.ocr-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ocr-detail-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.ocr-detail-item label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ocr-value {
+  font-size: 1rem;
+  color: #2d3748;
+  font-weight: 500;
+  padding: 8px 12px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.ocr-value-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.ocr-value-badge.workshop { background: #34d399; color: white; }
+.ocr-value-badge.conference { background: #fbbf24; color: white; }
+.ocr-value-badge.hackathon { background: #ef4444; color: white; }
+.ocr-value-badge.internship { background: #6366f1; color: white; }
+.ocr-value-badge.course { background: #a855f7; color: white; }
+.ocr-value-badge.competition { background: #f97316; color: white; }
+.ocr-value-badge.communityservice { background: #3b82f6; color: white; }
+.ocr-value-badge.leadership { background: #ec4899; color: white; }
+.ocr-value-badge.certificate { background: #8b5cf6; color: white; }
+
+.ocr-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ocr-skill-chip {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.ocr-more-info {
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 8px;
+  color: #667eea;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ocr-more-info i {
+  font-size: 1rem;
+}
+
+.ocr-loading-state {
+  margin-top: 20px;
+  padding: 24px;
+  text-align: center;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  color: #667eea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 1rem;
+}
+
+.ocr-loading-state i {
+  font-size: 1.3rem;
+}

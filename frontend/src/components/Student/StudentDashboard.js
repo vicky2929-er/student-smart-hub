@@ -119,6 +119,12 @@ const StudentDashboard = () =>{
     }
   };
 
+  const getDisplayType = (type) => {
+    // Map "Course" to "Certificate" for display
+    if (type === "Course") return "Certificate";
+    return type || "General";
+  };
+
   const getProgressColor = (percentage) => {
     if (percentage >= 80) return "#10b981"; // Green
     if (percentage >= 60) return "#f59e0b"; // Yellow
@@ -369,7 +375,7 @@ const StudentDashboard = () =>{
                     <div className="activity-content">
                       <h3>{activity.title || "Untitled Activity"}</h3>
                       <p>
-                        {activity.type || "General"} •{" "}
+                        {getDisplayType(activity.type)} •{" "}
                         {activity.dateCompleted 
                           ? formatDate(activity.dateCompleted)
                           : activity.uploadedAt 
@@ -526,41 +532,6 @@ const StudentDashboard = () =>{
                 )}
               </div>
             </div>
-
-            {/* OCR Insights */}
-            {dashboardData?.ocrOutputs && dashboardData.ocrOutputs.length > 0 && (
-              <div className="content-card ocr-card">
-                <div className="card-header">
-                  <h2>📄 AI Insights</h2>
-                  <button
-                    className="view-all-btn"
-                    onClick={() => handleNavigate("ocr-outputs")}
-                  >
-                    View All
-                  </button>
-                </div>
-                <div className="ocr-summary">
-                  <p className="ocr-subtitle">
-                    {dashboardData.ocrOutputs.length} certificate{dashboardData.ocrOutputs.length !== 1 ? 's' : ''} analyzed
-                  </p>
-                  <div className="ocr-preview-list">
-                    {dashboardData.ocrOutputs.slice(0, 3).map((ocr, index) => (
-                      <div key={ocr._id || index} className="ocr-preview-item">
-                        <div className="ocr-preview-icon">
-                          <i className="fas fa-certificate"></i>
-                        </div>
-                        <div className="ocr-preview-content">
-                          <h4>{ocr.course || 'Certificate'}</h4>
-                          <span className={`ocr-category-badge ${ocr.category?.toLowerCase()}`}>
-                            {ocr.category || 'Uncategorized'}
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
         </div>
 
@@ -751,11 +722,11 @@ const StudentDashboard = () =>{
                   <div className="activity-meta">
                     <span className="activity-type">
                       <i className="fas fa-tag"></i>
-                      {selectedActivity.type || "General"}
+                      {getDisplayType(selectedActivity.type)}
                     </span>
                     <span className="activity-date">
                       <i className="fas fa-calendar"></i>
-                      {formatDate(selectedActivity.dateCompleted)}
+                      {formatDate(selectedActivity.dateCompleted || selectedActivity.uploadedAt)}
                     </span>
                     <span className={`activity-status-badge status-${(selectedActivity.status || "pending")?.toLowerCase()}`}>
                       <i className="fas fa-circle"></i>
@@ -766,6 +737,13 @@ const StudentDashboard = () =>{
               </div>
 
               <div className="activity-details-grid">
+                {selectedActivity.type && (
+                  <div className="activity-detail-item">
+                    <label>Category</label>
+                    <p>{getDisplayType(selectedActivity.type)}</p>
+                  </div>
+                )}
+                
                 {selectedActivity.description && (
                   <div className="activity-detail-item">
                     <label>Description</label>
@@ -780,32 +758,45 @@ const StudentDashboard = () =>{
                   </div>
                 )}
                 
-                {selectedActivity.duration && (
+                {selectedActivity.instituteEmail && (
                   <div className="activity-detail-item">
-                    <label>Duration</label>
-                    <p>{selectedActivity.duration}</p>
+                    <label>Institute Email</label>
+                    <p>{selectedActivity.instituteEmail}</p>
                   </div>
                 )}
                 
-                {selectedActivity.skills && selectedActivity.skills.length > 0 && (
+                {selectedActivity.dateCompleted && (
                   <div className="activity-detail-item">
-                    <label>Skills</label>
-                    <div className="skills-tags">
-                      {selectedActivity.skills.map((skill, index) => (
-                        <span key={index} className="skill-tag">{skill}</span>
-                      ))}
-                    </div>
+                    <label>Completion Date</label>
+                    <p>{formatDate(selectedActivity.dateCompleted)}</p>
                   </div>
                 )}
                 
-                {selectedActivity.achievements && selectedActivity.achievements.length > 0 && (
+                {selectedActivity.uploadedAt && (
                   <div className="activity-detail-item">
-                    <label>Achievements</label>
-                    <ul className="achievements-list">
-                      {selectedActivity.achievements.map((achievement, index) => (
-                        <li key={index}>{achievement}</li>
-                      ))}
-                    </ul>
+                    <label>Uploaded On</label>
+                    <p>{formatDate(selectedActivity.uploadedAt)}</p>
+                  </div>
+                )}
+                
+                {selectedActivity.reviewedAt && (
+                  <div className="activity-detail-item">
+                    <label>Reviewed On</label>
+                    <p>{formatDate(selectedActivity.reviewedAt)}</p>
+                  </div>
+                )}
+                
+                {selectedActivity.comment && (
+                  <div className="activity-detail-item full-width">
+                    <label>Faculty Comment</label>
+                    <p className="faculty-comment">{selectedActivity.comment}</p>
+                  </div>
+                )}
+                
+                {selectedActivity.rejectionComment && (
+                  <div className="activity-detail-item full-width">
+                    <label>Rejection Reason</label>
+                    <p className="rejection-comment">{selectedActivity.rejectionComment}</p>
                   </div>
                 )}
                 
