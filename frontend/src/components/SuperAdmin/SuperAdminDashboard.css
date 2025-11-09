@@ -1665,3 +1665,99 @@
   outline: 2px solid #284B63;
   outline-offset: 2px;
 }
+
+/* View Modal Styles */
+.superadmin-view-modal {
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.superadmin-view-content {
+  padding: 1.5rem 0;
+}
+
+.superadmin-view-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.superadmin-view-section h3 {
+  color: #284B63;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.superadmin-view-section h4 {
+  color: #284B63;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.superadmin-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.superadmin-stat-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.superadmin-stat-box i {
+  font-size: 2rem;
+  color: #284B63;
+}
+
+.superadmin-stat-box h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.superadmin-stat-box p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Edit Modal Styles */
+.superadmin-edit-content {
+  padding: 1.5rem 0;
+}
+
+.superadmin-info-message {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #1e40af;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.superadmin-info-message i {
+  font-size: 1.25rem;
+  color: #3b82f6;
+}

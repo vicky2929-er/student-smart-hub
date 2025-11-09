@@ -116,36 +116,54 @@
 }
 
 .action-btn {
-  background: var(--primary-color);
-  color: var(--primary-bg);
+  background: linear-gradient(135deg, #284b63 0%, #1e3a50 100%);
+  color: white;
   border: none;
-  padding: var(--spacing-md) var(--spacing-lg);
-  border-radius: var(--border-radius);
+  padding: 14px 24px;
+  border-radius: 8px;
   cursor: pointer;
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-sm);
-  transition: var(--transition);
-  box-shadow: var(--shadow-light);
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(40, 75, 99, 0.15);
   font-size: 0.95rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.action-btn:hover::before {
+  left: 100%;
 }
 
 .action-btn:hover {
-  background-color: #1e3a50;
-  box-shadow: var(--shadow-medium);
+  background: linear-gradient(135deg, #1e3a50 0%, #284b63 100%);
+  box-shadow: 0 4px 16px rgba(40, 75, 99, 0.25);
   transform: translateY(-2px);
 }
 
 .action-btn:active {
   transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(40, 75, 99, 0.15);
 }
 
 .action-btn i {
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 /* Main Content Grid */
@@ -185,19 +203,34 @@
 }
 
 .add-new-btn {
-  background: var(--secondary-bg);
-  color: var(--primary-color);
-  border: 1px solid var(--border-color);
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--border-radius);
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
   cursor: pointer;
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.9rem;
-  transition: var(--transition);
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+}
+
+.add-new-btn:hover {
+  background: linear-gradient(135deg, #764ba2, #667eea);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  transform: translateY(-2px);
+}
+
+.add-new-btn:active {
+  transform: translateY(0);
+}
+
+.add-new-btn i {
+  font-size: 0.9rem;
 }
 
 .add-new-btn:hover {
@@ -472,22 +505,30 @@
 }
 
 .retry-btn {
-  background: var(--primary-color);
-  color: var(--primary-bg);
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
   border: none;
-  padding: var(--spacing-md) var(--spacing-lg);
-  border-radius: var(--border-radius);
+  padding: 12px 24px;
+  border-radius: 8px;
   cursor: pointer;
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  transition: var(--transition);
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+  font-size: 0.95rem;
 }
 
 .retry-btn:hover {
-  background: #1e3a50;
+  background: linear-gradient(135deg, #059669, #047857);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  transform: translateY(-2px);
+}
+
+.retry-btn:active {
+  transform: translateY(0);
 }
 
 /* Empty States */
@@ -514,23 +555,47 @@
 }
 
 .cta-btn {
-  background: var(--primary-color);
-  color: var(--primary-bg);
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
   border: none;
-  padding: var(--spacing-md) var(--spacing-lg);
-  border-radius: var(--border-radius);
+  padding: 14px 28px;
+  border-radius: 8px;
   cursor: pointer;
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  transition: var(--transition);
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta-btn:hover::before {
+  left: 100%;
 }
 
 .cta-btn:hover {
-  background: #1e3a50;
+  background: linear-gradient(135deg, #764ba2, #667eea);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
   transform: translateY(-2px);
+}
+
+.cta-btn:active {
+  transform: translateY(0);
 }
 
 .empty-activities,

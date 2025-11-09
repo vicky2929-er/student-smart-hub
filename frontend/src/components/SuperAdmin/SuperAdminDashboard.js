@@ -33,6 +33,8 @@ const SuperAdminDashboard = () => {
   // Modal states
   const [showAdminModal, setShowAdminModal] = useState(false);
   const [showReviewModal, setShowReviewModal] = useState(false);
+  const [showViewModal, setShowViewModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
   const [selectedInstitution, setSelectedInstitution] = useState(null);
   const [reviewAction, setReviewAction] = useState(null);
   const [rejectionComment, setRejectionComment] = useState('');
@@ -79,7 +81,7 @@ const SuperAdminDashboard = () => {
       setStats({
         totalColleges: response.metrics?.institutes || 0,
         totalStudents: response.metrics?.activeStudents || 0,
-        totalFaculty: 0, // Will be calculated from institutes
+        totalFaculty: response.metrics?.totalFaculty || 0,
         totalEvents: response.metrics?.activitiesLogged || 0,
         activeUsers: response.metrics?.activeStudents || 0,
         pendingApprovals: response.metrics?.pendingApprovals || 0,
@@ -188,13 +190,25 @@ const SuperAdminDashboard = () => {
       switch (action) {
         case 'approve':
           await superAdminService.approveCollege(collegeId);
+          alert('Institute approved successfully!');
           break;
         case 'reject':
           await superAdminService.rejectCollege(collegeId, data?.reason || 'No reason provided');
+          alert('Institute rejected successfully!');
           break;
         case 'delete':
           if (window.confirm('Are you sure you want to delete this institute?')) {
             await superAdminService.deleteCollege(collegeId);
+            alert('Institute deleted successfully!');
+          } else {
+            return;
+          }
+          break;
+        case 'suspend':
+          if (window.confirm('Are you sure you want to suspend this institute?')) {
+            // TODO: Implement suspend API endpoint
+            alert('Suspend functionality will be implemented soon.');
+            return;
           } else {
             return;
           }
@@ -210,6 +224,21 @@ const SuperAdminDashboard = () => {
       console.error(`Error ${action}ing institute:`, error);
       alert(`Failed to ${action} institute. Please try again.`);
     }
+  };
+
+  const handleViewInstitute = (college) => {
+    setSelectedInstitution(college);
+    setShowViewModal(true);
+  };
+
+  const handleEditInstitute = (college) => {
+    setSelectedInstitution(college);
+    setShowEditModal(true);
+  };
+
+  const handleViewAnalytics = (college) => {
+    // Navigate to analytics page for this institute
+    window.location.href = `/superadmin/analytics?institute=${college.id}`;
   };
 
   const handleReviewClick = (institution) => {
@@ -316,6 +345,82 @@ const SuperAdminDashboard = () => {
     } catch (error) {
       console.error(`Error performing ${actionType}:`, error);
       alert(`Failed to perform ${actionType}. Please try again.`);
+      setRefreshing(false);
+    }
+  };
+
+  const handleExportReport = async () => {
+    try {
+      setRefreshing(true);
+      
+      // Gather all data for the report
+      const reportData = {
+        generatedAt: new Date().toLocaleString(),
+        summary: {
+          totalInstitutes: stats.totalColleges,
+          totalStudents: stats.totalStudents,
+          totalFaculty: stats.totalFaculty,
+          activeEvents: stats.totalEvents,
+          pendingApprovals: stats.pendingApprovals,
+          systemHealth: stats.systemHealth,
+          platformUptime: stats.platformUptime,
+        },
+        institutes: colleges,
+        pendingInstitutions: pendingInstitutions,
+        recentActivities: recentActivities,
+        systemAlerts: systemAlerts
+      };
+
+      // Create CSV content
+      let csvContent = "SUPER ADMIN DASHBOARD REPORT\n";
+      csvContent += `Generated: ${reportData.generatedAt}\n\n`;
+      
+      csvContent += "SUMMARY STATISTICS\n";
+      csvContent += "Metric,Value\n";
+      csvContent += `Total Institutes,${reportData.summary.totalInstitutes}\n`;
+      csvContent += `Total Students,${reportData.summary.totalStudents}\n`;
+      csvContent += `Total Faculty,${reportData.summary.totalFaculty}\n`;
+      csvContent += `Active Events,${reportData.summary.activeEvents}\n`;
+      csvContent += `Pending Approvals,${reportData.summary.pendingApprovals}\n`;
+      csvContent += `System Health,${reportData.summary.systemHealth}\n`;
+      csvContent += `Platform Uptime,${reportData.summary.platformUptime}\n\n`;
+
+      csvContent += "APPROVED INSTITUTES\n";
+      csvContent += "Name,Code,Type,Students,Faculty,Status,Location\n";
+      reportData.institutes.forEach(inst => {
+        csvContent += `"${inst.name}",${inst.code},${inst.type},${inst.students},${inst.faculty},${inst.status},"${inst.location || 'N/A'}"\n`;
+      });
+
+      csvContent += "\nPENDING APPROVALS\n";
+      csvContent += "Name,Type,Location,Requested\n";
+      reportData.pendingInstitutions.forEach(inst => {
+        csvContent += `"${inst.name}",${inst.type},"${inst.location || 'N/A'}",${inst.requested}\n`;
+      });
+
+      csvContent += "\nRECENT ACTIVITIES\n";
+      csvContent += "Activity,Time\n";
+      reportData.recentActivities.forEach(activity => {
+        csvContent += `"${activity.action}",${activity.time}\n`;
+      });
+
+      // Create and download the file
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+      const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
+      
+      link.setAttribute('href', url);
+      link.setAttribute('download', `SuperAdmin_Report_${timestamp}.csv`);
+      link.style.visibility = 'hidden';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      setRefreshing(false);
+      alert('Report exported successfully!');
+    } catch (error) {
+      console.error('Error exporting report:', error);
+      alert('Failed to export report. Please try again.');
       setRefreshing(false);
     }
   };
@@ -628,6 +733,165 @@ const SuperAdminDashboard = () => {
         </div>
       )}
 
+      {/* View Institute Modal */}
+      {showViewModal && selectedInstitution && (
+        <div className="superadmin-modal-overlay" onClick={() => setShowViewModal(false)}>
+          <div className="superadmin-modal-content superadmin-view-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="superadmin-modal-header">
+              <h2>Institute Details</h2>
+              <button 
+                className="superadmin-modal-close"
+                onClick={() => setShowViewModal(false)}
+              >
+                <i className="fas fa-times"></i>
+              </button>
+            </div>
+            
+            <div className="superadmin-view-content">
+              <div className="superadmin-view-section">
+                <h3><i className="fas fa-university"></i> {selectedInstitution.name}</h3>
+                <div className="superadmin-detail-grid">
+                  <div className="superadmin-detail-item">
+                    <label>Institute Code:</label>
+                    <span>{selectedInstitution.code}</span>
+                  </div>
+                  <div className="superadmin-detail-item">
+                    <label>Type:</label>
+                    <span>{selectedInstitution.type}</span>
+                  </div>
+                  <div className="superadmin-detail-item">
+                    <label>Email:</label>
+                    <span>{selectedInstitution.email}</span>
+                  </div>
+                  <div className="superadmin-detail-item">
+                    <label>Location:</label>
+                    <span>{selectedInstitution.location || 'N/A'}</span>
+                  </div>
+                  <div className="superadmin-detail-item">
+                    <label>Status:</label>
+                    <span className={`superadmin-status ${selectedInstitution.status?.toLowerCase()}`}>
+                      {selectedInstitution.status}
+                    </span>
+                  </div>
+                  <div className="superadmin-detail-item">
+                    <label>Last Active:</label>
+                    <span>{selectedInstitution.lastActive || 'N/A'}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="superadmin-view-section">
+                <h4><i className="fas fa-chart-bar"></i> Statistics</h4>
+                <div className="superadmin-stats-row">
+                  <div className="superadmin-stat-box">
+                    <i className="fas fa-user-graduate"></i>
+                    <div>
+                      <h3>{selectedInstitution.students?.toLocaleString() || 0}</h3>
+                      <p>Students</p>
+                    </div>
+                  </div>
+                  <div className="superadmin-stat-box">
+                    <i className="fas fa-chalkboard-teacher"></i>
+                    <div>
+                      <h3>{selectedInstitution.faculty?.toLocaleString() || 0}</h3>
+                      <p>Faculty</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {selectedInstitution.approvedAt && (
+                <div className="superadmin-view-section">
+                  <h4><i className="fas fa-check-circle"></i> Approval Information</h4>
+                  <div className="superadmin-detail-grid">
+                    <div className="superadmin-detail-item">
+                      <label>Approved On:</label>
+                      <span>{new Date(selectedInstitution.approvedAt).toLocaleDateString()}</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div className="superadmin-modal-actions">
+              <button 
+                type="button" 
+                className="superadmin-btn-secondary"
+                onClick={() => setShowViewModal(false)}
+              >
+                Close
+              </button>
+              <button 
+                type="button" 
+                className="superadmin-btn-primary"
+                onClick={() => {
+                  setShowViewModal(false);
+                  handleEditInstitute(selectedInstitution);
+                }}
+              >
+                <i className="fas fa-edit"></i> Edit
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Edit Institute Modal */}
+      {showEditModal && selectedInstitution && (
+        <div className="superadmin-modal-overlay" onClick={() => setShowEditModal(false)}>
+          <div className="superadmin-modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="superadmin-modal-header">
+              <h2>Edit Institute</h2>
+              <button 
+                className="superadmin-modal-close"
+                onClick={() => setShowEditModal(false)}
+              >
+                <i className="fas fa-times"></i>
+              </button>
+            </div>
+            
+            <div className="superadmin-edit-content">
+              <p className="superadmin-info-message">
+                <i className="fas fa-info-circle"></i>
+                Full edit functionality will be implemented soon. For now, you can view institute details.
+              </p>
+              
+              <div className="superadmin-view-section">
+                <h4>Current Information</h4>
+                <div className="superadmin-detail-grid">
+                  <div className="superadmin-detail-item">
+                    <label>Name:</label>
+                    <span>{selectedInstitution.name}</span>
+                  </div>
+                  <div className="superadmin-detail-item">
+                    <label>Code:</label>
+                    <span>{selectedInstitution.code}</span>
+                  </div>
+                  <div className="superadmin-detail-item">
+                    <label>Type:</label>
+                    <span>{selectedInstitution.type}</span>
+                  </div>
+                  <div className="superadmin-detail-item">
+                    <label>Status:</label>
+                    <span>{selectedInstitution.status}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="superadmin-modal-actions">
+              <button 
+                type="button" 
+                className="superadmin-btn-secondary"
+                onClick={() => setShowEditModal(false)}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Header */}
       <div className="superadmin-dashboard-header">
         <div className="superadmin-header-content">
@@ -644,7 +908,11 @@ const SuperAdminDashboard = () => {
               <i className={`fas fa-sync-alt ${refreshing ? 'fa-spin' : ''}`}></i>
               {refreshing ? 'Refreshing...' : 'Refresh Data'}
             </button>
-            <button className="superadmin-btn-secondary">
+            <button 
+              className="superadmin-btn-secondary"
+              onClick={handleExportReport}
+              disabled={refreshing}
+            >
               <i className="fas fa-download"></i>
               Export Report
             </button>
@@ -689,7 +957,6 @@ const SuperAdminDashboard = () => {
               <i className="fas fa-tachometer-alt"></i>
               Quick Management
             </h2>
-            <p>Perform common administrative tasks</p>
           </div>
           <div className="superadmin-quick-actions-grid">
             <QuickActionCard
@@ -882,32 +1149,28 @@ const SuperAdminDashboard = () => {
                           <button 
                             className="superadmin-btn-icon view" 
                             title="View Details"
-                            onClick={() => console.log('View institute:', college.id)}
+                            onClick={() => handleViewInstitute(college)}
                           >
                             <i className="fas fa-eye"></i>
                           </button>
                           <button 
                             className="superadmin-btn-icon edit" 
                             title="Edit Institute"
-                            onClick={() => console.log('Edit institute:', college.id)}
+                            onClick={() => handleEditInstitute(college)}
                           >
                             <i className="fas fa-edit"></i>
                           </button>
                           <button 
                             className="superadmin-btn-icon analytics" 
                             title="View Analytics"
-                            onClick={() => console.log('Analytics for:', college.id)}
+                            onClick={() => handleViewAnalytics(college)}
                           >
                             <i className="fas fa-chart-bar"></i>
                           </button>
                           <button 
                             className="superadmin-btn-icon danger" 
                             title="Suspend Institute"
-                            onClick={() => {
-                              if (window.confirm(`Are you sure you want to suspend ${college.name}?`)) {
-                                handleCollegeAction('suspend', college.id);
-                              }
-                            }}
+                            onClick={() => handleCollegeAction('suspend', college.id)}
                           >
                             <i className="fas fa-ban"></i>
                           </button>

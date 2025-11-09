@@ -481,6 +481,48 @@ export const superAdminService = {
     }
   },
 
+  // Get Real Growth Analytics
+  getGrowthAnalytics: async (timeRange = '30d') => {
+    try {
+      const response = await api.get(`/dashboard/superadmin/analytics/growth?timeRange=${timeRange}`);
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching growth analytics:", error);
+      // Return empty data structure on error
+      return {
+        instituteGrowth: [],
+        studentGrowth: [],
+        eventGrowth: [],
+        summary: {
+          totalInstitutes: 0,
+          totalStudents: 0,
+          totalActivities: 0,
+          timeRange: timeRange,
+          period: '0 days'
+        }
+      };
+    }
+  },
+
+  // Get Real Demographics Data
+  getDemographicsAnalytics: async () => {
+    try {
+      const response = await api.get('/dashboard/superadmin/analytics/demographics');
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching demographics analytics:", error);
+      // Return empty data structure on error
+      return {
+        studentsByYear: [],
+        facultyByDepartment: [],
+        summary: {
+          totalStudents: 0,
+          totalFaculty: 0
+        }
+      };
+    }
+  },
+
   // Audit Logs
   getAuditLogs: async (page = 1, limit = 50, filters = {}) => {
     try {
