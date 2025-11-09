@@ -6,6 +6,7 @@ const { convertAchievementArrayUrls } = require("../utils/uploadCareUtils");
 const Student = require("../model/student");
 const Department = require("../model/department");
 const College = require("../model/college");
+const OcrOutput = require("../model/ocrOutput");
 const router = express.Router();
 
 // Middleware to check if user can access student data
@@ -63,11 +64,14 @@ router.get(
           .length,
       };
 
-      // Get recent activities (last 5) and convert UploadCare URLs
+      // Get ALL recent activities including pending - sort by upload date or completed date
       const recentActivities = convertAchievementArrayUrls(
         achievements
-          .sort((a, b) => new Date(b.dateCompleted) - new Date(a.dateCompleted))
-          .slice(0, 5)
+          .sort((a, b) => {
+            const dateA = new Date(a.dateCompleted || a.uploadedAt || 0);
+            const dateB = new Date(b.dateCompleted || b.uploadedAt || 0);
+            return dateB - dateA;
+          })
       );
 
       // Calculate academic progress
@@ -121,12 +125,25 @@ router.get(
         upcomingEvents = [];
       }
 
+      // Fetch OCR outputs for this student
+      let ocrOutputs = [];
+      try {
+        ocrOutputs = await OcrOutput.find({ student: studentId })
+          .sort({ createdAt: -1 })
+          .limit(10) // Get latest 10 OCR outputs
+          .lean();
+      } catch (ocrError) {
+        console.error("Error fetching OCR outputs:", ocrError);
+        // Continue without OCR data if fetch fails
+      }
+
       res.json({
         student,
         stats,
         recentActivities,
         academicProgress,
         upcomingEvents,
+        ocrOutputs, // Add OCR outputs to dashboard
         title: `${student.name.first}'s Dashboard`,
       });
     } catch (error) {
@@ -454,18 +471,27 @@ router.get(
         // Enhanced timeline data
         ...getAchievementTimeline(achievements),
 
-        // Recent achievements with full details
+        // Recent achievements with full details (including pending) - ALL achievements
         recentAchievements: achievements
-          .filter(a => a.dateCompleted) // Only include achievements with dates
-          .sort((a, b) => new Date(b.dateCompleted) - new Date(a.dateCompleted))
-          .slice(0, 10)
+          .filter(a => a.dateCompleted || a.uploadedAt) // Include achievements with either date
+          .sort((a, b) => {
+            // Sort by dateCompleted if available, otherwise by uploadedAt
+            const dateA = new Date(a.dateCompleted || a.uploadedAt);
+            const dateB = new Date(b.dateCompleted || b.uploadedAt);
+            return dateB - dateA;
+          })
           .map(achievement => ({
             title: achievement.title || 'Achievement',
             category: achievement.type,
             status: achievement.status,
-            date: achievement.dateCompleted ? new Date(achievement.dateCompleted).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : 'N/A',
+            date: achievement.dateCompleted 
+              ? new Date(achievement.dateCompleted).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+              : achievement.uploadedAt
+                ? new Date(achievement.uploadedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+                : 'N/A',
             dateCompleted: achievement.dateCompleted,
-            created_at: achievement.uploadedAt || achievement.dateCompleted
+            uploadedAt: achievement.uploadedAt,
+            isPending: achievement.status === 'Pending'
           })),
 
         // Skills analysis
@@ -871,5 +897,26 @@ router.delete(
     }
   }
 );
+
+// Get OCR outputs for a student (student can view their own)
+router.get("/:id/ocr-outputs", requireAuth, checkStudentAccess, async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    // Fetch all OCR outputs for this student
+    const ocrOutputs = await OcrOutput.find({ student: id })
+      .sort({ createdAt: -1 })
+      .lean();
+    
+    res.json({
+      success: true,
+      count: ocrOutputs.length,
+      data: ocrOutputs
+    });
+  } catch (error) {
+    console.error("Error fetching OCR outputs:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
 
 module.exports = router;

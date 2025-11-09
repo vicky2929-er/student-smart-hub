@@ -75,8 +75,9 @@ const FacultyReviews = () => {
         );
       case "recent":
       default:
-        const dateA = new Date(a.achievement?.dateCompleted || 0);
-        const dateB = new Date(b.achievement?.dateCompleted || 0);
+        // Use uploadedAt for pending items, dateCompleted for others
+        const dateA = new Date(a.achievement?.dateCompleted || a.achievement?.uploadedAt || 0);
+        const dateB = new Date(b.achievement?.dateCompleted || b.achievement?.uploadedAt || 0);
         return dateB - dateA; // Most recent first
     }
   });
@@ -359,7 +360,7 @@ const ReviewRow = ({ review, onReview, formatDate, getActivityIcon }) => {
         </div>
 
         <div className="table-cell submitted-col">
-          {formatDate(review.achievement?.dateCompleted)}
+          {formatDate(review.achievement?.dateCompleted || review.achievement?.uploadedAt)}
         </div>
 
         <div className="table-cell status-col">
@@ -460,8 +461,8 @@ const ReviewRow = ({ review, onReview, formatDate, getActivityIcon }) => {
                   {review.achievement?.description}
                 </p>
                 <p>
-                  <strong>Completed:</strong>{" "}
-                  {formatDate(review.achievement?.dateCompleted)}
+                  <strong>Submitted:</strong>{" "}
+                  {formatDate(review.achievement?.dateCompleted || review.achievement?.uploadedAt)}
                 </p>
                 {review.achievement?.status &&
                   review.achievement?.status !== "Pending" && (

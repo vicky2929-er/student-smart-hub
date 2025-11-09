@@ -236,22 +236,57 @@ const StudentAnalytics = () => {
   // Generate chart data based on stats with better data distribution
   const recentAchievements = stats?.fullAnalytics?.recentAchievements || [];
   
-  // Create monthly breakdown from recent achievements
+  // Create monthly breakdown from recent achievements based on selected period
   const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  const last6Months = [];
   const currentDate = new Date();
   
-  for (let i = 5; i >= 0; i--) {
+  // Determine number of months to show based on selected period
+  let monthsToShow = 6; // default
+  switch(selectedPeriod) {
+    case 'week':
+      monthsToShow = 1; // Show current month with weekly breakdown
+      break;
+    case 'month':
+      monthsToShow = 6; // Last 6 months
+      break;
+    case 'semester':
+      monthsToShow = 6; // Last 6 months (semester)
+      break;
+    case 'year':
+      monthsToShow = 12; // Full year
+      break;
+    default:
+      monthsToShow = 6;
+  }
+  
+  const timeSeriesMonths = [];
+  for (let i = monthsToShow - 1; i >= 0; i--) {
     const date = new Date(currentDate.getFullYear(), currentDate.getMonth() - i, 1);
-    last6Months.push({
+    timeSeriesMonths.push({
       label: `${monthNames[date.getMonth()]} ${date.getFullYear()}`,
       month: date.getMonth(),
       year: date.getFullYear()
     });
   }
   
-  // Count achievements by month and status
-  const monthlyBreakdown = last6Months.map(({ month, year, label }) => {
+  // Use backend's monthlyData if available, otherwise calculate from recent achievements
+  const backendMonthlyData = stats?.fullAnalytics?.monthlyData || {};
+  
+  const visualData = timeSeriesMonths.map(({ month, year, label }) => {
+    // Check if backend has data for this month
+    const backendData = backendMonthlyData[label];
+    
+    if (backendData) {
+      return {
+        label,
+        total: backendData.total || 0,
+        approved: backendData.approved || 0,
+        pending: backendData.pending || 0,
+        rejected: backendData.rejected || 0,
+      };
+    }
+    
+    // Fallback: calculate from recent achievements
     const achievementsInMonth = recentAchievements.filter(a => {
       const achDate = new Date(a.date || a.created_at);
       return achDate.getMonth() === month && achDate.getFullYear() === year;
@@ -262,17 +297,9 @@ const StudentAnalytics = () => {
       total: achievementsInMonth.length,
       approved: achievementsInMonth.filter(a => a.status === 'Approved').length,
       pending: achievementsInMonth.filter(a => a.status === 'Pending').length,
+      rejected: achievementsInMonth.filter(a => a.status === 'Rejected').length,
     };
   });
-  
-  // If no data, distribute current achievements across months for visualization
-  const hasMonthlyData = monthlyBreakdown.some(m => m.total > 0);
-  const visualData = hasMonthlyData ? monthlyBreakdown : last6Months.map((m, i) => ({
-    label: m.label,
-    total: i === 5 ? totalAchievements : 0, // Show all in current month if no date info
-    approved: i === 5 ? approvedAchievements : 0,
-    pending: i === 5 ? pendingAchievements : 0,
-  }));
   
   const achievementTrendData = {
     labels: visualData.map(d => d.label),
@@ -280,44 +307,63 @@ const StudentAnalytics = () => {
       {
         label: 'Total Achievements',
         data: visualData.map(d => d.total),
-        borderColor: 'rgb(59, 130, 246)',
-        backgroundColor: 'rgba(59, 130, 246, 0.2)',
-        fill: true,
+        borderColor: 'rgb(99, 102, 241)',
+        backgroundColor: 'transparent',
+        fill: false,
         tension: 0.4,
         borderWidth: 3,
+        borderDash: [8, 4], // Dashed line pattern
         pointRadius: 5,
         pointHoverRadius: 7,
-        pointBackgroundColor: 'rgb(59, 130, 246)',
+        pointBackgroundColor: 'rgb(99, 102, 241)',
         pointBorderColor: '#fff',
         pointBorderWidth: 2,
+        pointStyle: 'circle',
       },
       {
         label: 'Approved',
         data: visualData.map(d => d.approved),
         borderColor: 'rgb(16, 185, 129)',
-        backgroundColor: 'rgba(16, 185, 129, 0.2)',
-        fill: true,
+        backgroundColor: 'transparent',
+        fill: false,
         tension: 0.4,
         borderWidth: 3,
-        pointRadius: 5,
-        pointHoverRadius: 7,
+        pointRadius: 6,
+        pointHoverRadius: 8,
         pointBackgroundColor: 'rgb(16, 185, 129)',
         pointBorderColor: '#fff',
         pointBorderWidth: 2,
+        pointStyle: 'circle',
       },
       {
         label: 'Pending',
         data: visualData.map(d => d.pending),
         borderColor: 'rgb(245, 158, 11)',
-        backgroundColor: 'rgba(245, 158, 11, 0.2)',
-        fill: true,
+        backgroundColor: 'transparent',
+        fill: false,
         tension: 0.4,
         borderWidth: 3,
-        pointRadius: 5,
-        pointHoverRadius: 7,
+        pointRadius: 6,
+        pointHoverRadius: 8,
         pointBackgroundColor: 'rgb(245, 158, 11)',
         pointBorderColor: '#fff',
         pointBorderWidth: 2,
+        pointStyle: 'triangle',
+      },
+      {
+        label: 'Rejected',
+        data: visualData.map(d => d.rejected || 0),
+        borderColor: 'rgb(239, 68, 68)',
+        backgroundColor: 'transparent',
+        fill: false,
+        tension: 0.4,
+        borderWidth: 3,
+        pointRadius: 6,
+        pointHoverRadius: 8,
+        pointBackgroundColor: 'rgb(239, 68, 68)',
+        pointBorderColor: '#fff',
+        pointBorderWidth: 2,
+        pointStyle: 'rect',
       },
     ],
   };
@@ -388,10 +434,27 @@ const StudentAnalytics = () => {
     ],
   };
   
-  // Calculate performance score based on approval rate and activity level (totals already calculated above)
+  // Calculate metrics with proper logic
   const approvalRate = totalAchievements > 0 ? (approvedAchievements / totalAchievements) * 100 : 0;
-  const activityScore = Math.min(totalAchievements * 10, 100); // Max 100 for 10+ achievements
-  const performanceScore = Math.round((approvalRate * 0.7) + (activityScore * 0.3));
+  
+  // Performance Score Calculation:
+  // 1. Academic Score (40%): Based on CGPA (out of 10) and Attendance (out of 100)
+  //    - CGPA weighted 60% → (CGPA/10) * 60
+  //    - Attendance weighted 40% → (Attendance/100) * 40
+  // 2. Achievement Score (60%): Based on approval rate and activity
+  //    - Approval Rate 70% → (approvedAchievements/totalAchievements) * 70
+  //    - Activity Level 30% → min(totalAchievements * 3, 30)
+  const cgpa = academic?.cgpa || 0;
+  const attendance = academic?.attendance || 0;
+  const academicScore = ((cgpa / 10) * 60) + ((attendance / 100) * 40); // Out of 100
+  const achievementApprovalScore = totalAchievements > 0 ? (approvalRate * 0.7) : 0; // 70% weight
+  const achievementActivityScore = Math.min(totalAchievements * 3, 30); // 30% weight, max 30 for 10+ achievements
+  const achievementScore = achievementApprovalScore + achievementActivityScore;
+  const performanceScore = Math.round((academicScore * 0.4) + (achievementScore * 0.6));
+  
+  // Monthly Growth Calculation from backend data
+  const growthMetrics = stats?.fullAnalytics?.growthMetrics || { growthRate: 0, trend: 'stable' };
+  const monthlyGrowthRate = growthMetrics.growthRate || 0;
 
   if (loading) {
     return (
@@ -517,8 +580,8 @@ const StudentAnalytics = () => {
         <div className="charts-grid">{/* Achievement Trend */}
           <div className="chart-card large">
             <div className="chart-header">
-              <h2>Achievement Trend</h2>
-              <p>Your achievement submissions and approvals over time</p>
+              <h2>Achievement Trend - {selectedPeriod === 'week' ? 'This Week' : selectedPeriod === 'month' ? 'Last 6 Months' : selectedPeriod === 'semester' ? 'This Semester' : 'This Year'}</h2>
+              <p>Track total submissions (dashed line) and status breakdown (Approved, Pending, Rejected)</p>
             </div>
             <div className="chart-container">
               <Line data={achievementTrendData} options={chartOptions} />
@@ -529,7 +592,7 @@ const StudentAnalytics = () => {
           <div className="chart-card">
             <div className="chart-header">
               <h2>Achievement Categories</h2>
-              <p>Distribution of your achievement types</p>
+              <p>Distribution of <strong>approved</strong> achievements by type</p>
             </div>
             <div className="chart-container">
               <Doughnut data={achievementTypeData} options={doughnutOptions} />
@@ -539,12 +602,12 @@ const StudentAnalytics = () => {
           {/* Recent Achievements */}
           <div className="chart-card">
             <div className="chart-header">
-              <h2>Recent Achievements</h2>
-              <p>Your latest submitted achievements</p>
+              <h2>Recent Achievements {stats?.fullAnalytics?.recentAchievements?.length > 0 && `(${stats.fullAnalytics.recentAchievements.length})`}</h2>
+              <p>All your submitted achievements - scroll to view more</p>
             </div>
             <div className="recent-achievements-list">
               {stats?.fullAnalytics?.recentAchievements?.length > 0 ? (
-                stats.fullAnalytics.recentAchievements.slice(0, 5).map((achievement, index) => (
+                stats.fullAnalytics.recentAchievements.map((achievement, index) => (
                   <div key={index} className="achievement-item">
                     <div className="achievement-status">
                       <i className={`fas ${
@@ -631,11 +694,15 @@ const StudentAnalytics = () => {
                     <div className="stat-details">
                       <div className="stat-row">
                         <span>Monthly Growth:</span>
-                        <span className="stat-value positive">+12%</span>
+                        <span className={`stat-value ${monthlyGrowthRate >= 0 ? 'positive' : 'negative'}`}>
+                          {monthlyGrowthRate >= 0 ? '+' : ''}{monthlyGrowthRate}%
+                        </span>
                       </div>
                       <div className="stat-row">
                         <span>Performance Score:</span>
-                        <span className="stat-value">85%</span>
+                        <span className={`stat-value ${performanceScore >= 70 ? 'positive' : performanceScore >= 50 ? 'neutral' : 'negative'}`}>
+                          {performanceScore}%
+                        </span>
                       </div>
                     </div>
                   </div>

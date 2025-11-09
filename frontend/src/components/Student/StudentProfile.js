@@ -27,8 +27,11 @@ const StudentProfile = () => {
       setStudent(response.data.student);
       setEditForm(response.data.student);
       
-      // Fetch coordinator information if department exists
-      if (response.data.student.department) {
+      // Use student's coordinator directly (already populated by backend)
+      if (response.data.student.coordinator) {
+        setCoordinator(response.data.student.coordinator);
+      } else if (response.data.student.department) {
+        // Fallback: Fetch coordinator from department if student doesn't have one assigned
         try {
           const coordResponse = await studentService.getCoordinator(response.data.student.department._id || response.data.student.department);
           setCoordinator(coordResponse.data.coordinator);

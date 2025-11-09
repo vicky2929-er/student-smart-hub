@@ -4,6 +4,7 @@ const axios = require("axios");
 const router = express.Router();
 const Faculty = require("../model/faculty");
 const Student = require("../model/student");
+const OcrOutput = require("../model/ocrOutput");
 const { requireAuth } = require("../middleware/auth");
 const { convertUploadCareUrl } = require("../utils/uploadCareUtils");
 
@@ -379,28 +380,59 @@ router.post(
           console.log(`Processed file URL: ${processedUrl}`);
           console.log(`Flask API URL: ${flaskApiUrl}`);
           
-          // Send GET request to Flask API with query parameters
-          const apiEndpoint = `${flaskApiUrl}/process_certificate_get`;
-          console.log(`Full API call: ${apiEndpoint}?document_url=${encodeURIComponent(processedUrl)}&student_id=${studentId}`);
+          // Send POST request to Flask API with JSON body
+          console.log(`Full API call: POST ${flaskApiUrl} with body: {document_url: ${processedUrl}, student_id: ${studentId}}`);
           
-          const response = await axios.get(apiEndpoint, {
-            params: {
-              document_url: processedUrl,
-              student_id: studentId
-            },
+          const response = await axios.post(flaskApiUrl, {
+            document_url: processedUrl,
+            student_id: studentId
+          }, {
             timeout: 30000, // 30 second timeout
             headers: {
+              'Content-Type': 'application/json',
               'Accept': 'application/json'
             }
           });
 
           console.log("Flask API response:", response.data);
           
+          // Save parsed data to OcrOutput collection
+          if (response.data && response.data.parsed_data) {
+            try {
+              const parsedData = response.data.parsed_data;
+              
+              // Create OcrOutput document
+              const ocrOutput = new OcrOutput({
+                student: studentId,
+                course: parsedData.course || null,
+                date: parsedData.date && parsedData.date !== "Not found" ? new Date(parsedData.date) : null,
+                issuer: parsedData.issuer && parsedData.issuer !== "Not found" ? parsedData.issuer : null,
+                name: parsedData.name && parsedData.name !== "Not found" ? parsedData.name : null,
+                skills: parsedData.skills || [],
+                category: parsedData.category || null,
+              });
+              
+              await ocrOutput.save();
+              console.log("OCR output saved to database:", ocrOutput._id);
+              
+              // Add reference to student's ocrOutputs array
+              await Student.updateOne(
+                { _id: studentId },
+                { $push: { ocrOutputs: ocrOutput._id } }
+              );
+              console.log("OCR output reference added to student");
+              
+            } catch (saveError) {
+              console.error("Error saving OCR output:", saveError.message);
+              // Don't fail the whole request if OCR save fails
+            }
+          }
+          
           // Return success with Flask response
           res.json({
             message: "Achievement reviewed successfully",
             flask_response: response.data,
-            status: "Flask API called successfully",
+            status: "Flask API called successfully and data saved",
             processed_url: processedUrl
           });
         } catch (flaskError) {
@@ -991,6 +1023,38 @@ router.put('/profile/:id', requireAuth, async (req, res) => {
       return res.status(400).json({ error: error.message });
     }
     res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Get OCR outputs for a student
+router.get("/student/:studentId/ocr-outputs", requireAuth, async (req, res) => {
+  try {
+    const { studentId } = req.params;
+    
+    // Verify the student exists and belongs to this faculty
+    const student = await Student.findById(studentId);
+    if (!student) {
+      return res.status(404).json({ error: "Student not found" });
+    }
+    
+    // If user is faculty, verify they are the coordinator
+    if (req.user.role === 'faculty' && student.facultyCoordinator.toString() !== req.user._id) {
+      return res.status(403).json({ error: "Access denied. You are not this student's coordinator." });
+    }
+    
+    // Fetch all OCR outputs for this student
+    const ocrOutputs = await OcrOutput.find({ student: studentId })
+      .sort({ createdAt: -1 })
+      .lean();
+    
+    res.json({
+      success: true,
+      count: ocrOutputs.length,
+      data: ocrOutputs
+    });
+  } catch (error) {
+    console.error("Error fetching OCR outputs:", error);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
 

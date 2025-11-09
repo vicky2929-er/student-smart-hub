@@ -46,9 +46,30 @@ const StudentRoadmap = () => {
       console.log('Fetching roadmaps for student:', id);
       const response = await roadmapService.getStudentRoadmaps(id);
       console.log('Roadmaps response:', response);
-      setRoadmaps(response.data);
-      if (response.data.length > 0) {
-        setSelectedRoadmap(response.data[0]); // Select the most recent roadmap
+      console.log('Response data type:', typeof response.data, Array.isArray(response.data));
+      
+      // Backend returns array directly
+      let roadmapsData = [];
+      if (Array.isArray(response.data)) {
+        roadmapsData = response.data;
+      } else if (response.data?.data && Array.isArray(response.data.data)) {
+        roadmapsData = response.data.data;
+      } else if (response.data) {
+        // Single roadmap object
+        roadmapsData = [response.data];
+      }
+      
+      console.log('Processed roadmaps data:', roadmapsData);
+      console.log('Number of roadmaps:', roadmapsData.length);
+      
+      if (roadmapsData.length > 0) {
+        console.log('First roadmap structure:', roadmapsData[0]);
+        console.log('Potential roadmaps in first:', roadmapsData[0].potential_roadmaps?.length);
+      }
+      
+      setRoadmaps(roadmapsData);
+      if (roadmapsData.length > 0) {
+        setSelectedRoadmap(roadmapsData[0]); // Select the most recent roadmap
       }
     } catch (error) {
       console.error('Error fetching roadmaps:', error);
@@ -158,51 +179,72 @@ const StudentRoadmap = () => {
         career_title: "Full Stack Developer",
         existing_skills: baseSkills.filter(skill => 
           ['javascript', 'react', 'node.js', 'html', 'css'].includes(skill)
-        ).concat(['Problem Solving']),
+        ).concat(['JavaScript', 'HTML/CSS']),
         match_score: Math.min(0.9, 0.5 + (extractedSkills.length * 0.1)),
         sequenced_roadmap: [
-          "Master Advanced React Concepts",
-          "Learn TypeScript for Better Development",
-          "Database Design & Management (SQL/NoSQL)",
-          "RESTful API Development",
-          "DevOps & Deployment (Docker, AWS)",
-          "System Design & Architecture",
-          "Testing (Unit, Integration, E2E)",
-          "Microservices Architecture"
+          'Master HTML, CSS, and JavaScript fundamentals',
+          'Learn React.js for frontend development',
+          'Study Node.js and Express for backend',
+          'Learn database design with MongoDB/PostgreSQL',
+          'Build REST APIs and implement authentication',
+          'Deploy full-stack projects on cloud platforms',
+          'Create a portfolio with 3-5 full-stack projects',
+          'Contribute to open-source projects on GitHub',
+          'Apply for junior full-stack developer positions'
+        ]
+      },
+      {
+        career_title: "Machine Learning Engineer",
+        existing_skills: baseSkills.filter(skill => 
+          ['python', 'machine learning', 'tensorflow', 'pytorch'].includes(skill)
+        ).concat(['Python', 'Mathematics']),
+        match_score: Math.min(0.88, 0.45 + (extractedSkills.length * 0.09)),
+        sequenced_roadmap: [
+          'Master Python and linear algebra fundamentals',
+          'Learn supervised and unsupervised ML algorithms',
+          'Study deep learning with TensorFlow/PyTorch',
+          'Learn neural network architectures (CNN, RNN, Transformers)',
+          'Practice on ML competitions (Kaggle, DrivenData)',
+          'Learn MLOps: model deployment and monitoring',
+          'Study cloud ML services (AWS SageMaker, GCP AI)',
+          'Build and deploy ML models in production',
+          'Contribute to open-source ML projects'
         ]
       },
       {
         career_title: "Data Scientist",
         existing_skills: baseSkills.filter(skill => 
-          ['python', 'statistics', 'data analysis', 'machine learning'].includes(skill)
-        ).concat(['Analytical Thinking']),
+          ['python', 'statistics', 'data analysis', 'pandas', 'numpy'].includes(skill)
+        ).concat(['Python', 'Statistics']),
         match_score: Math.min(0.85, 0.4 + (extractedSkills.length * 0.08)),
         sequenced_roadmap: [
-          "Advanced Python for Data Science",
-          "Statistics & Probability",
-          "Machine Learning Algorithms",
-          "Deep Learning with TensorFlow/PyTorch",
-          "Data Visualization (Matplotlib, Seaborn)",
-          "Big Data Technologies (Spark, Hadoop)",
-          "MLOps & Model Deployment",
-          "Business Intelligence & Analytics"
+          'Master Python programming and data structures',
+          'Learn statistics and probability theory',
+          'Study Pandas and NumPy for data manipulation',
+          'Learn data visualization with Matplotlib/Seaborn',
+          'Master SQL for database querying',
+          'Learn machine learning algorithms with Scikit-learn',
+          'Work on real-world datasets from Kaggle',
+          'Build end-to-end data science projects',
+          'Create a data science portfolio and blog'
         ]
       },
       {
         career_title: "DevOps Engineer",
         existing_skills: baseSkills.filter(skill => 
-          ['docker', 'kubernetes', 'aws', 'azure', 'jenkins'].includes(skill)
-        ).concat(['System Administration']),
+          ['docker', 'kubernetes', 'aws', 'azure', 'jenkins', 'linux'].includes(skill)
+        ).concat(['Linux', 'Docker']),
         match_score: Math.min(0.8, 0.3 + (extractedSkills.length * 0.07)),
         sequenced_roadmap: [
-          "Linux System Administration",
-          "Container Technologies (Docker)",
-          "Kubernetes Orchestration",
-          "CI/CD Pipeline Development",
-          "Infrastructure as Code (Terraform)",
-          "Monitoring & Logging (Prometheus, ELK)",
-          "Cloud Platforms (AWS/Azure/GCP)",
-          "Security & Compliance"
+          'Master Linux system administration and shell scripting',
+          'Learn Git version control and GitHub workflows',
+          'Study Docker containerization and Docker Compose',
+          'Learn Kubernetes for container orchestration',
+          'Set up CI/CD pipelines with Jenkins/GitHub Actions',
+          'Learn Infrastructure as Code with Terraform',
+          'Study cloud platforms (AWS/Azure/GCP)',
+          'Implement monitoring with Prometheus and Grafana',
+          'Get certified (AWS Solutions Architect, CKA)'
         ]
       }
     ];
@@ -353,7 +395,8 @@ const StudentRoadmap = () => {
 
                 {/* Roadmap Grid */}
                 <div className="roadmaps-grid">
-                  {(selectedRoadmap || roadmaps[0])?.potential_roadmaps.map((career, index) => (
+                  {(selectedRoadmap || roadmaps[0])?.potential_roadmaps?.length > 0 ? (
+                    (selectedRoadmap || roadmaps[0]).potential_roadmaps.map((career, index) => (
                     <div key={index} className="career-roadmap-card">
                       <div className="career-header">
                         <h3 className="career-title">{career.career_title}</h3>
@@ -411,7 +454,16 @@ const StudentRoadmap = () => {
                         </div>
                       </div>
                     </div>
-                  ))}
+                  ))
+                  ) : (
+                    <div className="roadmap-empty-state">
+                      <div className="empty-roadmap-icon">
+                        <i className="fas fa-exclamation-circle"></i>
+                      </div>
+                      <h3>No Career Paths Available</h3>
+                      <p>This roadmap doesn't contain any career paths yet.</p>
+                    </div>
+                  )}
                 </div>
               </>
             )}

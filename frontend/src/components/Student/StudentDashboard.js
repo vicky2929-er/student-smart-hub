@@ -345,7 +345,7 @@ const StudentDashboard = () =>{
           {/* Recent Activities */}
           <div className="content-card activities-card">
             <div className="card-header">
-              <h2>Recent Activities</h2>
+              <h2>Recent Activities {recentActivities && recentActivities.length > 0 && `(${recentActivities.length})`}</h2>
               {isOwnDashboard && !isFacultyViewing && (
                 <button
                   className="add-new-btn"
@@ -370,7 +370,11 @@ const StudentDashboard = () =>{
                       <h3>{activity.title || "Untitled Activity"}</h3>
                       <p>
                         {activity.type || "General"} •{" "}
-                        {formatDate(activity.dateCompleted)}
+                        {activity.dateCompleted 
+                          ? formatDate(activity.dateCompleted)
+                          : activity.uploadedAt 
+                            ? formatDate(activity.uploadedAt)
+                            : "Date not available"}
                       </p>
                     </div>
                     <span
@@ -522,6 +526,41 @@ const StudentDashboard = () =>{
                 )}
               </div>
             </div>
+
+            {/* OCR Insights */}
+            {dashboardData?.ocrOutputs && dashboardData.ocrOutputs.length > 0 && (
+              <div className="content-card ocr-card">
+                <div className="card-header">
+                  <h2>📄 AI Insights</h2>
+                  <button
+                    className="view-all-btn"
+                    onClick={() => handleNavigate("ocr-outputs")}
+                  >
+                    View All
+                  </button>
+                </div>
+                <div className="ocr-summary">
+                  <p className="ocr-subtitle">
+                    {dashboardData.ocrOutputs.length} certificate{dashboardData.ocrOutputs.length !== 1 ? 's' : ''} analyzed
+                  </p>
+                  <div className="ocr-preview-list">
+                    {dashboardData.ocrOutputs.slice(0, 3).map((ocr, index) => (
+                      <div key={ocr._id || index} className="ocr-preview-item">
+                        <div className="ocr-preview-icon">
+                          <i className="fas fa-certificate"></i>
+                        </div>
+                        <div className="ocr-preview-content">
+                          <h4>{ocr.course || 'Certificate'}</h4>
+                          <span className={`ocr-category-badge ${ocr.category?.toLowerCase()}`}>
+                            {ocr.category || 'Uncategorized'}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 

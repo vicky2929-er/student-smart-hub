@@ -446,25 +446,27 @@ const FacultyDashboard = () => {
       {/* Welcome Section - Full Width */}
       <div className="welcome-section">
         <div className="welcome-content">
-          <h1>
-            Welcome back, {faculty?.designation} {facultyFirstName}!
-          </h1>
-          <p>
-            <span>
+          <div className="welcome-greeting">
+            <h1>
+              Welcome back, <span className="highlight-name">{faculty?.designation} {facultyFirstName}</span>!
+            </h1>
+          </div>
+          <div className="faculty-info-badges">
+            <span className="info-badge department-badge">
+              <i className="fas fa-building"></i>
               {faculty?.department?.name || "Department not specified"}
             </span>
-            {" • "}
-            <span>{faculty?.designation || "Faculty"}</span>
+            <span className="info-badge designation-badge">
+              <i className="fas fa-user-tie"></i>
+              {faculty?.designation || "Faculty"}
+            </span>
             {faculty?.facultyID && (
-              <>
-                <br />
-                {" • "}
-                <span style={{ whiteSpace: "nowrap" }}>
-                  Faculty&nbsp;ID:&nbsp;{faculty.facultyID}
-                </span>
-              </>
+              <span className="info-badge id-badge">
+                <i className="fas fa-id-card"></i>
+                {faculty.facultyID}
+              </span>
             )}
-          </p>
+          </div>
         </div>
       </div>
 
@@ -559,7 +561,7 @@ const FacultyDashboard = () => {
                         {review.student?.name?.first}{" "}
                         {review.student?.name?.last} •{" "}
                         {review.achievement?.type || "General"} •{" "}
-                        {formatDate(review.achievement?.dateCompleted)}
+                        {formatDate(review.achievement?.dateCompleted || review.achievement?.uploadedAt)}
                       </p>
                     </div>
                     <button
@@ -1324,8 +1326,8 @@ const FacultyDashboard = () => {
                   {selectedReview.achievement?.description}
                 </p>
                 <p>
-                  <strong>Completed:</strong>{" "}
-                  {formatDate(selectedReview.achievement?.dateCompleted)}
+                  <strong>Submitted:</strong>{" "}
+                  {formatDate(selectedReview.achievement?.dateCompleted || selectedReview.achievement?.uploadedAt)}
                 </p>
 
                 {/* Certificate Image */}

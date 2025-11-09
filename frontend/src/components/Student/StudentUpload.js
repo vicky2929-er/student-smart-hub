@@ -100,7 +100,7 @@ const StudentUpload = () => {
     try {
       // Create FormData for file upload
       const uploadData = new FormData();
-  uploadData.append("description", formData.description);
+      uploadData.append("description", ""); // Empty description since field removed from UI
 
       if (formData.file) {
         uploadData.append("certificate", formData.file);
@@ -212,25 +212,7 @@ const StudentUpload = () => {
             )}
 
             <form onSubmit={handleSubmit} className="upload-form">
-              {/* Removed: ACTIVITY CATEGORY, DATE COMPLETED, ACTIVITY TITLE, ORGANIZATION/INSTITUTION, INSTITUTE/ADMIN EMAIL */}
-
-              <div className="form-group">
-                <label htmlFor="description">DESCRIPTION *</label>
-                <textarea
-                  id="description"
-                  name="description"
-                  value={formData.description}
-                  onChange={handleInputChange}
-                  placeholder="Describe your achievement, skills gained, or project details..."
-                  rows={4}
-                  required
-                  disabled={submitting}
-                  maxLength={1000}
-                />
-                <small className="char-count">
-                  {formData.description.length}/1000 characters
-                </small>
-              </div>
+              {/* Removed: ACTIVITY CATEGORY, DATE COMPLETED, ACTIVITY TITLE, ORGANIZATION/INSTITUTION, INSTITUTE/ADMIN EMAIL, DESCRIPTION */}
 
               <div className="form-group">
                 <label>UPLOAD CERTIFICATE/DOCUMENT</label>
