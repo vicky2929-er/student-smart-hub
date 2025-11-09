@@ -61,9 +61,19 @@ const StudentAnalytics = () => {
     try {
       // Use the proper analytics endpoint instead of dashboard
       const response = await studentService.getAnalytics(id);
-      const analyticsData = response.data.analytics;
+      console.log('Full Response:', response); // Debug log
+      
+      // Handle nested response structure
+      const analyticsData = response.data?.data?.analytics || response.data?.analytics || response.data;
       
       console.log('Analytics Data:', analyticsData); // Debug log
+      
+      // Check if we have valid data
+      if (!analyticsData || !analyticsData.categoryBreakdown) {
+        console.error('Invalid analytics data structure:', analyticsData);
+        setError("Invalid data received from server");
+        return;
+      }
       
       // Process the analytics data
       const processedStats = {
@@ -93,7 +103,8 @@ const StudentAnalytics = () => {
       setAcademic(analyticsData.academicMetrics);
     } catch (err) {
       console.error('Analytics fetch error:', err);
-      setError("Failed to load analytics");
+      console.error('Error details:', err.response?.data || err.message);
+      setError("Failed to load analytics: " + (err.response?.data?.message || err.message));
     } finally {
       setLoading(false);
     }

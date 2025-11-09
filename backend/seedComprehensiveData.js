@@ -16,11 +16,13 @@ const OcrOutput = require('./model/ocrOutput');
 // Connect to MongoDB
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/sih2025', {
+    const dbUrl = process.env.DBURL || process.env.MONGODB_URI || 'mongodb://localhost:27017/sih2025';
+    await mongoose.connect(dbUrl, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
     console.log('✅ MongoDB Connected Successfully');
+    console.log(`📍 Connected to: ${dbUrl.includes('mongodb.net') ? 'MongoDB Atlas' : 'Local MongoDB'}`);
   } catch (error) {
     console.error('❌ MongoDB Connection Error:', error);
     process.exit(1);

@@ -421,24 +421,24 @@ router.get(
           (a) => a.status === "Rejected"
         ).length,
 
-        // Category breakdown
+        // Category breakdown - ONLY APPROVED achievements
         categoryBreakdown: {
-          certifications: achievements.filter((a) => a.type === "Course")
+          certifications: achievements.filter((a) => a.type === "Course" && a.status === "Approved")
             .length,
-          internships: achievements.filter((a) => a.type === "Internship")
+          internships: achievements.filter((a) => a.type === "Internship" && a.status === "Approved")
             .length,
-          competitions: achievements.filter((a) => a.type === "Competition")
+          competitions: achievements.filter((a) => a.type === "Competition" && a.status === "Approved")
             .length,
-          workshops: achievements.filter((a) => a.type === "Workshop").length,
-          hackathons: achievements.filter((a) => a.type === "Hackathon").length,
-          conferences: achievements.filter((a) => a.type === "Conference").length,
+          workshops: achievements.filter((a) => a.type === "Workshop" && a.status === "Approved").length,
+          hackathons: achievements.filter((a) => a.type === "Hackathon" && a.status === "Approved").length,
+          conferences: achievements.filter((a) => a.type === "Conference" && a.status === "Approved").length,
           communityService: achievements.filter(
-            (a) => a.type === "CommunityService"
+            (a) => a.type === "CommunityService" && a.status === "Approved"
           ).length,
-          leadership: achievements.filter((a) => a.type === "Leadership").length,
-          clubs: achievements.filter((a) => a.type === "Clubs").length,
-          volunteering: achievements.filter((a) => a.type === "Volunteering").length,
-          others: achievements.filter((a) => a.type === "Others").length,
+          leadership: achievements.filter((a) => a.type === "Leadership" && a.status === "Approved").length,
+          clubs: achievements.filter((a) => a.type === "Clubs" && a.status === "Approved").length,
+          volunteering: achievements.filter((a) => a.type === "Volunteering" && a.status === "Approved").length,
+          others: achievements.filter((a) => a.type === "Others" && a.status === "Approved").length,
         },
 
         // Academic metrics
@@ -456,14 +456,16 @@ router.get(
 
         // Recent achievements with full details
         recentAchievements: achievements
+          .filter(a => a.dateCompleted) // Only include achievements with dates
           .sort((a, b) => new Date(b.dateCompleted) - new Date(a.dateCompleted))
           .slice(0, 10)
           .map(achievement => ({
             title: achievement.title || 'Achievement',
             category: achievement.type,
             status: achievement.status,
-            date: new Date(achievement.dateCompleted).toLocaleDateString(),
-            dateCompleted: achievement.dateCompleted
+            date: achievement.dateCompleted ? new Date(achievement.dateCompleted).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : 'N/A',
+            dateCompleted: achievement.dateCompleted,
+            created_at: achievement.uploadedAt || achievement.dateCompleted
           })),
 
         // Skills analysis
@@ -480,14 +482,19 @@ router.get(
       };
 
       res.json({
-        student,
-        analytics,
-        title: `${student.name.first}'s Analytics`,
+        success: true,
+        data: {
+          student,
+          analytics,
+          title: `${student.name.first}'s Analytics`,
+        },
       });
     } catch (error) {
       console.error("Analytics error:", error);
       res.status(500).json({
+        success: false,
         error: "Internal server error",
+        message: error.message,
       });
     }
   }
@@ -517,7 +524,9 @@ function getAchievementTimeline(achievements) {
   
   // Populate with actual data
   achievements.forEach((achievement) => {
-    const month = new Date(achievement.dateCompleted).toLocaleDateString("en-US", {
+    // Use dateCompleted, uploadedAt, or current date as fallback
+    const achievementDate = achievement.dateCompleted || achievement.uploadedAt || new Date();
+    const month = new Date(achievementDate).toLocaleDateString("en-US", {
       year: "numeric",
       month: "short",
     });
@@ -619,12 +628,14 @@ function calculateGrowthMetrics(achievements) {
   const thisMonthEnd = new Date(now.getFullYear(), now.getMonth() + 1, 0);
   
   const thisMonthAchievements = achievements.filter(a => {
-    const date = new Date(a.dateCompleted);
+    const achievementDate = a.dateCompleted || a.uploadedAt || new Date();
+    const date = new Date(achievementDate);
     return date >= thisMonth && date <= thisMonthEnd;
   }).length;
   
   const lastMonthAchievements = achievements.filter(a => {
-    const date = new Date(a.dateCompleted);
+    const achievementDate = a.dateCompleted || a.uploadedAt || new Date();
+    const date = new Date(achievementDate);
     const lastMonthEnd = new Date(now.getFullYear(), now.getMonth(), 0);
     return date >= lastMonth && date <= lastMonthEnd;
   }).length;
@@ -650,12 +661,14 @@ function calculateMonthlyGoals(achievements) {
   const lastMonthEnd = new Date(now.getFullYear(), now.getMonth(), 0);
   
   const thisMonthCount = achievements.filter(a => {
-    const date = new Date(a.dateCompleted);
+    const achievementDate = a.dateCompleted || a.uploadedAt || new Date();
+    const date = new Date(achievementDate);
     return date >= thisMonth && date <= thisMonthEnd;
   }).length;
   
   const lastMonthCount = achievements.filter(a => {
-    const date = new Date(a.dateCompleted);
+    const achievementDate = a.dateCompleted || a.uploadedAt || new Date();
+    const date = new Date(achievementDate);
     return date >= lastMonth && date <= lastMonthEnd;
   }).length;
   
