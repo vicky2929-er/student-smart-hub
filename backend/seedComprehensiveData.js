@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 require('dotenv').config();
 
+// Import models
 const SuperAdmin = require('./model/superadmin');
 const Institute = require('./model/institute');
 const College = require('./model/college');
@@ -9,1101 +10,764 @@ const Department = require('./model/department');
 const Faculty = require('./model/faculty');
 const Student = require('./model/student');
 const Event = require('./model/event');
+const Roadmap = require('./model/roadmap');
+const OcrOutput = require('./model/ocrOutput');
 
-// Helper function to get dates for last 12 months (Nov 2024 to Nov 2025)
-const getDateMonthsAgo = (months, day = 15) => {
-  const date = new Date(2025, 10 - months, day); // November 2025 = month 10 (0-indexed)
-  return date;
-};
-
-const seedData = {
-  superAdmin: {
-    name: { first: 'Admin', last: 'Master' },
-    email: 'admin@smartstudenthub.com',
-    password: 'Admin@123',
-  },
-  
-  institute: {
-    name: 'Indian Institute of Technology Delhi',
-    code: 'IITD',
-    type: 'University',
-    email: 'admin@iitd.ac.in',
-    password: 'IIT@Delhi123',
-    address: {
-      line1: 'Hauz Khas',
-      city: 'New Delhi',
-      state: 'Delhi',
-      country: 'India',
-      pincode: '110016',
-    },
-    contactNumber: '+91-11-26591111',
-    website: 'https://www.iitd.ac.in',
-    headOfInstitute: {
-      name: 'Dr. Rangan Banerjee',
-      email: 'director@iitd.ac.in',
-      contact: '+91-11-26591001',
-    },
-    modalOfficer: {
-      name: 'Dr. Subhasis Chaudhuri',
-      email: 'modalofficer@iitd.ac.in',
-      contact: '+91-11-26591002',
-    },
-    naacGrading: true,
-    naacGrade: 'A++',
-    status: 'Active',
-    approvalStatus: 'Approved',
-    studentCount: 15,
-  },
-  
-  colleges: [
-    {
-      name: 'School of Computer Science and Engineering',
-      code: 'SCSE',
-      email: 'cs@iitd.ac.in',
-      password: 'CS@IIT123',
-      contactNumber: '+91-11-26591234',
-      address: {
-        line1: 'Block 5, IIT Delhi',
-        city: 'New Delhi',
-        state: 'Delhi',
-        country: 'India',
-        pincode: '110016',
-      },
-    },
-    {
-      name: 'School of Engineering',
-      code: 'SOE',
-      email: 'engineering@iitd.ac.in',
-      password: 'Eng@IIT123',
-      contactNumber: '+91-11-26591235',
-      address: {
-        line1: 'Block 3, IIT Delhi',
-        city: 'New Delhi',
-        state: 'Delhi',
-        country: 'India',
-        pincode: '110016',
-      },
-    },
-  ],
-  
-  departments: [
-    { name: 'Computer Science & Engineering', code: 'CSE', email: 'cse@iitd.ac.in', password: 'Dept@123' },
-    { name: 'Electrical Engineering', code: 'EE', email: 'ee@iitd.ac.in', password: 'Dept@123' },
-    { name: 'Mechanical Engineering', code: 'ME', email: 'me@iitd.ac.in', password: 'Dept@123' },
-    { name: 'Mathematics & Computing', code: 'MNC', email: 'mnc@iitd.ac.in', password: 'Dept@123' },
-  ],
-  
-  faculty: [
-    {
-      name: { first: 'Rajesh', last: 'Kumar' },
-      facultyID: 'FAC001',
-      email: 'rajesh.kumar@iitd.ac.in',
-      password: 'Faculty@123',
-      gender: 'Male',
-      designation: 'Professor',
-      qualifications: 'Ph.D. in Computer Science, M.Tech, B.Tech',
-      specialization: 'Machine Learning, Data Science, Artificial Intelligence',
-      experience: 15,
-      contactNumber: '+91-9876543210',
-      isCoordinator: true,
-      joiningDate: new Date('2010-07-15'),
-      dob: new Date('1980-05-20'),
-      address: {
-        line1: 'Faculty Quarters, IIT Delhi',
-        city: 'New Delhi',
-        state: 'Delhi',
-        country: 'India',
-        pincode: '110016',
-      },
-    },
-    {
-      name: { first: 'Priya', last: 'Sharma' },
-      facultyID: 'FAC002',
-      email: 'priya.sharma@iitd.ac.in',
-      password: 'Faculty@123',
-      gender: 'Female',
-      designation: 'Associate Professor',
-      qualifications: 'Ph.D. in Artificial Intelligence, M.Tech',
-      specialization: 'Deep Learning, Computer Vision, Neural Networks',
-      experience: 10,
-      contactNumber: '+91-9876543211',
-      isCoordinator: false,
-      joiningDate: new Date('2015-08-01'),
-      dob: new Date('1985-08-12'),
-      address: {
-        line1: 'Sector 15, Rohini',
-        city: 'New Delhi',
-        state: 'Delhi',
-        country: 'India',
-        pincode: '110085',
-      },
-    },
-    {
-      name: { first: 'Amit', last: 'Verma' },
-      facultyID: 'FAC003',
-      email: 'amit.verma@iitd.ac.in',
-      password: 'Faculty@123',
-      gender: 'Male',
-      designation: 'Assistant Professor',
-      qualifications: 'Ph.D. in Software Engineering, M.Tech',
-      specialization: 'Cloud Computing, DevOps, Software Architecture',
-      experience: 8,
-      contactNumber: '+91-9876543212',
-      isCoordinator: false,
-      joiningDate: new Date('2017-07-15'),
-      dob: new Date('1987-03-25'),
-      address: {
-        line1: 'Dwarka Sector 10',
-        city: 'New Delhi',
-        state: 'Delhi',
-        country: 'India',
-        pincode: '110075',
-      },
-    },
-  ],
-  
-  // Students with MIXED status achievements (Approved, Pending, Rejected)
-  students: [
-    {
-      name: { first: 'Aarav', last: 'Patel' },
-      email: 'aarav.patel@student.iitd.ac.in',
-      password: 'Student@123',
-      studentID: 'IIT2022001',
-      gender: 'Male',
-      dateOfBirth: new Date('2004-03-15'),
-      contactNumber: '+91-9876501001',
-      course: 'B.Tech Computer Science',
-      year: '3rd Year',
-      enrollmentYear: 2022,
-      batch: '2022-2026',
-      gpa: 9.2,
-      attendance: 92,
-      bio: 'Passionate about AI/ML and open source development. Active contributor to TensorFlow.',
-      interests: ['Machine Learning', 'Web Development', 'Open Source', 'Research'],
-      skills: {
-        technical: ['Python', 'JavaScript', 'React', 'TensorFlow', 'Docker', 'Kubernetes'],
-        soft: ['Leadership', 'Team Collaboration', 'Public Speaking', 'Problem Solving'],
-      },
-      social: {
-        linkedin: 'https://linkedin.com/in/aaravpatel',
-        github: 'https://github.com/aaravpatel',
-      },
-      address: {
-        line1: 'Hostel 5, IIT Delhi',
-        city: 'New Delhi',
-        state: 'Delhi',
-        country: 'India',
-        pincode: '110016',
-      },
-      achievements: [
-        // APPROVED - November 2024
-        {
-          title: 'Google Summer of Code 2024 - TensorFlow',
-          type: 'Internship',
-          description: 'Contributed to TensorFlow core library, implemented new optimization algorithms for neural networks',
-          organization: 'Google',
-          dateCompleted: getDateMonthsAgo(0, 5),
-          uploadedAt: getDateMonthsAgo(0, 6),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(0, 7),
-        },
-        // APPROVED - October 2024
-        {
-          title: 'Smart India Hackathon 2024 - Winner',
-          type: 'Hackathon',
-          description: 'Developed AI-powered education platform that won first prize at national level',
-          organization: 'Government of India',
-          dateCompleted: getDateMonthsAgo(1, 12),
-          uploadedAt: getDateMonthsAgo(1, 13),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(1, 14),
-        },
-        // PENDING - October 2024
-        {
-          title: 'Machine Learning Research Paper',
-          type: 'Others',
-          description: 'Submitted research paper on novel ML algorithm to IEEE conference',
-          organization: 'IEEE',
-          dateCompleted: getDateMonthsAgo(1, 25),
-          uploadedAt: getDateMonthsAgo(1, 26),
-          status: 'Pending',
-        },
-        // APPROVED - September 2024
-        {
-          title: 'AWS Machine Learning Workshop',
-          type: 'Workshop',
-          description: 'Completed advanced ML workshop on AWS SageMaker and deployment strategies',
-          organization: 'Amazon Web Services',
-          dateCompleted: getDateMonthsAgo(2, 8),
-          uploadedAt: getDateMonthsAgo(2, 9),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(2, 10),
-        },
-        // REJECTED - September 2024
-        {
-          title: 'Local Coding Competition',
-          type: 'Competition',
-          description: 'Participated in inter-college coding competition',
-          organization: 'Local College',
-          dateCompleted: getDateMonthsAgo(2, 22),
-          uploadedAt: getDateMonthsAgo(2, 23),
-          status: 'Rejected',
-          rejectionComment: 'Please provide valid certificate or proof of participation',
-          reviewedAt: getDateMonthsAgo(2, 24),
-        },
-        // APPROVED - August 2024
-        {
-          title: 'IEEE International Conference on AI',
-          type: 'Conference',
-          description: 'Presented research paper on neural architecture search optimization',
-          organization: 'IEEE',
-          dateCompleted: getDateMonthsAgo(3, 20),
-          uploadedAt: getDateMonthsAgo(3, 21),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(3, 22),
-        },
-        // APPROVED - July 2024
-        {
-          title: 'ACM ICPC Regional Finals',
-          type: 'Competition',
-          description: 'Secured 5th rank in regional programming competition',
-          organization: 'ACM',
-          dateCompleted: getDateMonthsAgo(4, 15),
-          uploadedAt: getDateMonthsAgo(4, 16),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(4, 17),
-        },
-        // APPROVED - June 2024
-        {
-          title: 'Code for Good - Social Impact Project',
-          type: 'CommunityService',
-          description: 'Developed education app for underprivileged students',
-          organization: 'JPMorgan Chase',
-          dateCompleted: getDateMonthsAgo(5, 10),
-          uploadedAt: getDateMonthsAgo(5, 11),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(5, 12),
-        },
-        // PENDING - May 2024
-        {
-          title: 'Tech Talk Series Speaker',
-          type: 'Leadership',
-          description: 'Conducted tech talk on AI trends',
-          organization: 'IIT Delhi Tech Club',
-          dateCompleted: getDateMonthsAgo(6, 5),
-          uploadedAt: getDateMonthsAgo(6, 6),
-          status: 'Pending',
-        },
-      ],
-    },
-    {
-      name: { first: 'Diya', last: 'Sharma' },
-      email: 'diya.sharma@student.iitd.ac.in',
-      password: 'Student@123',
-      studentID: 'IIT2022002',
-      gender: 'Female',
-      dateOfBirth: new Date('2004-07-22'),
-      contactNumber: '+91-9876501002',
-      course: 'B.Tech Computer Science',
-      year: '3rd Year',
-      enrollmentYear: 2022,
-      batch: '2022-2026',
-      gpa: 9.5,
-      attendance: 95,
-      bio: 'AI researcher and competitive programmer. Passionate about advancing AI for social good.',
-      interests: ['Artificial Intelligence', 'Research', 'Competitive Programming', 'Women in Tech'],
-      skills: {
-        technical: ['C++', 'Python', 'PyTorch', 'Data Structures', 'Algorithms', 'Research'],
-        soft: ['Problem Solving', 'Research', 'Communication', 'Mentoring'],
-      },
-      social: {
-        linkedin: 'https://linkedin.com/in/diyasharma',
-        github: 'https://github.com/diyasharma',
-      },
-      address: {
-        line1: 'Hostel 3, IIT Delhi',
-        city: 'New Delhi',
-        state: 'Delhi',
-        country: 'India',
-        pincode: '110016',
-      },
-      achievements: [
-        // APPROVED - November 2024
-        {
-          title: 'Microsoft Student Ambassador - Gold',
-          type: 'Leadership',
-          description: 'Led technical workshops and mentored 50+ students in cloud technologies',
-          organization: 'Microsoft',
-          dateCompleted: getDateMonthsAgo(0, 8),
-          uploadedAt: getDateMonthsAgo(0, 9),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(0, 10),
-        },
-        // APPROVED - October 2024
-        {
-          title: 'Grace Hopper Celebration 2024',
-          type: 'Conference',
-          description: 'Attended largest gathering of women technologists and presented research poster',
-          organization: 'AnitaB.org',
-          dateCompleted: getDateMonthsAgo(1, 18),
-          uploadedAt: getDateMonthsAgo(1, 19),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(1, 20),
-        },
-        // REJECTED - October 2024
-        {
-          title: 'Online Course Completion',
-          type: 'Course',
-          description: 'Completed online ML course',
-          organization: 'Coursera',
-          dateCompleted: getDateMonthsAgo(1, 5),
-          uploadedAt: getDateMonthsAgo(1, 6),
-          status: 'Rejected',
-          rejectionComment: 'Free online courses do not qualify. Please submit paid certifications or university courses.',
-          reviewedAt: getDateMonthsAgo(1, 7),
-        },
-        // APPROVED - September 2024
-        {
-          title: 'Women in Tech Leadership Summit',
-          type: 'Workshop',
-          description: 'Participated in leadership development program for women in technology',
-          organization: 'WiT',
-          dateCompleted: getDateMonthsAgo(2, 25),
-          uploadedAt: getDateMonthsAgo(2, 26),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(2, 27),
-        },
-        // APPROVED - August 2024
-        {
-          title: 'Google Code Jam - Top 100',
-          type: 'Competition',
-          description: 'Ranked in top 100 globally in programming competition',
-          organization: 'Google',
-          dateCompleted: getDateMonthsAgo(3, 12),
-          uploadedAt: getDateMonthsAgo(3, 13),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(3, 14),
-        },
-        // PENDING - August 2024
-        {
-          title: 'Research Paper Submission',
-          type: 'Others',
-          description: 'Submitted paper to ACM conference',
-          organization: 'ACM',
-          dateCompleted: getDateMonthsAgo(3, 28),
-          uploadedAt: getDateMonthsAgo(3, 29),
-          status: 'Pending',
-        },
-        // APPROVED - July 2024
-        {
-          title: 'AI Research Internship',
-          type: 'Internship',
-          description: 'Research intern at IIIT Delhi AI Lab working on computer vision',
-          organization: 'IIIT Delhi',
-          dateCompleted: getDateMonthsAgo(4, 30),
-          uploadedAt: getDateMonthsAgo(4, 30),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(5, 1),
-        },
-        // APPROVED - June 2024
-        {
-          title: 'Girls Who Code - Mentor',
-          type: 'Volunteering',
-          description: 'Mentored high school girls in programming',
-          organization: 'Girls Who Code',
-          dateCompleted: getDateMonthsAgo(5, 20),
-          uploadedAt: getDateMonthsAgo(5, 21),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(5, 22),
-        },
-      ],
-    },
-    {
-      name: { first: 'Rohan', last: 'Gupta' },
-      email: 'rohan.gupta@student.iitd.ac.in',
-      password: 'Student@123',
-      studentID: 'IIT2022003',
-      gender: 'Male',
-      dateOfBirth: new Date('2004-01-10'),
-      contactNumber: '+91-9876501003',
-      course: 'B.Tech Computer Science',
-      year: '3rd Year',
-      enrollmentYear: 2022,
-      batch: '2022-2026',
-      gpa: 8.8,
-      attendance: 88,
-      bio: 'Full-stack developer and hackathon enthusiast. Building scalable web applications.',
-      interests: ['Web Development', 'Cloud Computing', 'Entrepreneurship', 'Startups'],
-      skills: {
-        technical: ['JavaScript', 'Node.js', 'React', 'MongoDB', 'AWS', 'Docker'],
-        soft: ['Creativity', 'Adaptability', 'Time Management', 'Teamwork'],
-      },
-      social: {
-        linkedin: 'https://linkedin.com/in/rohangupta',
-        github: 'https://github.com/rohangupta',
-      },
-      address: {
-        line1: 'Hostel 7, IIT Delhi',
-        city: 'New Delhi',
-        state: 'Delhi',
-        country: 'India',
-        pincode: '110016',
-      },
-      achievements: [
-        // APPROVED - November 2024
-        {
-          title: 'DevFest Delhi 2024 - Speaker',
-          type: 'Conference',
-          description: 'Delivered talk on modern web development practices and microservices',
-          organization: 'Google Developers Group',
-          dateCompleted: getDateMonthsAgo(0, 3),
-          uploadedAt: getDateMonthsAgo(0, 4),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(0, 5),
-        },
-        // APPROVED - October 2024
-        {
-          title: 'Hack4Bengal 2024 - 2nd Prize',
-          type: 'Hackathon',
-          description: 'Built fintech solution for rural banking',
-          organization: 'Hack4Bengal',
-          dateCompleted: getDateMonthsAgo(1, 22),
-          uploadedAt: getDateMonthsAgo(1, 23),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(1, 24),
-        },
-        // REJECTED - October 2024
-        {
-          title: 'Weekend Hackathon Participation',
-          type: 'Hackathon',
-          description: 'Participated in college hackathon',
-          organization: 'College Tech Club',
-          dateCompleted: getDateMonthsAgo(1, 8),
-          uploadedAt: getDateMonthsAgo(1, 9),
-          status: 'Rejected',
-          rejectionComment: 'Internal college events need faculty coordinator approval',
-          reviewedAt: getDateMonthsAgo(1, 10),
-        },
-        // APPROVED - September 2024
-        {
-          title: 'AWS Solutions Architect Certification',
-          type: 'Course',
-          description: 'Completed AWS Solutions Architect Associate certification',
-          organization: 'Amazon Web Services',
-          dateCompleted: getDateMonthsAgo(2, 5),
-          uploadedAt: getDateMonthsAgo(2, 6),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(2, 7),
-        },
-        // PENDING - September 2024
-        {
-          title: 'Startup Pitch Competition',
-          type: 'Competition',
-          description: 'Pitched startup idea at entrepreneurship summit',
-          organization: 'E-Summit IIT Delhi',
-          dateCompleted: getDateMonthsAgo(2, 18),
-          uploadedAt: getDateMonthsAgo(2, 19),
-          status: 'Pending',
-        },
-        // APPROVED - August 2024
-        {
-          title: 'Startup Weekend IIT Delhi',
-          type: 'Competition',
-          description: 'Co-founded startup idea, pitched to investors, won best idea award',
-          organization: 'Techstars',
-          dateCompleted: getDateMonthsAgo(3, 28),
-          uploadedAt: getDateMonthsAgo(3, 29),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(3, 30),
-        },
-        // APPROVED - July 2024
-        {
-          title: 'Full Stack Development Internship',
-          type: 'Internship',
-          description: 'Built scalable web applications at tech startup',
-          organization: 'Zomato',
-          dateCompleted: getDateMonthsAgo(4, 20),
-          uploadedAt: getDateMonthsAgo(4, 21),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(4, 22),
-        },
-        // APPROVED - June 2024
-        {
-          title: 'ReactJS Advanced Workshop',
-          type: 'Workshop',
-          description: 'Mastered advanced React patterns and performance optimization',
-          organization: 'Meta',
-          dateCompleted: getDateMonthsAgo(5, 15),
-          uploadedAt: getDateMonthsAgo(5, 16),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(5, 17),
-        },
-        // REJECTED - May 2024
-        {
-          title: 'Blog Writing',
-          type: 'Others',
-          description: 'Technical blog posts',
-          organization: 'Personal Blog',
-          dateCompleted: getDateMonthsAgo(6, 12),
-          uploadedAt: getDateMonthsAgo(6, 13),
-          status: 'Rejected',
-          rejectionComment: 'Personal blogs do not qualify as verifiable achievements',
-          reviewedAt: getDateMonthsAgo(6, 14),
-        },
-      ],
-    },
-    {
-      name: { first: 'Ananya', last: 'Singh' },
-      email: 'ananya.singh@student.iitd.ac.in',
-      password: 'Student@123',
-      studentID: 'IIT2022004',
-      gender: 'Female',
-      dateOfBirth: new Date('2004-09-05'),
-      contactNumber: '+91-9876501004',
-      course: 'B.Tech Computer Science',
-      year: '3rd Year',
-      enrollmentYear: 2022,
-      batch: '2022-2026',
-      gpa: 9.0,
-      attendance: 90,
-      bio: 'Cybersecurity enthusiast and tech community leader. Passionate about ethical hacking.',
-      interests: ['Cybersecurity', 'Blockchain', 'Community Building', 'Ethical Hacking'],
-      skills: {
-        technical: ['Python', 'Linux', 'Network Security', 'Blockchain', 'Ethical Hacking', 'Cryptography'],
-        soft: ['Leadership', 'Event Management', 'Mentoring', 'Public Speaking'],
-      },
-      social: {
-        linkedin: 'https://linkedin.com/in/ananyasingh',
-        github: 'https://github.com/ananyasingh',
-      },
-      address: {
-        line1: 'Hostel 4, IIT Delhi',
-        city: 'New Delhi',
-        state: 'Delhi',
-        country: 'India',
-        pincode: '110016',
-      },
-      achievements: [
-        // APPROVED - November 2024
-        {
-          title: 'Cybersecurity Summit Asia 2024',
-          type: 'Conference',
-          description: 'Attended premier cybersecurity conference and networked with industry experts',
-          organization: 'ISC2',
-          dateCompleted: getDateMonthsAgo(0, 10),
-          uploadedAt: getDateMonthsAgo(0, 11),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(0, 12),
-        },
-        // APPROVED - October 2024
-        {
-          title: 'HackTheBox - Top 50 India',
-          type: 'Competition',
-          description: 'Achieved top 50 rank in ethical hacking platform',
-          organization: 'HackTheBox',
-          dateCompleted: getDateMonthsAgo(1, 15),
-          uploadedAt: getDateMonthsAgo(1, 16),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(1, 17),
-        },
-        // PENDING - October 2024
-        {
-          title: 'Cybersecurity Workshop Organizer',
-          type: 'Leadership',
-          description: 'Organized cybersecurity awareness workshop',
-          organization: 'IIT Delhi',
-          dateCompleted: getDateMonthsAgo(1, 28),
-          uploadedAt: getDateMonthsAgo(1, 29),
-          status: 'Pending',
-        },
-        // APPROVED - September 2024
-        {
-          title: 'Tech Community Lead - WiCS IIT Delhi',
-          type: 'Leadership',
-          description: 'Leading Women in Computer Science chapter with 100+ members',
-          organization: 'IIT Delhi',
-          dateCompleted: getDateMonthsAgo(2, 1),
-          uploadedAt: getDateMonthsAgo(2, 2),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(2, 3),
-        },
-        // APPROVED - August 2024
-        {
-          title: 'Blockchain Development Bootcamp',
-          type: 'Workshop',
-          description: 'Completed intensive blockchain development course',
-          organization: 'Ethereum Foundation',
-          dateCompleted: getDateMonthsAgo(3, 18),
-          uploadedAt: getDateMonthsAgo(3, 19),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(3, 20),
-        },
-        // REJECTED - August 2024
-        {
-          title: 'YouTube Tutorial Series',
-          type: 'Others',
-          description: 'Created cybersecurity tutorials',
-          organization: 'YouTube',
-          dateCompleted: getDateMonthsAgo(3, 5),
-          uploadedAt: getDateMonthsAgo(3, 6),
-          status: 'Rejected',
-          rejectionComment: 'Personal content creation does not qualify without significant reach/impact metrics',
-          reviewedAt: getDateMonthsAgo(3, 7),
-        },
-        // APPROVED - July 2024
-        {
-          title: 'Teach for India - Tech Education',
-          type: 'Volunteering',
-          description: 'Teaching coding to underprivileged children every weekend',
-          organization: 'Teach for India',
-          dateCompleted: getDateMonthsAgo(4, 10),
-          uploadedAt: getDateMonthsAgo(4, 11),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(4, 12),
-        },
-        // APPROVED - June 2024
-        {
-          title: 'Women Techmakers Scholar 2024',
-          type: 'Others',
-          description: 'Selected as Google Women Techmakers Scholar',
-          organization: 'Google',
-          dateCompleted: getDateMonthsAgo(5, 25),
-          uploadedAt: getDateMonthsAgo(5, 26),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(5, 27),
-        },
-        // APPROVED - May 2024
-        {
-          title: 'Certified Ethical Hacker (CEH)',
-          type: 'Course',
-          description: 'Achieved CEH certification',
-          organization: 'EC-Council',
-          dateCompleted: getDateMonthsAgo(6, 8),
-          uploadedAt: getDateMonthsAgo(6, 9),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(6, 10),
-        },
-      ],
-    },
-    {
-      name: { first: 'Arjun', last: 'Reddy' },
-      email: 'arjun.reddy@student.iitd.ac.in',
-      password: 'Student@123',
-      studentID: 'IIT2022005',
-      gender: 'Male',
-      dateOfBirth: new Date('2004-11-18'),
-      contactNumber: '+91-9876501005',
-      course: 'B.Tech Computer Science',
-      year: '3rd Year',
-      enrollmentYear: 2022,
-      batch: '2022-2026',
-      gpa: 8.5,
-      attendance: 85,
-      bio: 'Mobile app developer and UI/UX designer. Building beautiful and functional apps.',
-      interests: ['Mobile Development', 'UI/UX Design', 'Product Management', 'Flutter'],
-      skills: {
-        technical: ['Flutter', 'React Native', 'Figma', 'Firebase', 'Swift', 'Kotlin'],
-        soft: ['Design Thinking', 'User Research', 'Project Management', 'Creativity'],
-      },
-      social: {
-        linkedin: 'https://linkedin.com/in/arjunreddy',
-        github: 'https://github.com/arjunreddy',
-      },
-      address: {
-        line1: 'Hostel 6, IIT Delhi',
-        city: 'New Delhi',
-        state: 'Delhi',
-        country: 'India',
-        pincode: '110016',
-      },
-      achievements: [
-        // APPROVED - November 2024
-        {
-          title: 'Flutter India Conference 2024',
-          type: 'Conference',
-          description: 'Presented mobile app architecture best practices',
-          organization: 'Flutter Community India',
-          dateCompleted: getDateMonthsAgo(0, 2),
-          uploadedAt: getDateMonthsAgo(0, 3),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(0, 4),
-        },
-        // APPROVED - October 2024
-        {
-          title: 'App Design Challenge - Winner',
-          type: 'Competition',
-          description: 'Won national app design competition with innovative UI/UX',
-          organization: 'Adobe',
-          dateCompleted: getDateMonthsAgo(1, 20),
-          uploadedAt: getDateMonthsAgo(1, 21),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(1, 22),
-        },
-        // PENDING - October 2024
-        {
-          title: 'App Launch - Student Marketplace',
-          type: 'Others',
-          description: 'Launched student marketplace app',
-          organization: 'Personal Project',
-          dateCompleted: getDateMonthsAgo(1, 10),
-          uploadedAt: getDateMonthsAgo(1, 11),
-          status: 'Pending',
-        },
-        // APPROVED - September 2024
-        {
-          title: 'Google UX Design Professional Certificate',
-          type: 'Course',
-          description: 'Completed comprehensive UX design certification',
-          organization: 'Google',
-          dateCompleted: getDateMonthsAgo(2, 10),
-          uploadedAt: getDateMonthsAgo(2, 11),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(2, 12),
-        },
-        // REJECTED - September 2024
-        {
-          title: 'Freelance Design Work',
-          type: 'Others',
-          description: 'Freelance UI/UX design projects',
-          organization: 'Fiverr',
-          dateCompleted: getDateMonthsAgo(2, 25),
-          uploadedAt: getDateMonthsAgo(2, 26),
-          status: 'Rejected',
-          rejectionComment: 'Freelance work does not qualify without institutional recognition',
-          reviewedAt: getDateMonthsAgo(2, 27),
-        },
-        // APPROVED - August 2024
-        {
-          title: 'Mobile Dev Internship - Paytm',
-          type: 'Internship',
-          description: 'Developed features for Paytm mobile app reaching 50M+ users',
-          organization: 'Paytm',
-          dateCompleted: getDateMonthsAgo(3, 25),
-          uploadedAt: getDateMonthsAgo(3, 26),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(3, 27),
-        },
-        // APPROVED - July 2024
-        {
-          title: 'Figma Design Workshop',
-          type: 'Workshop',
-          description: 'Advanced design systems and prototyping workshop',
-          organization: 'Figma',
-          dateCompleted: getDateMonthsAgo(4, 5),
-          uploadedAt: getDateMonthsAgo(4, 6),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(4, 7),
-        },
-        // APPROVED - June 2024
-        {
-          title: 'UI/UX Design Hackathon - 3rd Place',
-          type: 'Hackathon',
-          description: 'Designed mobile app for healthcare in 48 hours',
-          organization: 'DesignJam',
-          dateCompleted: getDateMonthsAgo(5, 18),
-          uploadedAt: getDateMonthsAgo(5, 19),
-          status: 'Approved',
-          reviewedAt: getDateMonthsAgo(5, 20),
-        },
-        // PENDING - May 2024
-        {
-          title: 'Design Mentorship Program',
-          type: 'Leadership',
-          description: 'Mentoring junior students in design',
-          organization: 'IIT Delhi Design Club',
-          dateCompleted: getDateMonthsAgo(6, 15),
-          uploadedAt: getDateMonthsAgo(6, 16),
-          status: 'Pending',
-        },
-      ],
-    },
-  ],
-
-  // Events for comprehensive system
-  events: [
-    {
-      title: 'Tech Fest 2025',
-      description: 'Annual technical festival with workshops, competitions, and talks',
-      eventType: 'Technical',
-      startDate: new Date('2025-02-15'),
-      endDate: new Date('2025-02-17'),
-      venue: 'IIT Delhi Main Auditorium',
-      capacity: 500,
-      registrationDeadline: new Date('2025-02-10'),
-    },
-    {
-      title: 'Coding Marathon',
-      description: '24-hour coding competition',
-      eventType: 'Competition',
-      startDate: new Date('2025-01-20'),
-      endDate: new Date('2025-01-21'),
-      venue: 'Computer Lab Block-5',
-      capacity: 200,
-      registrationDeadline: new Date('2025-01-15'),
-    },
-    {
-      title: 'Industry Connect Summit',
-      description: 'Networking event with industry professionals',
-      eventType: 'Workshop',
-      startDate: new Date('2025-03-10'),
-      endDate: new Date('2025-03-10'),
-      venue: 'Conference Hall',
-      capacity: 300,
-      registrationDeadline: new Date('2025-03-05'),
-    },
-  ],
-};
-
-async function seedDatabase() {
+// Connect to MongoDB
+const connectDB = async () => {
   try {
-    console.log('🔗 Connecting to MongoDB...');
-    await mongoose.connect(process.env.DBURL);
-    console.log('✅ Connected to MongoDB\n');
-
-    // Clear existing data
-    console.log('🗑️  Clearing existing data...');
-    await Promise.all([
-      SuperAdmin.deleteMany({}),
-      Student.deleteMany({}),
-      Faculty.deleteMany({}),
-      Department.deleteMany({}),
-      College.deleteMany({}),
-      Institute.deleteMany({}),
-      Event.deleteMany({}),
-    ]);
-    console.log('✅ Existing data cleared\n');
-
-    // Create Super Admin
-    console.log('👤 Creating Super Admin...');
-    const hashedSuperAdminPassword = await bcrypt.hash(seedData.superAdmin.password, 10);
-    const superAdmin = await SuperAdmin.create({
-      ...seedData.superAdmin,
-      password: hashedSuperAdminPassword,
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/sih2025', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
-    console.log(`✅ Super Admin created: ${superAdmin.email}\n`);
-
-    // Create Institute
-    console.log('🏛️  Creating Institute...');
-    const hashedInstitutePassword = await bcrypt.hash(seedData.institute.password, 10);
-    const institute = await Institute.create({
-      ...seedData.institute,
-      password: hashedInstitutePassword,
-      approvedBy: superAdmin._id,
-      approvedAt: new Date(),
-    });
-    console.log(`✅ Institute created: ${institute.name}\n`);
-
-    // Create Colleges
-    console.log('🏫 Creating Colleges...');
-    const colleges = [];
-    for (const collegeData of seedData.colleges) {
-      const hashedPassword = await bcrypt.hash(collegeData.password, 10);
-      const college = await College.create({
-        ...collegeData,
-        password: hashedPassword,
-        institute: institute._id,
-      });
-      colleges.push(college);
-      console.log(`   ✅ College created: ${college.name}`);
-    }
-    console.log('');
-
-    // Update institute with colleges
-    institute.colleges = colleges.map(c => c._id);
-    await institute.save();
-
-    // Create Departments
-    console.log('📚 Creating Departments...');
-    const departments = [];
-    for (let i = 0; i < seedData.departments.length; i++) {
-      const deptData = seedData.departments[i];
-      const hashedPassword = await bcrypt.hash(deptData.password, 10);
-      const college = colleges[i % 2]; // Alternate between colleges
-      const department = await Department.create({
-        ...deptData,
-        password: hashedPassword,
-        college: college._id,
-        institute: institute._id,
-      });
-      departments.push(department);
-      console.log(`   ✅ Department created: ${department.name} (${college.name})`);
-    }
-    console.log('');
-
-    // Create Faculty
-    console.log('👨‍🏫 Creating Faculty...');
-    const facultyMembers = [];
-    for (let i = 0; i < seedData.faculty.length; i++) {
-      const facultyData = seedData.faculty[i];
-      const hashedPassword = await bcrypt.hash(facultyData.password, 10);
-      const department = departments[i % departments.length];
-      const faculty = await Faculty.create({
-        ...facultyData,
-        password: hashedPassword,
-        department: department._id,
-      });
-      facultyMembers.push(faculty);
-      console.log(`   ✅ Faculty created: ${faculty.name.first} ${faculty.name.last} (${faculty.designation})`);
-    }
-    console.log('');
-
-    // Create Students with achievements
-    console.log('👨‍🎓 Creating Students with Mixed Status Achievements...');
-    const students = [];
-    const coordinator = facultyMembers.find(f => f.isCoordinator);
-    const reviewers = facultyMembers.filter(f => !f.isCoordinator);
-    
-    for (let i = 0; i < seedData.students.length; i++) {
-      const studentData = seedData.students[i];
-      const hashedPassword = await bcrypt.hash(studentData.password, 10);
-      const department = departments[0]; // All in CSE for consistency
-      
-      // Add reviewer reference to approved/rejected achievements
-      const achievementsWithReviewer = studentData.achievements.map((ach, index) => {
-        if (ach.status === 'Approved' || ach.status === 'Rejected') {
-          return {
-            ...ach,
-            verifiedBy: reviewers[index % reviewers.length]._id,
-          };
-        }
-        return ach;
-      });
-      
-      const student = await Student.create({
-        ...studentData,
-        achievements: achievementsWithReviewer,
-        password: hashedPassword,
-        department: department._id,
-        coordinator: coordinator._id,
-      });
-      students.push(student);
-      
-      const approvedCount = student.achievements.filter(a => a.status === 'Approved').length;
-      const pendingCount = student.achievements.filter(a => a.status === 'Pending').length;
-      const rejectedCount = student.achievements.filter(a => a.status === 'Rejected').length;
-      
-      console.log(`   ✅ ${student.name.first} ${student.name.last}: ${student.achievements.length} total (✓${approvedCount} ⏳${pendingCount} ✗${rejectedCount})`);
-    }
-    console.log('');
-
-    // Update faculty with students and achievement reviews
-    console.log('🔗 Linking Faculty with Students and Reviews...');
-    for (const faculty of facultyMembers) {
-      faculty.students = students.map(s => s._id);
-      
-      // Add achievement reviews
-      students.forEach(student => {
-        student.achievements.forEach(achievement => {
-          if ((achievement.status === 'Approved' || achievement.status === 'Rejected') && 
-              achievement.verifiedBy && achievement.verifiedBy.equals(faculty._id)) {
-            faculty.achievementsReviewed.push({
-              achievementId: achievement._id,
-              studentId: student._id,
-              status: achievement.status,
-              comment: achievement.rejectionComment || 'Good work!',
-              reviewedAt: achievement.reviewedAt,
-            });
-          }
-        });
-      });
-      
-      await faculty.save();
-      console.log(`   ✅ ${faculty.name.first} ${faculty.name.last}: ${faculty.achievementsReviewed.length} reviews completed`);
-    }
-    console.log('');
-
-    // Events skipped (can be added later with proper model fields)
-    const events = [];
-    console.log('');
-
-    // Calculate statistics
-    const totalAchievements = students.reduce((sum, s) => sum + s.achievements.length, 0);
-    const approvedAchievements = students.reduce((sum, s) => 
-      sum + s.achievements.filter(a => a.status === 'Approved').length, 0);
-    const pendingAchievements = students.reduce((sum, s) => 
-      sum + s.achievements.filter(a => a.status === 'Pending').length, 0);
-    const rejectedAchievements = students.reduce((sum, s) => 
-      sum + s.achievements.filter(a => a.status === 'Rejected').length, 0);
-    const totalReviews = facultyMembers.reduce((sum, f) => sum + f.achievementsReviewed.length, 0);
-
-    // Print comprehensive summary
-    console.log('═══════════════════════════════════════════════════════════════');
-    console.log('📊 COMPREHENSIVE DATABASE SEEDING SUMMARY');
-    console.log('═══════════════════════════════════════════════════════════════');
-    console.log('\n🎯 USER ACCOUNTS:');
-    console.log(`   ✅ Super Admins: 1`);
-    console.log(`   ✅ Institutes: 1`);
-    console.log(`   ✅ Colleges: ${colleges.length}`);
-    console.log(`   ✅ Departments: ${departments.length}`);
-    console.log(`   ✅ Faculty Members: ${facultyMembers.length}`);
-    console.log(`   ✅ Students: ${students.length}`);
-    
-    console.log('\n📈 ACHIEVEMENT STATISTICS:');
-    console.log(`   📊 Total Achievements: ${totalAchievements}`);
-    console.log(`   ✅ Approved: ${approvedAchievements} (${Math.round(approvedAchievements/totalAchievements*100)}%)`);
-    console.log(`   ⏳ Pending: ${pendingAchievements} (${Math.round(pendingAchievements/totalAchievements*100)}%)`);
-    console.log(`   ✗ Rejected: ${rejectedAchievements} (${Math.round(rejectedAchievements/totalAchievements*100)}%)`);
-    
-    console.log('\n👨‍🏫 FACULTY ACTIVITY:');
-    console.log(`   📝 Total Reviews Completed: ${totalReviews}`);
-    console.log(`   🎓 Students per Faculty: ${Math.round(students.length / facultyMembers.length)}`);
-    
-    console.log('\n📅 EVENTS:');
-    console.log(`   🎪 Total Events: ${events.length}`);
-    
-    console.log('\n═══════════════════════════════════════════════════════════════');
-    console.log('🔑 LOGIN CREDENTIALS');
-    console.log('═══════════════════════════════════════════════════════════════');
-    
-    console.log('\n👤 SUPER ADMIN:');
-    console.log(`   Email: ${seedData.superAdmin.email}`);
-    console.log(`   Password: ${seedData.superAdmin.password}`);
-    
-    console.log('\n🏛️  INSTITUTE:');
-    console.log(`   Email: ${seedData.institute.email}`);
-    console.log(`   Password: ${seedData.institute.password}`);
-    
-    console.log('\n👨‍🏫 FACULTY (All use password: Faculty@123):');
-    seedData.faculty.forEach(f => {
-      console.log(`   ${f.name.first} ${f.name.last} (${f.designation})`);
-      console.log(`     └─ ${f.email}`);
-    });
-    
-    console.log('\n👨‍🎓 STUDENTS (All use password: Student@123):');
-    seedData.students.forEach((s, index) => {
-      const student = students[index];
-      const approved = student.achievements.filter(a => a.status === 'Approved').length;
-      const pending = student.achievements.filter(a => a.status === 'Pending').length;
-      const rejected = student.achievements.filter(a => a.status === 'Rejected').length;
-      
-      console.log(`   ${s.name.first} ${s.name.last} (${s.gender}) - GPA: ${s.gpa}`);
-      console.log(`     └─ ${s.email}`);
-      console.log(`     └─ Achievements: ✓${approved} ⏳${pending} ✗${rejected}`);
-    });
-    
-    console.log('\n═══════════════════════════════════════════════════════════════');
-    console.log('✨ ANALYTICS FEATURES READY:');
-    console.log('═══════════════════════════════════════════════════════════════');
-    console.log('   ✅ Achievement Timeline (12 months data)');
-    console.log('   ✅ Status Distribution (Approved/Pending/Rejected)');
-    console.log('   ✅ Category Breakdown (All types covered)');
-    console.log('   ✅ Faculty Review Dashboard');
-    console.log('   ✅ Growth Metrics & Trends');
-    console.log('   ✅ Monthly Goals Tracking');
-    console.log('   ✅ Student Performance Analytics');
-    console.log('   ✅ Department Analytics');
-    console.log('   ✅ Institute-wide Statistics');
-    console.log('═══════════════════════════════════════════════════════════════\n');
-
-    console.log('🎉 DATABASE SEEDING COMPLETED SUCCESSFULLY!');
-    console.log('📈 All data is consistent with mixed statuses for comprehensive analytics!');
-    console.log('🎯 Perfect for presentation with all permutations covered!\n');
-    
-    await mongoose.disconnect();
+    console.log('✅ MongoDB Connected Successfully');
   } catch (error) {
-    console.error('❌ Error seeding database:', error);
+    console.error('❌ MongoDB Connection Error:', error);
     process.exit(1);
   }
-}
+};
 
-seedDatabase();
+// Helper function to hash passwords
+const hashPassword = async (password) => {
+  return await bcrypt.hash(password, 10);
+};
+
+// Comprehensive Data Generation
+const seedData = async () => {
+  try {
+    console.log('🧹 Clearing existing data...');
+    await SuperAdmin.deleteMany({});
+    await Institute.deleteMany({});
+    await College.deleteMany({});
+    await Department.deleteMany({});
+    await Faculty.deleteMany({});
+    await Student.deleteMany({});
+    await Event.deleteMany({});
+    await Roadmap.deleteMany({});
+    await OcrOutput.deleteMany({});
+    console.log('✅ Data cleared successfully');
+
+    // 1. CREATE SUPER ADMINS
+    console.log('👤 Creating Super Admins...');
+    const hashedPassword = await hashPassword('admin123');
+    const superAdmins = await SuperAdmin.insertMany([
+      {
+        name: { first: 'Rajesh', last: 'Kumar' },
+        email: 'rajesh.admin@sih.gov.in',
+        password: hashedPassword,
+        contactNumber: '+91-9876543210',
+        permissions: ['full_access'],
+        status: 'Active',
+      },
+      {
+        name: { first: 'Priya', last: 'Sharma' },
+        email: 'priya.admin@sih.gov.in',
+        password: hashedPassword,
+        contactNumber: '+91-9876543211',
+        permissions: ['full_access'],
+        status: 'Active',
+      },
+      {
+        name: { first: 'Amit', last: 'Verma' },
+        email: 'amit.admin@sih.gov.in',
+        password: hashedPassword,
+        contactNumber: '+91-9876543212',
+        permissions: ['full_access'],
+        status: 'Inactive',
+      },
+    ]);
+    console.log(`✅ Created ${superAdmins.length} Super Admins`);
+
+    // 2. CREATE INSTITUTES (All Types)
+    console.log('🏛️ Creating Institutes...');
+    const instituteTypes = ['University', 'StandaloneCollege', 'Government', 'Private', 'Autonomous', 'Deemed'];
+    const instituteStatuses = ['Approved', 'Pending', 'Rejected'];
+    const naacGrades = ['A++', 'A+', 'A', 'B++', 'B+', 'B', 'C'];
+    
+    const institutes = [];
+    let instituteCounter = 1;
+
+    for (let type of instituteTypes) {
+      for (let status of instituteStatuses) {
+        const hasNaac = Math.random() > 0.3;
+        const institute = {
+          name: `${type} of Excellence ${instituteCounter}`,
+          code: `INST${String(instituteCounter).padStart(3, '0')}`,
+          aisheCode: `AISHE${String(instituteCounter).padStart(6, '0')}`,
+          type: type,
+          email: `institute${instituteCounter}@example.com`,
+          password: hashedPassword,
+          contactNumber: `+91-${9000000000 + instituteCounter}`,
+          address: {
+            line1: `${instituteCounter} Education Street`,
+            line2: 'Knowledge Park',
+            city: ['Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Kolkata', 'Pune'][instituteCounter % 6],
+            state: ['Maharashtra', 'Delhi', 'Karnataka', 'Tamil Nadu', 'West Bengal', 'Maharashtra'][instituteCounter % 6],
+            district: ['Mumbai', 'New Delhi', 'Bangalore Urban', 'Chennai', 'Kolkata', 'Pune'][instituteCounter % 6],
+            country: 'India',
+            pincode: `${400000 + instituteCounter}`,
+          },
+          website: `https://www.institute${instituteCounter}.edu.in`,
+          headOfInstitute: {
+            name: `Dr. ${['Ramesh', 'Suresh', 'Dinesh', 'Mahesh'][instituteCounter % 4]} Patel`,
+            email: `head.institute${instituteCounter}@example.com`,
+            contact: `+91-${9100000000 + instituteCounter}`,
+            alternateContact: `+91-${9200000000 + instituteCounter}`,
+          },
+          modalOfficer: {
+            name: `Prof. ${['Sunita', 'Kavita', 'Anita', 'Rita'][instituteCounter % 4]} Singh`,
+            email: `officer.institute${instituteCounter}@example.com`,
+            contact: `+91-${9300000000 + instituteCounter}`,
+            alternateContact: `+91-${9400000000 + instituteCounter}`,
+          },
+          naacGrading: hasNaac,
+          naacGrade: hasNaac ? naacGrades[instituteCounter % naacGrades.length] : '',
+          status: status === 'Approved' ? 'Active' : status === 'Pending' ? 'Pending' : 'Inactive',
+          approvalStatus: status,
+          studentCount: Math.floor(Math.random() * 5000) + 500,
+          location: {
+            city: ['Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Kolkata', 'Pune'][instituteCounter % 6],
+            state: ['Maharashtra', 'Delhi', 'Karnataka', 'Tamil Nadu', 'West Bengal', 'Maharashtra'][instituteCounter % 6],
+            country: 'India',
+          },
+        };
+
+        if (status === 'Approved') {
+          institute.approvedBy = superAdmins[0]._id;
+          institute.approvedAt = new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000);
+        } else if (status === 'Rejected') {
+          institute.rejectionReason = 'Incomplete documentation provided';
+          institute.reviewedBy = superAdmins[1]._id;
+          institute.reviewedAt = new Date();
+        }
+
+        institutes.push(institute);
+        instituteCounter++;
+      }
+    }
+
+    const createdInstitutes = await Institute.insertMany(institutes);
+    console.log(`✅ Created ${createdInstitutes.length} Institutes`);
+
+    // Only proceed with approved institutes
+    const approvedInstitutes = createdInstitutes.filter(inst => inst.approvalStatus === 'Approved');
+    console.log(`✅ ${approvedInstitutes.length} Approved Institutes for further processing`);
+
+    // 3. CREATE COLLEGES (All Types)
+    console.log('🏫 Creating Colleges...');
+    const collegeTypes = [
+      'Engineering College',
+      'Medical College',
+      'Arts College',
+      'Science College',
+      'Commerce College',
+      'Law College',
+      'Other',
+    ];
+    
+    const colleges = [];
+    let collegeCounter = 1;
+
+    for (let institute of approvedInstitutes) {
+      // Each institute gets 2-3 colleges
+      const numColleges = Math.floor(Math.random() * 2) + 2;
+      for (let i = 0; i < numColleges; i++) {
+        const college = {
+          institute: institute._id,
+          name: `${collegeTypes[collegeCounter % collegeTypes.length]} ${collegeCounter}`,
+          code: `COL${String(collegeCounter).padStart(4, '0')}`,
+          email: `college${collegeCounter}@example.com`,
+          password: hashedPassword,
+          contactNumber: `+91-${8000000000 + collegeCounter}`,
+          address: {
+            line1: `${collegeCounter} Campus Road`,
+            line2: institute.address.line2,
+            city: institute.address.city,
+            state: institute.address.state,
+            country: 'India',
+            pincode: `${400000 + collegeCounter}`,
+          },
+          website: `https://www.college${collegeCounter}.edu.in`,
+          type: collegeTypes[collegeCounter % collegeTypes.length],
+          status: Math.random() > 0.1 ? 'Active' : 'Inactive',
+        };
+        colleges.push(college);
+        collegeCounter++;
+      }
+    }
+
+    const createdColleges = await College.insertMany(colleges);
+    console.log(`✅ Created ${createdColleges.length} Colleges`);
+
+    // Update institutes with college references
+    for (let college of createdColleges) {
+      await Institute.findByIdAndUpdate(college.institute, {
+        $push: { colleges: college._id },
+      });
+    }
+
+    // Only proceed with active colleges
+    const activeColleges = createdColleges.filter(col => col.status === 'Active');
+    console.log(`✅ ${activeColleges.length} Active Colleges for further processing`);
+
+    // 4. CREATE DEPARTMENTS
+    console.log('🏢 Creating Departments...');
+    const departmentNames = [
+      'Computer Science',
+      'Electronics',
+      'Mechanical',
+      'Civil',
+      'Electrical',
+      'Information Technology',
+      'Biotechnology',
+      'Chemical',
+      'Automobile',
+      'Aerospace',
+      'Mathematics',
+      'Physics',
+      'Chemistry',
+      'English',
+      'Economics',
+    ];
+
+    const departments = [];
+    let deptCounter = 1;
+
+    for (let college of activeColleges) {
+      // Each college gets 3-5 departments
+      const numDepts = Math.floor(Math.random() * 3) + 3;
+      for (let i = 0; i < numDepts && i < departmentNames.length; i++) {
+        const department = {
+          college: college._id,
+          institute: college.institute,
+          name: departmentNames[i],
+          code: `DEPT${String(deptCounter).padStart(4, '0')}`,
+          email: `dept${deptCounter}@example.com`,
+          password: hashedPassword,
+          contactNumber: `+91-${7000000000 + deptCounter}`,
+          status: Math.random() > 0.05 ? 'Active' : 'Inactive',
+        };
+        departments.push(department);
+        deptCounter++;
+      }
+    }
+
+    const createdDepartments = await Department.insertMany(departments);
+    console.log(`✅ Created ${createdDepartments.length} Departments`);
+
+    // Update colleges with department references
+    for (let dept of createdDepartments) {
+      await College.findByIdAndUpdate(dept.college, {
+        $push: { departments: dept._id },
+      });
+    }
+
+    const activeDepartments = createdDepartments.filter(dept => dept.status === 'Active');
+    console.log(`✅ ${activeDepartments.length} Active Departments for further processing`);
+
+    // 5. CREATE FACULTY (All Designations)
+    console.log('👨‍🏫 Creating Faculty Members...');
+    const designations = [
+      'Professor',
+      'Associate Professor',
+      'Assistant Professor',
+      'Lecturer',
+      'Coordinator',
+      'HOD',
+      'Dean',
+    ];
+    const genders = ['Male', 'Female', 'Other'];
+    const firstNames = ['Amit', 'Priya', 'Rahul', 'Sneha', 'Vikram', 'Anjali', 'Suresh', 'Kavita', 'Rajesh', 'Pooja'];
+    const lastNames = ['Kumar', 'Sharma', 'Singh', 'Patel', 'Verma', 'Gupta', 'Reddy', 'Nair', 'Desai', 'Mehta'];
+
+    const faculties = [];
+    let facultyCounter = 1;
+
+    for (let dept of activeDepartments) {
+      // Each department gets 5-8 faculty members
+      const numFaculty = Math.floor(Math.random() * 4) + 5;
+      
+      for (let i = 0; i < numFaculty; i++) {
+        const isCoordinator = i === 0; // First faculty is coordinator
+        const designation = i === 0 ? 'HOD' : designations[facultyCounter % (designations.length - 1)];
+        
+        const faculty = {
+          department: dept._id,
+          name: {
+            first: firstNames[facultyCounter % firstNames.length],
+            last: lastNames[facultyCounter % lastNames.length],
+          },
+          facultyID: `FAC${String(facultyCounter).padStart(5, '0')}`,
+          email: `faculty${facultyCounter}@example.com`,
+          password: hashedPassword,
+          designation: designation,
+          contactNumber: `+91-${6000000000 + facultyCounter}`,
+          dob: new Date(1970 + Math.floor(Math.random() * 20), Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1),
+          gender: genders[facultyCounter % genders.length],
+          address: {
+            line1: `${facultyCounter} Faculty Street`,
+            line2: 'Campus Area',
+            city: 'City Name',
+            state: 'State Name',
+            country: 'India',
+            pincode: `${500000 + facultyCounter}`,
+          },
+          joiningDate: new Date(2010 + Math.floor(Math.random() * 14), Math.floor(Math.random() * 12), 1),
+          experience: Math.floor(Math.random() * 20) + 1,
+          qualifications: ['PhD', 'M.Tech', 'B.Tech'][Math.floor(Math.random() * 3)],
+          specialization: `${dept.name} Specialization`,
+          isCoordinator: isCoordinator,
+          status: Math.random() > 0.05 ? 'Active' : 'Inactive',
+        };
+        faculties.push(faculty);
+        facultyCounter++;
+      }
+    }
+
+    const createdFaculty = await Faculty.insertMany(faculties);
+    console.log(`✅ Created ${createdFaculty.length} Faculty Members`);
+
+    // Update departments with faculty references and HOD
+    for (let dept of activeDepartments) {
+      const deptFaculty = createdFaculty.filter(f => f.department.toString() === dept._id.toString());
+      const hod = deptFaculty.find(f => f.designation === 'HOD');
+      
+      await Department.findByIdAndUpdate(dept._id, {
+        $push: { faculties: { $each: deptFaculty.map(f => f._id) } },
+        hod: hod ? hod._id : null,
+      });
+    }
+
+    const activeFaculty = createdFaculty.filter(f => f.status === 'Active');
+    console.log(`✅ ${activeFaculty.length} Active Faculty Members`);
+
+    // 6. CREATE STUDENTS (Comprehensive Data)
+    console.log('🎓 Creating Students...');
+    const studentFirstNames = ['Aarav', 'Vivaan', 'Aditya', 'Arjun', 'Sai', 'Aadhya', 'Ananya', 'Diya', 'Isha', 'Saanvi'];
+    const studentLastNames = ['Sharma', 'Kumar', 'Singh', 'Patel', 'Gupta', 'Reddy', 'Rao', 'Nair', 'Joshi', 'Iyer'];
+    const courses = ['B.Tech', 'M.Tech', 'B.Sc', 'M.Sc', 'BCA', 'MCA', 'B.Com', 'M.Com', 'BA', 'MA'];
+    const years = ['1st Year', '2nd Year', '3rd Year', '4th Year', 'Final Year'];
+    const achievementTypes = [
+      'Workshop',
+      'Conference',
+      'Hackathon',
+      'Internship',
+      'Course',
+      'Competition',
+      'CommunityService',
+      'Leadership',
+      'Clubs',
+      'Volunteering',
+      'Others',
+    ];
+
+    const students = [];
+    let studentCounter = 1;
+
+    for (let dept of activeDepartments) {
+      const deptFaculty = activeFaculty.filter(f => f.department.toString() === dept._id.toString());
+      const coordinator = deptFaculty.find(f => f.isCoordinator) || deptFaculty[0];
+      
+      // Each department gets 20-30 students
+      const numStudents = Math.floor(Math.random() * 11) + 20;
+      
+      for (let i = 0; i < numStudents; i++) {
+        const enrollYear = 2020 + Math.floor(Math.random() * 5);
+        const currentYear = new Date().getFullYear();
+        const yearIndex = Math.min(currentYear - enrollYear, years.length - 1);
+        
+        // Generate 0-10 achievements per student
+        const numAchievements = Math.floor(Math.random() * 11);
+        const achievements = [];
+        
+        for (let j = 0; j < numAchievements; j++) {
+          const status = ['Pending', 'Approved', 'Rejected'][Math.floor(Math.random() * 3)];
+          const achievement = {
+            title: `Achievement ${j + 1} - ${achievementTypes[j % achievementTypes.length]}`,
+            type: achievementTypes[j % achievementTypes.length],
+            description: `Detailed description of ${achievementTypes[j % achievementTypes.length]} achievement`,
+            organization: ['Google', 'Microsoft', 'Amazon', 'IBM', 'TCS', 'Infosys', 'Wipro'][j % 7],
+            instituteEmail: `student${studentCounter}@example.com`,
+            dateCompleted: new Date(Date.now() - Math.random() * 365 * 24 * 60 * 60 * 1000),
+            fileUrl: `https://ucarecdn.com/dummy-file-${studentCounter}-${j}/`,
+            fileId: `dummy-uuid-${studentCounter}-${j}`,
+            status: status,
+            comment: status === 'Approved' ? 'Well done!' : status === 'Rejected' ? 'Needs verification' : '',
+            rejectionComment: status === 'Rejected' ? 'Please provide proper documentation' : '',
+            uploadedAt: new Date(Date.now() - Math.random() * 180 * 24 * 60 * 60 * 1000),
+            reviewedAt: status !== 'Pending' ? new Date(Date.now() - Math.random() * 90 * 24 * 60 * 60 * 1000) : undefined,
+            verifiedBy: status !== 'Pending' && deptFaculty.length > 0 ? deptFaculty[Math.floor(Math.random() * deptFaculty.length)]._id : undefined,
+          };
+          achievements.push(achievement);
+        }
+
+        // Generate education history
+        const education = [
+          {
+            institution: `School ${studentCounter}`,
+            location: 'Mumbai, Maharashtra',
+            year: `${enrollYear - 4}`,
+            degree: '10th Standard - CBSE',
+          },
+          {
+            institution: `College ${studentCounter}`,
+            location: 'Pune, Maharashtra',
+            year: `${enrollYear - 2}`,
+            degree: '12th Standard - State Board',
+          },
+        ];
+
+        // Generate projects
+        const numProjects = Math.floor(Math.random() * 5) + 1;
+        const projects = [];
+        for (let p = 0; p < numProjects; p++) {
+          projects.push({
+            title: `Project ${p + 1} - ${dept.name}`,
+            link: `https://github.com/student${studentCounter}/project${p}`,
+            tech: 'React, Node.js, MongoDB, Express',
+            description: [
+              `Developed a comprehensive solution for ${dept.name}`,
+              `Implemented modern technologies and best practices`,
+              `Achieved ${Math.floor(Math.random() * 50) + 50}% performance improvement`,
+            ],
+          });
+        }
+
+        const student = {
+          department: dept._id,
+          coordinator: coordinator ? coordinator._id : null,
+          name: {
+            first: studentFirstNames[studentCounter % studentFirstNames.length],
+            last: studentLastNames[studentCounter % studentLastNames.length],
+          },
+          studentID: `STU${String(studentCounter).padStart(6, '0')}`,
+          email: `student${studentCounter}@example.com`,
+          password: hashedPassword,
+          dateOfBirth: new Date(2000 + Math.floor(Math.random() * 5), Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1),
+          gender: genders[studentCounter % genders.length],
+          contactNumber: `+91-${5000000000 + studentCounter}`,
+          bio: `Passionate ${dept.name} student with interest in technology and innovation`,
+          profilePicture: `https://ui-avatars.com/api/?name=${studentFirstNames[studentCounter % studentFirstNames.length]}+${studentLastNames[studentCounter % studentLastNames.length]}`,
+          emergencyContact: {
+            name: `Parent ${studentCounter}`,
+            phone: `+91-${4000000000 + studentCounter}`,
+            relationship: ['Father', 'Mother', 'Guardian'][studentCounter % 3],
+          },
+          course: courses[studentCounter % courses.length],
+          year: years[yearIndex] || 'Final Year',
+          interests: ['Coding', 'AI/ML', 'Web Development', 'Mobile Apps', 'Cloud Computing'].slice(0, Math.floor(Math.random() * 3) + 2),
+          skills: {
+            technical: ['JavaScript', 'Python', 'Java', 'React', 'Node.js', 'MongoDB'].slice(0, Math.floor(Math.random() * 4) + 2),
+            soft: ['Communication', 'Leadership', 'Team Work', 'Problem Solving'].slice(0, Math.floor(Math.random() * 3) + 1),
+          },
+          address: {
+            line1: `${studentCounter} Student Hostel`,
+            line2: 'Campus Area',
+            city: 'City Name',
+            state: 'State Name',
+            country: 'India',
+            pincode: `${600000 + studentCounter}`,
+          },
+          enrollmentYear: enrollYear,
+          batch: `${enrollYear}-${enrollYear + 4}`,
+          achievements: achievements,
+          gpa: parseFloat((Math.random() * 4 + 6).toFixed(2)), // 6.0 to 10.0
+          attendance: Math.floor(Math.random() * 30) + 70, // 70-100%
+          resumeGenerated: Math.random() > 0.5,
+          status: Math.random() > 0.05 ? 'Active' : 'Inactive',
+          resumePdfUrl: Math.random() > 0.5 ? `https://ucarecdn.com/resume-${studentCounter}.pdf` : undefined,
+          social: {
+            linkedin: `https://linkedin.com/in/student${studentCounter}`,
+            github: `https://github.com/student${studentCounter}`,
+          },
+          education: education,
+          projects: projects,
+        };
+        students.push(student);
+        studentCounter++;
+      }
+    }
+
+    const createdStudents = await Student.insertMany(students);
+    console.log(`✅ Created ${createdStudents.length} Students`);
+
+    // Update faculty with student references
+    for (let student of createdStudents) {
+      if (student.coordinator) {
+        await Faculty.findByIdAndUpdate(student.coordinator, {
+          $push: { students: student._id },
+        });
+      }
+    }
+
+    // Update faculty achievement reviews
+    for (let student of createdStudents) {
+      for (let achievement of student.achievements) {
+        if (achievement.verifiedBy) {
+          await Faculty.findByIdAndUpdate(achievement.verifiedBy, {
+            $push: {
+              achievementsReviewed: {
+                achievementId: achievement._id,
+                studentId: student._id,
+                status: achievement.status,
+                comment: achievement.comment || achievement.rejectionComment,
+                reviewedAt: achievement.reviewedAt,
+              },
+            },
+          });
+        }
+      }
+    }
+
+    // 7. CREATE EVENTS (All Types)
+    console.log('🎉 Creating Events...');
+    const eventTypes = [
+      'Workshop',
+      'Seminar',
+      'Conference',
+      'Competition',
+      'Cultural',
+      'Sports',
+      'Hackathon',
+      'Guest Lecture',
+      'Placement Drive',
+      'Other',
+    ];
+    const eventStatuses = ['Draft', 'Published', 'Cancelled', 'Completed'];
+    const targetAudiences = ['All', 'Students', 'Faculty', 'Department'];
+
+    const events = [];
+    let eventCounter = 1;
+
+    for (let dept of activeDepartments) {
+      const deptFaculty = activeFaculty.filter(f => f.department.toString() === dept._id.toString());
+      if (deptFaculty.length === 0) continue;
+
+      const college = activeColleges.find(c => c._id.toString() === dept.college.toString());
+      if (!college) continue;
+
+      // Each department gets 5-10 events
+      const numEvents = Math.floor(Math.random() * 6) + 5;
+      
+      for (let i = 0; i < numEvents; i++) {
+        const eventType = eventTypes[eventCounter % eventTypes.length];
+        const status = eventStatuses[Math.floor(Math.random() * eventStatuses.length)];
+        const isPast = Math.random() > 0.5;
+        const eventDate = isPast 
+          ? new Date(Date.now() - Math.random() * 180 * 24 * 60 * 60 * 1000)
+          : new Date(Date.now() + Math.random() * 90 * 24 * 60 * 60 * 1000);
+        
+        const requiresRegistration = Math.random() > 0.3;
+        
+        // Generate registrations for past published events
+        const registrations = [];
+        if (isPast && status === 'Published') {
+          const numRegistrations = Math.floor(Math.random() * 20) + 5;
+          const deptStudents = createdStudents.filter(s => s.department.toString() === dept._id.toString() && s.status === 'Active').slice(0, numRegistrations);
+          
+          for (let student of deptStudents) {
+            registrations.push({
+              user: student._id,
+              userType: 'Student',
+              registeredAt: new Date(eventDate.getTime() - Math.random() * 30 * 24 * 60 * 60 * 1000),
+              status: ['Registered', 'Attended', 'Absent'][Math.floor(Math.random() * 3)],
+            });
+          }
+
+          // Add some faculty registrations
+          const facultyToRegister = deptFaculty.slice(0, Math.floor(Math.random() * 3) + 1);
+          for (let faculty of facultyToRegister) {
+            registrations.push({
+              user: faculty._id,
+              userType: 'Faculty',
+              registeredAt: new Date(eventDate.getTime() - Math.random() * 30 * 24 * 60 * 60 * 1000),
+              status: ['Registered', 'Attended'][Math.floor(Math.random() * 2)],
+            });
+          }
+        }
+
+        const event = {
+          title: `${eventType} ${eventCounter} - ${dept.name}`,
+          description: `Comprehensive ${eventType} focusing on latest trends in ${dept.name}. This event will cover multiple aspects and provide hands-on experience.`,
+          eventDate: eventDate,
+          eventTime: `${Math.floor(Math.random() * 12) + 1}:${['00', '30'][Math.floor(Math.random() * 2)]} ${['AM', 'PM'][Math.floor(Math.random() * 2)]}`,
+          venue: ['Seminar Hall', 'Auditorium', 'Conference Room', 'Lab', 'Sports Ground', 'Open Area'][eventCounter % 6],
+          eventType: eventType,
+          department: dept._id,
+          college: college.institute,
+          createdBy: deptFaculty[Math.floor(Math.random() * deptFaculty.length)]._id,
+          targetAudience: targetAudiences[Math.floor(Math.random() * targetAudiences.length)],
+          maxParticipants: requiresRegistration ? Math.floor(Math.random() * 100) + 50 : null,
+          registrationRequired: requiresRegistration,
+          registrationDeadline: requiresRegistration ? new Date(eventDate.getTime() - 7 * 24 * 60 * 60 * 1000) : undefined,
+          status: isPast && status === 'Published' ? 'Completed' : status,
+          attachments: [
+            {
+              name: `${eventType}_Brochure.pdf`,
+              url: `https://ucarecdn.com/event-${eventCounter}-brochure.pdf`,
+              uploadedAt: new Date(eventDate.getTime() - 15 * 24 * 60 * 60 * 1000),
+            },
+          ],
+          registrations: registrations,
+          tags: [eventType, dept.name, 'Academic', 'Student Development'],
+          isPublic: Math.random() > 0.2,
+        };
+        events.push(event);
+        eventCounter++;
+      }
+    }
+
+    const createdEvents = await Event.insertMany(events);
+    console.log(`✅ Created ${createdEvents.length} Events`);
+
+    // 8. CREATE OCR OUTPUTS
+    console.log('📄 Creating OCR Outputs...');
+    const categories = ['Certificate', 'Course Completion', 'Workshop', 'Internship', 'Achievement'];
+    const issuers = ['Coursera', 'Udemy', 'Google', 'Microsoft', 'IBM', 'AWS', 'NPTEL', 'edX'];
+    const skillsList = [
+      ['Python', 'Machine Learning', 'Data Science'],
+      ['JavaScript', 'React', 'Node.js'],
+      ['Java', 'Spring Boot', 'Microservices'],
+      ['Cloud Computing', 'AWS', 'DevOps'],
+      ['Web Development', 'HTML', 'CSS'],
+    ];
+
+    const ocrOutputs = [];
+    let ocrCounter = 1;
+
+    for (let student of createdStudents) {
+      // Each student gets 2-5 OCR outputs
+      const numOcr = Math.floor(Math.random() * 4) + 2;
+      
+      for (let i = 0; i < numOcr; i++) {
+        const ocr = {
+          student: student._id,
+          course: `${categories[i % categories.length]} Course ${ocrCounter}`,
+          date: new Date(Date.now() - Math.random() * 365 * 24 * 60 * 60 * 1000),
+          issuer: issuers[ocrCounter % issuers.length],
+          name: `${student.name.first} ${student.name.last}`,
+          skills: skillsList[ocrCounter % skillsList.length],
+          category: categories[i % categories.length],
+        };
+        ocrOutputs.push(ocr);
+        ocrCounter++;
+      }
+    }
+
+    const createdOcrOutputs = await OcrOutput.insertMany(ocrOutputs);
+    console.log(`✅ Created ${createdOcrOutputs.length} OCR Outputs`);
+
+    // Update students with OCR references
+    for (let ocr of createdOcrOutputs) {
+      await Student.findByIdAndUpdate(ocr.student, {
+        $push: { ocrOutputs: ocr._id },
+      });
+    }
+
+    // 9. CREATE ROADMAPS
+    console.log('🗺️ Creating Career Roadmaps...');
+    const careerTitles = [
+      'Full Stack Developer',
+      'Data Scientist',
+      'Machine Learning Engineer',
+      'DevOps Engineer',
+      'Mobile App Developer',
+      'Cloud Architect',
+      'Cybersecurity Specialist',
+      'AI Research Scientist',
+      'Backend Engineer',
+      'Frontend Developer',
+    ];
+
+    const roadmaps = [];
+    
+    for (let student of createdStudents) {
+      // Each student gets 2-4 potential roadmaps
+      const numRoadmaps = Math.floor(Math.random() * 3) + 2;
+      const potentialRoadmaps = [];
+      
+      for (let i = 0; i < numRoadmaps; i++) {
+        const careerTitle = careerTitles[Math.floor(Math.random() * careerTitles.length)];
+        const matchScore = parseFloat((Math.random() * 0.4 + 0.6).toFixed(2)); // 0.6 to 1.0
+        
+        potentialRoadmaps.push({
+          career_title: careerTitle,
+          existing_skills: student.skills.technical.slice(0, 3),
+          match_score: matchScore,
+          sequenced_roadmap: [
+            `Master ${student.skills.technical[0] || 'programming fundamentals'}`,
+            `Learn advanced ${careerTitle.toLowerCase()} concepts`,
+            'Build real-world projects',
+            'Contribute to open source',
+            'Prepare for interviews',
+            'Apply for internships',
+            'Network with professionals',
+          ],
+        });
+      }
+
+      roadmaps.push({
+        student_id: student._id,
+        potential_roadmaps: potentialRoadmaps,
+        created_at: new Date(Date.now() - Math.random() * 60 * 24 * 60 * 60 * 1000),
+        updated_at: new Date(),
+      });
+    }
+
+    const createdRoadmaps = await Roadmap.insertMany(roadmaps);
+    console.log(`✅ Created ${createdRoadmaps.length} Career Roadmaps`);
+
+    // Print Summary
+    console.log('\n' + '='.repeat(60));
+    console.log('📊 COMPREHENSIVE DATA SEEDING COMPLETED');
+    console.log('='.repeat(60));
+    console.log(`✅ Super Admins: ${superAdmins.length}`);
+    console.log(`✅ Institutes: ${createdInstitutes.length} (${approvedInstitutes.length} approved)`);
+    console.log(`✅ Colleges: ${createdColleges.length} (${activeColleges.length} active)`);
+    console.log(`✅ Departments: ${createdDepartments.length} (${activeDepartments.length} active)`);
+    console.log(`✅ Faculty: ${createdFaculty.length} (${activeFaculty.length} active)`);
+    console.log(`✅ Students: ${createdStudents.length}`);
+    console.log(`✅ Events: ${createdEvents.length}`);
+    console.log(`✅ OCR Outputs: ${createdOcrOutputs.length}`);
+    console.log(`✅ Roadmaps: ${createdRoadmaps.length}`);
+    console.log('='.repeat(60));
+    console.log('\n🎯 Sample Login Credentials:');
+    console.log('─'.repeat(60));
+    console.log('Super Admin:');
+    console.log('  Email: rajesh.admin@sih.gov.in');
+    console.log('  Password: admin123');
+    console.log('\nInstitute (Approved):');
+    console.log(`  Email: ${approvedInstitutes[0]?.email}`);
+    console.log('  Password: admin123');
+    console.log('\nCollege:');
+    console.log(`  Email: ${activeColleges[0]?.email}`);
+    console.log('  Password: admin123');
+    console.log('\nDepartment:');
+    console.log(`  Email: ${activeDepartments[0]?.email}`);
+    console.log('  Password: admin123');
+    console.log('\nFaculty:');
+    console.log(`  Email: ${activeFaculty[0]?.email}`);
+    console.log('  Password: admin123');
+    console.log('\nStudent:');
+    console.log(`  Email: ${createdStudents[0]?.email}`);
+    console.log('  Password: admin123');
+    console.log('='.repeat(60));
+
+  } catch (error) {
+    console.error('❌ Error seeding data:', error);
+    throw error;
+  }
+};
+
+// Main execution
+const main = async () => {
+  await connectDB();
+  await seedData();
+  console.log('\n✅ Database seeding completed successfully!');
+  process.exit(0);
+};
+
+main().catch((error) => {
+  console.error('❌ Fatal error:', error);
+  process.exit(1);
+});
