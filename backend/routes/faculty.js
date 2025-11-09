@@ -123,7 +123,7 @@ router.get("/dashboard/:id", requireAuth, async (req, res) => {
       },
       {
         $sort: {
-          "achievements.uploadedAt": -1,
+          "achievements.dateCompleted": -1,
         },
       },
       {
@@ -165,7 +165,7 @@ router.get("/dashboard/:id", requireAuth, async (req, res) => {
         },
         {
           $match: {
-            "achievements.uploadedAt": {
+            "achievements.dateCompleted": {
               $exists: true,
               $gte: startOfMonth,
             },
@@ -263,7 +263,7 @@ router.get("/reviews/:id", requireAuth, async (req, res) => {
       },
       {
         $sort: {
-          "achievements.uploadedAt": -1,
+          "achievements.dateCompleted": -1,
         },
       },
       {
@@ -470,11 +470,11 @@ router.get("/students/:id", requireAuth, async (req, res) => {
       // Get recent achievements
       const recentAchievements =
         student.achievements
-          ?.sort((a, b) => new Date(b.uploadedAt) - new Date(a.uploadedAt))
+          ?.sort((a, b) => new Date(b.dateCompleted) - new Date(a.dateCompleted))
           .slice(0, 3) || [];
 
       const lastActivity =
-        recentAchievements[0]?.uploadedAt || student.updatedAt;
+        recentAchievements[0]?.dateCompleted || student.updatedAt;
 
       return {
         ...student,
@@ -546,7 +546,7 @@ router.get("/analytics/:id", requireAuth, async (req, res) => {
       },
       {
         $match: {
-          "achievements.uploadedAt": { $gte: startDate },
+          "achievements.dateCompleted": { $gte: startDate },
         },
       },
       {
@@ -555,7 +555,7 @@ router.get("/analytics/:id", requireAuth, async (req, res) => {
             date: {
               $dateToString: {
                 format: "%Y-%m-%d",
-                date: "$achievements.uploadedAt",
+                date: "$achievements.dateCompleted",
               },
             },
           },
@@ -612,7 +612,7 @@ router.get("/analytics/:id", requireAuth, async (req, res) => {
       },
       {
         $sort: {
-          "achievements.uploadedAt": -1,
+          "achievements.dateCompleted": -1,
         },
       },
       {
@@ -626,7 +626,7 @@ router.get("/analytics/:id", requireAuth, async (req, res) => {
           date: {
             $dateToString: {
               format: "%Y-%m-%d",
-              date: "$achievements.uploadedAt",
+              date: "$achievements.dateCompleted",
             },
           },
         },
@@ -645,7 +645,7 @@ router.get("/analytics/:id", requireAuth, async (req, res) => {
       },
       {
         $match: {
-          "achievements.uploadedAt": { $gte: startDate },
+          "achievements.dateCompleted": { $gte: startDate },
         },
       },
       {

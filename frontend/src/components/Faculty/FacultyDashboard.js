@@ -507,7 +507,7 @@ const FacultyDashboard = () => {
                         {review.student?.name?.first}{" "}
                         {review.student?.name?.last} •{" "}
                         {review.achievement?.type || "General"} •{" "}
-                        {formatDate(review.achievement?.uploadedAt)}
+                        {formatDate(review.achievement?.dateCompleted)}
                       </p>
                     </div>
                     <span className="activity-status status-pending">

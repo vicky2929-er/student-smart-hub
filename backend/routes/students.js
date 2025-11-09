@@ -66,7 +66,7 @@ router.get(
       // Get recent activities (last 5) and convert UploadCare URLs
       const recentActivities = convertAchievementArrayUrls(
         achievements
-          .sort((a, b) => new Date(b.uploadedAt) - new Date(a.uploadedAt))
+          .sort((a, b) => new Date(b.dateCompleted) - new Date(a.dateCompleted))
           .slice(0, 5)
       );
 
@@ -517,7 +517,7 @@ function getAchievementTimeline(achievements) {
   
   // Populate with actual data
   achievements.forEach((achievement) => {
-    const month = new Date(achievement.uploadedAt).toLocaleDateString("en-US", {
+    const month = new Date(achievement.dateCompleted).toLocaleDateString("en-US", {
       year: "numeric",
       month: "short",
     });
@@ -619,12 +619,12 @@ function calculateGrowthMetrics(achievements) {
   const thisMonthEnd = new Date(now.getFullYear(), now.getMonth() + 1, 0);
   
   const thisMonthAchievements = achievements.filter(a => {
-    const date = new Date(a.uploadedAt);
+    const date = new Date(a.dateCompleted);
     return date >= thisMonth && date <= thisMonthEnd;
   }).length;
   
   const lastMonthAchievements = achievements.filter(a => {
-    const date = new Date(a.uploadedAt);
+    const date = new Date(a.dateCompleted);
     const lastMonthEnd = new Date(now.getFullYear(), now.getMonth(), 0);
     return date >= lastMonth && date <= lastMonthEnd;
   }).length;
@@ -650,12 +650,12 @@ function calculateMonthlyGoals(achievements) {
   const lastMonthEnd = new Date(now.getFullYear(), now.getMonth(), 0);
   
   const thisMonthCount = achievements.filter(a => {
-    const date = new Date(a.uploadedAt);
+    const date = new Date(a.dateCompleted);
     return date >= thisMonth && date <= thisMonthEnd;
   }).length;
   
   const lastMonthCount = achievements.filter(a => {
-    const date = new Date(a.uploadedAt);
+    const date = new Date(a.dateCompleted);
     return date >= lastMonth && date <= lastMonthEnd;
   }).length;
   

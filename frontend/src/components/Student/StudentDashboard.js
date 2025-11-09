@@ -370,7 +370,7 @@ const StudentDashboard = () =>{
                       <h3>{activity.title || "Untitled Activity"}</h3>
                       <p>
                         {activity.type || "General"} •{" "}
-                        {formatDate(activity.uploadedAt)}
+                        {formatDate(activity.dateCompleted)}
                       </p>
                     </div>
                     <span
@@ -716,7 +716,7 @@ const StudentDashboard = () =>{
                     </span>
                     <span className="activity-date">
                       <i className="fas fa-calendar"></i>
-                      {formatDate(selectedActivity.uploadedAt)}
+                      {formatDate(selectedActivity.dateCompleted)}
                     </span>
                     <span className={`activity-status-badge status-${(selectedActivity.status || "pending")?.toLowerCase()}`}>
                       <i className="fas fa-circle"></i>

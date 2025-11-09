@@ -318,7 +318,7 @@ const StudentPortfolio = () => {
                           <h3>{cert.title || "Untitled Certification"}</h3>
                           <p className="organization">
                             {cert.type || "Certification"} •{" "}
-                            {formatDate(cert.uploadedAt)}
+                            {formatDate(cert.dateCompleted)}
                           </p>
                           {cert.description && (
                             <p className="description">{cert.description}</p>
@@ -359,7 +359,7 @@ const StudentPortfolio = () => {
                           <h3>{internship.title || "Untitled Internship"}</h3>
                           <p className="organization">
                             {internship.type || "Internship"} •{" "}
-                            {formatDate(internship.uploadedAt)}
+                            {formatDate(internship.dateCompleted)}
                           </p>
                           {internship.description && (
                             <p className="description">
@@ -405,7 +405,7 @@ const StudentPortfolio = () => {
                             </h3>
                             <p className="organization">
                               {competition.type || "Competition"} •{" "}
-                              {formatDate(competition.uploadedAt)}
+                              {formatDate(competition.dateCompleted)}
                             </p>
                             {competition.description && (
                               <p className="description">
@@ -449,7 +449,7 @@ const StudentPortfolio = () => {
                           <h3>{workshop.title || "Untitled Workshop"}</h3>
                           <p className="organization">
                             {workshop.type || "Workshop"} •{" "}
-                            {formatDate(workshop.uploadedAt)}
+                            {formatDate(workshop.dateCompleted)}
                           </p>
                           {workshop.description && (
                             <p className="description">
