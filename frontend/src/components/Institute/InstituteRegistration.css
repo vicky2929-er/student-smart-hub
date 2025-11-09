@@ -1,0 +1,278 @@
+.institute-registration-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a52 100%);
+  padding: var(--spacing-lg);
+  font-family: var(--font-body);
+}
+
+.institute-registration-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-xxl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.back-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: var(--spacing-lg);
+  transition: var(--transition);
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-2px);
+}
+
+.institute-registration-header h1 {
+  color: white;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0;
+  font-family: var(--font-heading);
+}
+
+.institute-registration-form {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--primary-bg);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-heavy);
+}
+
+.form-section {
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.form-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-section h2 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 3px solid var(--primary-color);
+  display: inline-block;
+  font-family: var(--font-heading);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  transition: var(--transition);
+  background: var(--primary-bg);
+  font-family: var(--font-body);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: var(--primary-bg);
+  box-shadow: 0 0 0 3px rgba(40, 75, 99, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-note {
+  color: var(--text-light);
+  font-size: 0.75rem;
+  margin-top: var(--spacing-xs);
+  display: block;
+}
+
+.radio-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.radio-group label {
+  margin-bottom: var(--spacing-md);
+}
+
+.radio-options {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-md);
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  background: var(--primary-bg);
+}
+
+.radio-option:hover {
+  border-color: var(--primary-color);
+  background: var(--primary-bg);
+  box-shadow: var(--shadow-light);
+}
+
+.radio-option input[type="radio"] {
+  width: auto;
+  margin-right: var(--spacing-sm);
+  margin-bottom: 0;
+}
+
+.radio-option span {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.radio-option input[type="radio"]:checked + span {
+  color: var(--primary-color);
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--spacing-lg);
+  justify-content: center;
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 2px solid var(--border-color);
+}
+
+.cancel-button,
+.submit-button {
+  padding: var(--spacing-md) var(--spacing-xl);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  min-width: 120px;
+  font-family: var(--font-body);
+}
+
+.cancel-button {
+  background: var(--secondary-bg);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+}
+
+.cancel-button:hover:not(:disabled) {
+  background: var(--border-color);
+  border-color: var(--text-secondary);
+  box-shadow: var(--shadow-light);
+}
+
+.submit-button {
+  background: var(--primary-color);
+  color: var(--primary-bg);
+  border: 2px solid transparent;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: #1e3a50;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.submit-button:disabled,
+.cancel-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error-message {
+  background: #e74c3c;
+  color: white;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 500;
+  text-align: center;
+}
+
+.success-message {
+  background: #27ae60;
+  color: white;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .institute-registration-container {
+    padding: var(--spacing-md);
+  }
+  
+  .institute-registration-form {
+    padding: var(--spacing-xl);
+    margin: 0 var(--spacing-md);
+  }
+  
+  .institute-registration-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-button,
+  .submit-button {
+    width: 100%;
+  }
+  
+  .radio-options {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .institute-registration-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+  }
+  
+  .back-button {
+    margin-right: 0;
+  }
+}

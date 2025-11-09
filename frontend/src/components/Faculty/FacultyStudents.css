@@ -1,0 +1,240 @@
+/* ====== Container & Grid ====== */
+.faculty-students-container {
+  max-width: 1165px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.faculty-students-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+@media (max-width: 992px) {
+  .faculty-students-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .faculty-students-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ====== Card ====== */
+.faculty-student-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.faculty-student-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* ====== Header ====== */
+.faculty-student-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faculty-student-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #e0e6ef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #1c3d5a;
+}
+
+.faculty-student-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ====== Card Actions ====== */
+.faculty-student-card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.faculty-card-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #3d5a80; /* navy tone */
+  transition: background 0.2s, color 0.2s;
+}
+
+.faculty-card-action-btn:hover {
+  background: #f2f6fa;
+  color: #1c3d5a;
+}
+
+.faculty-edit-btn {
+  color: #0077ff;
+}
+
+.faculty-delete-btn {
+  color: #d9534f;
+}
+
+/* ====== Card Body ====== */
+.faculty-student-card-body {
+  margin-top: 1rem;
+}
+
+.faculty-student-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1c3d5a;
+  text-align: center;
+}
+
+.faculty-student-id,
+.faculty-student-batch {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.25rem;
+  text-align: center;
+}
+
+/* ====== Stats ====== */
+.faculty-student-card-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.faculty-stat-item {
+  text-align: center;
+}
+
+.faculty-stat-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1c3d5a;
+}
+
+.faculty-stat-label {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+/* ====== Footer ====== */
+.faculty-student-card-footer {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid #eee;
+}
+
+.faculty-achievements-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.faculty-achievements-badge i {
+  color: #f0b400;
+}
+
+/* ====== Controls Container ====== */
+.students-controls {
+  max-width: 1135px;
+  margin: 0 auto;
+  padding: 1rem 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.search-and-sort {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ====== Search Box ====== */
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d0d7e2;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  max-width: 260px; /* smaller, not full width */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.search-box i {
+  color: #3d5a80;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  flex: 1;
+  color: #1c3d5a;
+}
+
+.search-box input::placeholder {
+  color: #999;
+}
+
+/* ====== Sort Box ====== */
+.sort-box select {
+  background: #ffffff;
+  border: 1px solid #d0d7e2;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  color: #1c3d5a;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s ease;
+}
+
+.sort-box select:focus {
+  border-color: #3d5a80;
+  outline: none;
+}
+
+/* ====== Students Summary ====== */
+.students-summary {
+  background: #1c3d5a;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}

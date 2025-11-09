@@ -1,0 +1,3 @@
+name,code,email,password,institute,contactNumber,line1,line2,city,state,country,pincode,website,type,status
+College One,COL001,one@college.com,pass123,64f1234567890abcdef12345,1234567890,Addr1,,Mumbai,MH,India,400001,www.col1.com,Engineering College,Active
+College Two,COL002,two@college.com,pass456,64f1234567890abcdef12345,9876543210,Addr2,,Pune,MH,India,411001,www.col2.com,Medical College,Active

@@ -1,0 +1,622 @@
+/* Manage Colleges Container */
+.manage-colleges-container {
+  min-height: 100vh;
+  background-color: #FFFFFF;
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.manage-colleges-header {
+  margin-bottom: 2rem;
+}
+
+.manage-colleges-header-content {
+  background: linear-gradient(135deg, #284B63 0%, #1e3a52 100%);
+  color: white;
+  border-radius: 16px;
+  padding: 48px 32px;
+  box-shadow: 0 4px 16px rgba(40, 75, 99, 0.2);
+  text-align: center;
+}
+
+.manage-colleges-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #284B63;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-bottom: 16px;
+}
+
+.manage-colleges-back-btn:hover {
+  background: #1e3a4f;
+}
+
+.manage-colleges-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.manage-colleges-subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Controls */
+.manage-colleges-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.manage-colleges-search {
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+}
+
+.manage-colleges-search svg {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #284B63;
+}
+
+.manage-colleges-search-input {
+  width: 100%;
+  padding: 12px 16px 12px 48px;
+  border: 1px solid #D9D9D9;
+  border-radius: 8px;
+  background: #FFFFFF;
+  font-size: 14px;
+  color: #284B63;
+  transition: all 0.2s ease;
+}
+
+.manage-colleges-search-input:focus {
+  outline: none;
+  border-color: #284B63;
+  box-shadow: 0 0 0 3px rgba(40, 75, 99, 0.1);
+}
+
+.manage-colleges-search-input::placeholder {
+  color: #9ca3af;
+}
+
+.manage-colleges-filter {
+  min-width: 200px;
+}
+
+.manage-colleges-filter-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #D9D9D9;
+  border-radius: 8px;
+  background: #FFFFFF;
+  font-size: 14px;
+  color: #284B63;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.manage-colleges-filter-select:focus {
+  outline: none;
+  border-color: #284B63;
+  box-shadow: 0 0 0 3px rgba(40, 75, 99, 0.1);
+}
+
+/* Colleges Grid */
+.manage-colleges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.manage-college-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(40, 75, 99, 0.1);
+  border: 1px solid #D9D9D9;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.manage-college-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(40, 75, 99, 0.15);
+}
+
+.manage-college-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #284B63 0%, #1e3a52 100%);
+}
+
+.manage-college-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.manage-college-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #284B63;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+
+.manage-college-code {
+  font-size: 14px;
+  color: #284B63;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+}
+
+.manage-college-status {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.manage-college-status.active {
+  background: rgba(34, 197, 94, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #22c55e;
+}
+
+.manage-college-type-badge {
+  background: rgba(40, 75, 99, 0.1);
+  color: #284B63;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.manage-college-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.manage-college-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+  color: #284B63;
+}
+
+.manage-college-stat svg {
+  color: #284B63;
+}
+
+.manage-college-details {
+  margin-bottom: 1.5rem;
+}
+
+.manage-college-contact,
+.manage-college-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+  color: #284B63;
+  margin-bottom: 0.5rem;
+}
+
+.manage-college-contact svg,
+.manage-college-location svg {
+  color: #284B63;
+}
+
+.manage-college-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.manage-college-edit-btn,
+.manage-college-delete-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.manage-college-edit-btn {
+  background: rgba(40, 75, 99, 0.1);
+  color: #284B63;
+}
+
+.manage-college-edit-btn:hover {
+  background: #284B63;
+  color: white;
+}
+
+.manage-college-delete-btn {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+.manage-college-delete-btn:hover {
+  background: #dc2626;
+  color: white;
+}
+
+/* Empty State */
+.manage-colleges-empty {
+  text-align: center;
+  padding: 48px 24px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(40, 75, 99, 0.1);
+  border: 1px solid #D9D9D9;
+}
+
+.manage-colleges-empty-icon {
+  margin-bottom: 16px;
+  color: #284B63;
+}
+
+.manage-colleges-empty h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #284B63;
+  margin: 0 0 8px 0;
+}
+
+.manage-colleges-empty p {
+  color: #284B63;
+  margin: 0;
+}
+
+/* Loading State */
+.manage-colleges-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: #284B63;
+}
+
+.manage-colleges-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #D9D9D9;
+  border-top: 4px solid #284B63;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error State */
+.manage-colleges-error {
+  text-align: center;
+  padding: 48px 24px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(40, 75, 99, 0.1);
+  border: 1px solid #D9D9D9;
+  color: #284B63;
+}
+
+.manage-colleges-retry-btn {
+  background: #284B63;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 16px;
+}
+
+.manage-colleges-retry-btn:hover {
+  background: #1e3a4f;
+}
+
+/* Modal Styles */
+.manage-colleges-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.manage-colleges-modal-content {
+  background: #FFFFFF;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.manage-colleges-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #284B63;
+  border-radius: 16px 16px 0 0;
+  flex-shrink: 0;
+}
+
+.manage-colleges-modal-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.manage-colleges-modal-close {
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.manage-colleges-modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+
+/* Edit Form */
+.manage-colleges-edit-form {
+  padding: 32px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.manage-colleges-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.manage-colleges-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.manage-colleges-form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #284B63;
+  margin-bottom: 8px;
+}
+
+.manage-colleges-form-group input,
+.manage-colleges-form-group select {
+  padding: 12px 16px;
+  border: 1px solid #D9D9D9;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #FFFFFF;
+  transition: all 0.2s ease;
+}
+
+.manage-colleges-form-group input:focus,
+.manage-colleges-form-group select:focus {
+  outline: none;
+  border-color: #284B63;
+  box-shadow: 0 0 0 3px rgba(40, 75, 99, 0.1);
+}
+
+.manage-colleges-form-section {
+  margin-bottom: 32px;
+}
+
+.manage-colleges-form-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #284B63;
+  margin: 0 0 16px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #D9D9D9;
+}
+
+.manage-colleges-form-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  padding-top: 16px;
+  border-top: 1px solid #D9D9D9;
+}
+
+.manage-colleges-cancel-btn,
+.manage-colleges-save-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.manage-colleges-cancel-btn {
+  background: #FFFFFF;
+  color: #284B63;
+  border: 1px solid #D9D9D9;
+}
+
+.manage-colleges-cancel-btn:hover {
+  background: #f8fafc;
+  color: #284B63;
+}
+
+.manage-colleges-save-btn {
+  background: #284B63;
+  color: white;
+}
+
+.manage-colleges-save-btn:hover {
+  background: #1e3a4f;
+}
+
+/* Delete Modal */
+.manage-colleges-delete-modal {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.manage-colleges-delete-icon {
+  color: #dc2626;
+  margin-bottom: 16px;
+}
+
+.manage-colleges-delete-modal h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #284B63;
+  margin: 0 0 16px 0;
+}
+
+.manage-colleges-delete-modal p {
+  color: #284B63;
+  margin: 0 0 8px 0;
+}
+
+.manage-colleges-delete-warning {
+  color: #dc2626;
+  font-weight: 500;
+  margin-bottom: 32px !important;
+}
+
+.manage-colleges-delete-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.manage-colleges-confirm-delete-btn {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.manage-colleges-confirm-delete-btn:hover {
+  background: #b91c1c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .manage-colleges-container {
+    padding: 1rem;
+  }
+  
+  .manage-colleges-header-content {
+    padding: 1.5rem;
+  }
+  
+  .manage-colleges-title {
+    font-size: 2rem;
+  }
+  
+  .manage-colleges-controls {
+    flex-direction: column;
+  }
+  
+  .manage-colleges-search {
+    min-width: unset;
+  }
+  
+  .manage-colleges-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .manage-colleges-modal-overlay {
+    padding: 1rem;
+  }
+  
+  .manage-colleges-edit-form {
+    padding: 1rem;
+  }
+  
+  .manage-colleges-form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .manage-colleges-form-actions {
+    flex-direction: column;
+  }
+  
+  .manage-colleges-delete-actions {
+    flex-direction: column;
+  }
+}

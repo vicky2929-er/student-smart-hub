@@ -1,0 +1,314 @@
+/* Faculty Analytics Page */
+.faculty-analytics {
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+  background: #f5f6fa;
+  min-height: 100vh;
+}
+
+/* Page Header */
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 16px 20px;
+  background: #fff;
+  border-radius: 12px;
+  width: 1135px;
+}
+.page-header h1 {
+  color: red;
+}
+.page-header h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Period Selector */
+.period-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.period-selector label {
+  font-weight: 500;
+  color: #2d4b64;
+  font-size: 0.95rem;
+}
+
+.period-selector select {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  font-size: 0.9rem;
+  color: #2d4b64;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.period-selector select:hover {
+  border-color: #2d4b64;
+  background: #eef2ff;
+}
+
+.period-selector select:focus {
+  outline: none;
+  border-color: #2d4b64;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* Overview Section */
+.analytics-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.overview-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+}
+
+.overview-icon {
+  font-size: 1.5rem;
+  color: #2d4b64;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.overview-content h3 {
+  font-size: 0.95rem;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.overview-number {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+.overview-change {
+  font-size: 0.8rem;
+}
+.overview-change.positive {
+  color: #059669;
+}
+.overview-change.negative {
+  color: #dc2626;
+}
+
+/* Charts Grid */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-areas:
+    "top-performers submission-trend"
+    "achievement-types student-performance"
+    "recent-activity monthly-stats";
+  gap: 20px;
+}
+
+.chart-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+}
+
+.chart-header h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+.chart-header p {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.chart-container {
+  height: 260px;
+}
+
+/* Grid Areas */
+.chart-card.top-performers {
+  grid-area: top-performers;
+}
+.chart-card.submission-trend {
+  grid-area: submission-trend;
+}
+.chart-card.achievement-types {
+  grid-area: achievement-types;
+}
+.chart-card.student-performance {
+  grid-area: student-performance;
+}
+.chart-card.recent-activity {
+  grid-area: recent-activity;
+}
+.chart-card.monthly-stats {
+  grid-area: monthly-stats;
+}
+
+/* Top Performers */
+.top-performers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.performer-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9fafb;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.performer-rank {
+  font-weight: 700;
+  color: #fff;
+}
+.performer-info h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #111827;
+}
+.performer-info p {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+.performer-score {
+  font-weight: 600;
+  color: #059669;
+}
+
+/* Recent Activity Timeline */
+.activity-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.timeline-marker {
+  width: 8px;
+  height: 8px;
+  background: #4f46e5;
+  border-radius: 50%;
+  margin-top: 6px;
+}
+
+.timeline-content h4 {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #111827;
+}
+.timeline-content p {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin: 2px 0;
+}
+.timeline-date {
+  font-size: 0.7rem;
+  color: #9ca3af;
+}
+
+/* Monthly Stats */
+.monthly-stats {
+  margin-top: 10px;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+.stat-box {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 12px;
+}
+.stat-box h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #374151;
+}
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin: 3px 0;
+  color: #111827;
+}
+
+/* Loading State */
+.loading-container {
+  text-align: center;
+  padding: 40px;
+}
+.loading-spinner {
+  font-size: 2rem;
+  color: #4f46e5;
+  margin-bottom: 10px;
+}
+
+/* Error State */
+.error-container {
+  text-align: center;
+  padding: 40px;
+}
+.error-icon {
+  font-size: 2rem;
+  color: #dc2626;
+  margin-bottom: 8px;
+}
+.retry-btn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #4f46e5;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.retry-btn:hover {
+  background: #3730a3;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "submission-trend"
+      "top-performers"
+      "achievement-types"
+      "student-performance"
+      "recent-activity"
+      "monthly-stats";
+  }
+}
