@@ -1,0 +1,5947 @@
+{
+  "career_paths": [
+    {
+      "title": "Acoustical Engineer",
+      "skills": [
+        "EASE Software",
+        "COMSOL Multiphysics",
+        " Brüel & Kjær Sound Level Meters",
+        "MATLAB Signal Processing",
+        "ANSI/ASA S12.60",
+        "Noise Control Engineering Principles",
+        "Vibration Analysis"
+      ]
+    },
+    {
+      "title": "Active Directory Security Engineer",
+      "skills": [
+        "Microsoft Certified: Identity and Access Administrator Associate",
+        "BloodHound",
+        "PowerShell for AD",
+        "Group Policy Object (GPO) Management",
+        "Kerberos Authentication",
+        "AD Federation Services (ADFS)",
+        "PingCastle"
+      ]
+    },
+    {
+      "title": "ADAS (Advanced Driver-Assistance Systems) Engineer",
+      "skills": [
+        "Vector CANoe",
+        "dSPACE TargetLink",
+        "ISO 26262 Functional Safety Standard",
+        "Sensor Fusion Algorithms",
+        "Computer Vision (OpenCV)",
+        "Automotive SPICE (ASPICE)",
+        "MATLAB/Simulink for Automotive"
+      ]
+    },
+    {
+      "title": "Aerodynamics Engineer",
+      "skills": [
+        "Computational Fluid Dynamics (CFD)",
+        "ANSYS Fluent",
+        "STAR-CCM+",
+        "Wind Tunnel Testing",
+        "MATLAB",
+        "CATIA/SolidWorks",
+        "Gas Dynamics Theory"
+      ]
+    },
+    {
+      "title": "Aerospace Engineer – Aerodynamics Specialist",
+      "skills": [
+        "Computational Fluid Dynamics (CFD)",
+        "ANSYS Fluent",
+        "OpenFOAM",
+        "Wind Tunnel Testing",
+        "MATLAB for Aerospace",
+        "CATIA V5/V6",
+        "Flight Dynamics Principles"
+      ]
+    },
+    {
+      "title": "Aerospace Engineer – Avionics Specialist",
+      "skills": [
+        "DO-178C (Software in Airborne Systems)",
+        "DO-254 (Design Assurance for Airborne Electronic Hardware)",
+        "ARINC 429",
+        "MIL-STD-1553",
+        "VHDL/Verilog",
+        "Embedded C/C++",
+        "Systems Tool Kit (STK)"
+      ]
+    },
+    {
+      "title": "Aerospace Engineer – Propulsion Engineer",
+      "skills": [
+        "Gas Turbine Theory",
+        "Rocket Propulsion Principles",
+        "ANSYS Mechanical",
+        "Thermal Desktop",
+        "Propulsion System Modeling (NPSS)",
+        "Combustion Analysis",
+        "High-Temperature Materials Science"
+      ]
+    },
+    {
+      "title": "Aerospace Engineer – Space Systems Engineer",
+      "skills": [
+        "Systems Tool Kit (STK)",
+        "NASA Systems Engineering Handbook",
+        "Orbital Mechanics",
+        "GMAT (General Mission Analysis Tool)",
+        "Satellite Communications Systems",
+        "Spacecraft Thermal Control",
+        "DOORS for Requirements Management"
+      ]
+    },
+    {
+      "title": "Agricultural Engineer – Automation Systems",
+      "skills": [
+        "PLC Programming (Allen-Bradley, Siemens)",
+        "Precision Agriculture Technologies (GPS/GIS)",
+        "Farm Management Information Systems (FMIS)",
+        "Robotics in Agriculture",
+        "ISO 11783 (ISOBUS)",
+        "Machine Vision for Crop Monitoring",
+        "VEX Robotics Design System"
+      ]
+    },
+    {
+      "title": "Agricultural Engineer – Farm Equipment Design",
+      "skills": [
+        "SolidWorks/Creo for Mechanical Design",
+        "Finite Element Analysis (FEA)",
+        "Hydraulic Systems Design",
+        "ASABE Standards",
+        "Powertrain Engineering",
+        "Materials Science for Durability",
+        "CAN Bus Protocols"
+      ]
+    },
+    {
+      "title": "Agricultural Engineer – Irrigation Systems Engineer",
+      "skills": [
+        "Certified Irrigation Designer (CID)",
+        "EPANET",
+        "AutoCAD Civil 3D",
+        "Hydraulic Modeling",
+        "Soil Moisture Sensing Technology",
+        "Water Resource Management",
+        "SCADA for Irrigation"
+      ]
+    },
+    {
+      "title": "Agricultural Engineer – Soil & Environmental Engineer",
+      "skills": [
+        "SWAT (Soil and Water Assessment Tool)",
+        "GIS for Environmental Analysis",
+        "NRCS Standards and Practices",
+        "Erosion Control Planning",
+        "Watershed Management",
+        "Bioremediation Techniques",
+        "Environmental Impact Assessment (EIA)"
+      ]
+    },
+    {
+      "title": "AI/ML Security Engineer",
+      "skills": [
+        "Adversarial Machine Learning Techniques",
+        "Differential Privacy",
+        "Homomorphic Encryption",
+        "AI Model Security Auditing",
+        "TensorFlow/PyTorch Security",
+        "Certified AI Security Professional (CAISP)",
+        "Data Poisoning and Evasion Attack Mitigation"
+      ]
+    },
+    {
+      "title": "AI Systems Engineer",
+      "skills": [
+        "TensorFlow/PyTorch",
+        "NVIDIA CUDA",
+        "Kubernetes/Docker for MLOps",
+        "Scikit-learn",
+        "Natural Language Processing (NLP)",
+        "Computer Vision (OpenCV)",
+        "Reinforcement Learning"
+      ]
+    },
+    {
+      "title": "Aircraft Structural Engineer",
+      "skills": [
+        "NASTRAN/PATRAN",
+        "Finite Element Analysis (FEA)",
+        "Fatigue and Damage Tolerance Analysis",
+        "Composite Materials Design",
+        "CATIA for Structural Design",
+        "Federal Aviation Regulations (FARs)",
+        "Aircraft Stress Analysis"
+      ]
+    },
+    {
+      "title": "Aircraft Systems Integrator",
+      "skills": [
+        "Systems Engineering (INCOSE CSEP)",
+        "ARP4754A (Guidelines For Development Of Civil Aircraft and Systems)",
+        "DOORS for Requirements Management",
+        "MBSE (Model-Based Systems Engineering)",
+        "SysML/UML",
+        "Avionics Integration (ARINC, MIL-STD-1553)",
+        "Integration Testing and Verification"
+      ]
+    },
+    {
+      "title": "Android Security Engineer",
+      "skills": [
+        "Android Application Reverse Engineering (JADX, Ghidra)",
+        "Mobile Application Security Verification Standard (MASVS)",
+        "Frida Toolkit",
+        "Drozer Framework",
+        "Android Debug Bridge (ADB)",
+        "Secure Coding for Android (Kotlin/Java)",
+        "OWASP Mobile Top 10"
+      ]
+    },
+    {
+      "title": "Anti-Tamper Engineer",
+      "skills": [
+        "FPGA Design (VHDL/Verilog)",
+        "Side-Channel Attack Analysis",
+        "Cryptographic Hardware Implementation",
+        "Reverse Engineering (IDA Pro, Ghidra)",
+        "PUF (Physical Unclonable Functions)",
+        "Hardware Security Modules (HSMs)",
+        "FIPS 140-2/3 Standards"
+      ]
+    },
+    {
+      "title": "API Security Engineer",
+      "skills": [
+        "OWASP API Security Top 10",
+        "OAuth 2.0 / OpenID Connect (OIDC)",
+        "Postman for API Testing",
+        "REST/GraphQL Security Analysis",
+        "API Gateway Management (Kong, Apigee)",
+        "Microservices Security Architecture",
+        "Web Application Firewall (WAF) for APIs"
+      ]
+    },
+    {
+      "title": "Application Security Engineer",
+      "skills": [
+        "Certified Application Security Engineer (CASE)",
+        "Static Application Security Testing (SAST) - Checkmarx, Veracode",
+        "Dynamic Application Security Testing (DAST) - Burp Suite, OWASP ZAP",
+        "Software Composition Analysis (SCA) - Snyk, Black Duck",
+        "Threat Modeling (STRIDE)",
+        "Secure Coding Practices (OWASP Top 10)",
+        "DevSecOps Implementation"
+      ]
+    },
+    {
+      "title": "Applied Machine Learning Engineer",
+      "skills": [
+        "TensorFlow/PyTorch",
+        "Scikit-learn",
+        "Kubeflow",
+        "AWS SageMaker/Azure ML",
+        "Natural Language Processing (NLP)",
+        "Computer Vision",
+        "Statistical Modeling"
+      ]
+    },
+    {
+      "title": "Artificial Lift Engineer",
+      "skills": [
+        "PROSPER/GAP Software",
+        "Electrical Submersible Pump (ESP) Design",
+        "Gas Lift Optimization",
+        "Rod Pumping System Design (SROD)",
+        "Well Performance Modeling",
+        "Nodal Analysis",
+        "Production Operations Management"
+      ]
+    },
+    {
+      "title": "Assembly Process Engineer",
+      "skills": [
+        "Lean Manufacturing Principles",
+        "Six Sigma Green/Black Belt",
+        "Design for Manufacturing and Assembly (DFMA)",
+        "AutoCAD/SolidWorks",
+        "Ergonomics in Manufacturing",
+        "Time and Motion Study",
+        "Statistical Process Control (SPC)"
+      ]
+    },
+    {
+      "title": "Asset Integrity Engineer",
+      "skills": [
+        "API 510 (Pressure Vessel Inspector)",
+        "API 570 (Piping Inspector)",
+        "Risk-Based Inspection (RBI) - API 580/581",
+        "Fitness-For-Service (FFS) - API 579",
+        "Non-Destructive Testing (NDT) Methods",
+        "Corrosion Management",
+        "Reliability Centered Maintenance (RCM)"
+      ]
+    },
+    {
+      "title": "Authentication Systems Engineer",
+      "skills": [
+        "OAuth 2.0 / OpenID Connect (OIDC)",
+        "SAML 2.0",
+        "Multi-Factor Authentication (MFA) Implementation",
+        "Identity and Access Management (IAM) Platforms (Okta, Auth0)",
+        "Biometric Authentication Standards",
+        "FIDO/WebAuthn",
+        "Cryptography Basics"
+      ]
+    },
+    {
+      "title": "Automation and Robotics Engineer",
+      "skills": [
+        "PLC Programming (Siemens, Rockwell)",
+        "Robot Programming (FANUC, KUKA)",
+        "SCADA/HMI Design (Wonderware, Ignition)",
+        "Industrial Networks (Profinet, EtherNet/IP)",
+        "Machine Vision Systems (Cognex, Keyence)",
+        "Robotics Operating System (ROS)",
+        "Control Systems Theory"
+      ]
+    },
+    {
+      "title": "Automotive Cybersecurity Engineer",
+      "skills": [
+        "ISO/SAE 21434",
+        "CAN Bus Analysis (Vector CANoe)",
+        "Automotive Ethernet Security",
+        "Hardware Security Modules (HSMs) in ECUs",
+        "Embedded Systems Security",
+        "Threat Analysis and Risk Assessment (TARA)",
+        "Firmware Reverse Engineering"
+      ]
+    },
+    {
+      "title": "Automotive Design Engineer",
+      "skills": [
+        "CATIA V5/V6",
+        "Alias/ICEM Surf for Class-A Surfacing",
+        "SolidWorks",
+        "Geometric Dimensioning & Tolerancing (GD&T)",
+        "Design for Manufacturing (DFM)",
+        "Finite Element Analysis (FEA)",
+        "Plastics and Composites Design"
+      ]
+    },
+    {
+      "title": "Automotive Electronics Engineer",
+      "skills": [
+        "Embedded C/C++",
+        "AUTOSAR (Automotive Open System Architecture)",
+        "CAN/LIN Bus protocols",
+        "Vector CANoe/CANalyzer",
+        "ISO 26262 (Functional Safety)",
+        "Altium Designer/OrCAD",
+        "Automotive SPICE (ASPICE)"
+      ]
+    },
+    {
+      "title": "Automotive NVH (Noise, Vibration, and Harshness) Engineer",
+      "skills": [
+        "LMS Test.Lab",
+        "HEAD Acoustics Artemis Suite",
+        "Signal Processing (FFT Analysis)",
+        "Modal Analysis",
+        "Finite Element Analysis (FEA) for Acoustics",
+        "Material Damping Properties",
+        "Psychoacoustics"
+      ]
+    },
+    {
+      "title": "Automotive Test Engineer",
+      "skills": [
+        "Vector CANoe/CANalyzer",
+        "dSPACE/ETAS Hardware-in-the-Loop (HIL) systems",
+        "Vehicle Dynamics Testing",
+        "Data Acquisition Systems (DAQ)",
+        "Test Automation Scripting (Python, CAPL)",
+        "ISO 26262 Validation",
+        "Environmental and Durability Testing"
+      ]
+    },
+    {
+      "title": "Avionics Systems Engineer",
+      "skills": [
+        "DO-178C (Software)",
+        "DO-254 (Hardware)",
+        "ARINC protocols (429, 664)",
+        "MIL-STD-1553",
+        "Systems Engineering Lifecycle (V-Model)",
+        "Requirements Management (DOORS)",
+        "Federal Aviation Regulations (FARs)"
+      ]
+    },
+    {
+      "title": "Azure Cloud Security Engineer",
+      "skills": [
+        "Microsoft Certified: Azure Security Engineer Associate (AZ-500)",
+        "Azure Sentinel",
+        "Microsoft Defender for Cloud",
+        "Azure Active Directory (AAD) Security",
+        "Azure Network Security Groups (NSGs)",
+        "Azure Key Vault",
+        "Infrastructure as Code (IaC) Security (Terraform, Bicep)"
+      ]
+    },
+    {
+      "title": "Backup Power Engineer",
+      "skills": [
+        "Uninterruptible Power Supply (UPS) Design",
+        "Generator Sizing and Specification",
+        "Automatic Transfer Switch (ATS) configuration",
+        "NFPA 110 Standard for Emergency Power Systems",
+        "Battery Technology and Maintenance",
+        "Power Distribution Unit (PDU) management",
+        "Electrical Load Calculations"
+      ]
+    },
+    {
+      "title": "Battery Engineer",
+      "skills": [
+        "Lithium-ion Battery Chemistry",
+        "Battery Management System (BMS) Design",
+        "Electrochemical Impedance Spectroscopy (EIS)",
+        "Battery Testing and Validation",
+        "COMSOL/ANSYS for Battery Modeling",
+        "Cell Characterization",
+        "Battery Pack Design"
+      ]
+    },
+    {
+      "title": "Bioenergy Systems Engineer",
+      "skills": [
+        "Biomass Conversion Technologies",
+        "Anaerobic Digestion Process Design",
+        "Biofuel Production (Ethanol, Biodiesel)",
+        "Aspen Plus for Process Simulation",
+        "Gasification and Pyrolysis Systems",
+        "Life Cycle Assessment (LCA)",
+        "Renewable Energy Policy and Economics"
+      ]
+    },
+    {
+      "title": "Biochemical Engineer – Bioprocess Engineer",
+      "skills": [
+        "Bioreactor Design and Operation",
+        "Downstream Processing (Chromatography, Filtration)",
+        "Good Manufacturing Practices (GMP)",
+        "Process Scale-up",
+        "Aspen Plus/SuperPro Designer",
+        "Cell Culture Techniques",
+        "Fermentation Technology"
+      ]
+    },
+    {
+      "title": "Biochemical Engineer – Metabolic Engineer",
+      "skills": [
+        "Metabolic Flux Analysis",
+        "CRISPR/Cas9 Genome Editing",
+        "Systems Biology Modeling",
+        "Bioinformatics",
+        "High-Throughput Screening",
+        "Synthetic Biology Principles",
+        "Analytical Chemistry (HPLC, GC-MS)"
+      ]
+    },
+    {
+      "title": "Biomaterials Engineer",
+      "skills": [
+        "Polymer Chemistry",
+        "Tissue Engineering",
+        "Material Characterization (SEM, XRD, AFM)",
+        "Biocompatibility Testing (ISO 10993)",
+        "Drug Delivery Systems",
+        "SolidWorks for Implant Design",
+        "Cell Culture"
+      ]
+    },
+    {
+      "title": "Biomechanical Engineer",
+      "skills": [
+        "Finite Element Analysis (FEA) with Abaqus/ANSYS",
+        "Motion Capture Systems (Vicon, Qualisys)",
+        "Medical Implant Design",
+        "Musculoskeletal Modeling (OpenSim)",
+        "SolidWorks/Creo",
+        "Biomechanics of Injury",
+        "ASTM/ISO Standards for Medical Devices"
+      ]
+    },
+    {
+      "title": "Biomedical Engineer – Biomechanics Engineer",
+      "skills": [
+        "Finite Element Analysis (FEA) for biological systems (Abaqus, ANSYS)",
+        "Musculoskeletal modeling (OpenSim)",
+        "Motion Capture Analysis (Vicon)",
+        "SolidWorks for medical device design",
+        "ASTM standards for biomechanical testing",
+        "Implant and Prosthetic Design",
+        "Computational Biomechanics"
+      ]
+    },
+    {
+      "title": "Biomedical Engineer – Clinical Engineer",
+      "skills": [
+        "Certified Clinical Engineer (CCE)",
+        "Medical Device Maintenance and Management",
+        "FDA Regulations for Medical Devices",
+        "HIPAA Compliance",
+        "Medical Device Networking",
+        "Equipment Lifecycle Management",
+        "Root Cause Analysis for Device Failures"
+      ]
+    },
+    {
+      "title": "Biomedical Engineer – Medical Imaging Engineer",
+      "skills": [
+        "DICOM Standard",
+        "Image Processing with MATLAB/Python (SimpleITK)",
+        "MRI/CT/Ultrasound Physics",
+        "PACS (Picture Archiving and Communication System) Administration",
+        "Medical Image Reconstruction Algorithms",
+        "Regulatory Affairs (FDA 510(k))",
+        "Machine Learning for Medical Imaging"
+      ]
+    },
+    {
+      "title": "Biomedical Engineer – Rehabilitation Engineer",
+      "skills": [
+        "Assistive Technology Professional (ATP) Certification",
+        "Prosthetics and Orthotics Design",
+        "Human-Computer Interaction (HCI)",
+        "Signal Processing for Biosignals (EMG, EEG)",
+        "SolidWorks/Creo for Assistive Devices",
+        "Wheelchair Seating and Positioning",
+        "Rehabilitation Robotics"
+      ]
+    },
+    {
+      "title": "Biomedical Systems Engineer",
+      "skills": [
+        "FDA Design Controls (21 CFR 820.30)",
+        "ISO 13485 (Medical Device Quality Management)",
+        "Risk Management (ISO 14971)",
+        "Systems Engineering (INCOSE)",
+        "Requirements Management (DOORS)",
+        "V&V (Verification and Validation) Planning",
+        "Medical Device Interoperability Standards (HL7)"
+      ]
+    },
+    {
+      "title": "Bioprocess Control Engineer",
+      "skills": [
+        "DeltaV/Emerson Automation Solutions",
+        "Process Analytical Technology (PAT)",
+        "SCADA systems for bioprocessing",
+        "Control Loop Tuning",
+        "Good Automated Manufacturing Practice (GAMP 5)",
+        "Data Historian (OSIsoft PI)",
+        "Statistical Process Control (SPC)"
+      ]
+    },
+    {
+      "title": "Bioreactor Design Engineer",
+      "skills": [
+        "Computational Fluid Dynamics (CFD) for mixing analysis",
+        "SolidWorks/Inventor for mechanical design",
+        "ASME BPE (Bioprocessing Equipment) standards",
+        "Mass Transfer and Kinetics",
+        "Sterilization-in-Place (SIP) and Clean-in-Place (CIP) design",
+        "Instrumentation and Control selection",
+        "Material selection for biocompatibility"
+      ]
+    },
+    {
+      "title": "Blockchain Security Engineer",
+      "skills": [
+        "Smart Contract Auditing",
+        "Solidity Security Best Practices",
+        "Static and Dynamic Analysis of Smart Contracts (Slither, Mythril)",
+        "Cryptography (Elliptic Curve, Hash Functions)",
+        "Decentralized Application (DApp) Security",
+        "Certified Blockchain Security Professional (CBSP)",
+        "Common Blockchain Attack Vectors (Re-entrancy, Oracle manipulation)"
+      ]
+    },
+    {
+      "title": "Blue Team Engineer",
+      "skills": [
+        "GIAC Certified Intrusion Analyst (GCIA)",
+        "Security Information and Event Management (SIEM) - Splunk, ELK Stack",
+        "Intrusion Detection/Prevention Systems (IDS/IPS) - Snort, Suricata",
+        "Endpoint Detection and Response (EDR) - CrowdStrike, SentinelOne",
+        "Network Traffic Analysis (Wireshark, Zeek)",
+        "Digital Forensics and Incident Response (DFIR)",
+        "Threat Hunting Methodologies"
+      ]
+    },
+    {
+      "title": "Breach and Attack Simulation (BAS) Engineer",
+      "skills": [
+        "BAS Platform Management (Picus, AttackIQ)",
+        "MITRE ATT&CK Framework",
+        "Penetration Testing Concepts",
+        "Security Control Validation",
+        "Automation and Scripting (Python)",
+        "SIEM/SOAR Integration",
+        "Threat Modeling"
+      ]
+    },
+    {
+      "title": "Bridge Safety Engineer",
+      "skills": [
+        "FHWA Bridge Inspector's Reference Manual (BIRM)",
+        "Certified Bridge Safety Inspector (CBSI)",
+        "Non-Destructive Testing (NDT) of Structures",
+        "Structural Health Monitoring (SHM)",
+        "AASHTO Load and Resistance Factor Design (LRFD)",
+        "Scour Analysis",
+        "Seismic Analysis of Bridges"
+      ]
+    },
+    {
+      "title": "Bridge Structural Engineer",
+      "skills": [
+        "Professional Engineer (P.E.) License",
+        "AASHTO LRFD Bridge Design Specifications",
+        "Structural Analysis Software (SAP2000, CSiBridge)",
+        "AutoCAD/MicroStation",
+        "Finite Element Analysis (FEA)",
+        "Steel and Concrete Bridge Design",
+        "Geotechnical Engineering for Foundations"
+      ]
+    },
+    {
+      "title": "Broadcast Engineer – RF Systems",
+      "skills": [
+        "Society of Broadcast Engineers (SBE) Certification",
+        "RF Spectrum Analysis",
+        "Transmitter Maintenance and Operation",
+        "Antenna System Design",
+        "Microwave Link Engineering",
+        "FCC Regulations",
+        "Network Engineering for Broadcast"
+      ]
+    },
+    {
+      "title": "Broadcast Engineer – Satellite Systems",
+      "skills": [
+        "Satellite Uplink/Downlink Operations",
+        "Global VSAT Forum (GVF) Certification",
+        "RF Spectrum Management",
+        "MPEG Transport Streams",
+        "Digital Video Broadcasting (DVB) standards",
+        "Network Management Systems (NMS)",
+        "Communications Systems Analysis"
+      ]
+    },
+    {
+      "title": "Building Automation Systems (BAS) Engineer",
+      "skills": [
+        "Niagara Framework (Tridium) Certification",
+        "BACnet/Modbus Protocols",
+        "HVAC Control Systems",
+        "PLC Programming for Building Automation",
+        "Energy Management Systems (EMS)",
+        "Systems Integration",
+        "Control Sequence Programming"
+      ]
+    },
+    {
+      "title": "Cabling Infrastructure Engineer",
+      "skills": [
+        "BICSI Registered Communications Distribution Designer (RCDD)",
+        "TIA/EIA Standards for Structured Cabling",
+        "Fiber Optic Cabling Design",
+        "Copper Cabling Systems (Cat6, Cat6A)",
+        "Data Center Cabling Design",
+        "Cable Testing and Certification (Fluke Networks)",
+        "AutoCAD/Visio for Layouts"
+      ]
+    },
+    {
+      "title": "CAD/CAM Engineer",
+      "skills": [
+        "Autodesk Inventor/Fusion 360",
+        "SolidWorks",
+        "CATIA/NX",
+        "Mastercam/HSMWorks for CAM",
+        "CNC Programming (G-code, M-code)",
+        "Geometric Dimensioning & Tolerancing (GD&T)",
+        "Finite Element Analysis (FEA) Simulation"
+      ]
+    },
+    {
+      "title": "Calibration Engineer",
+      "skills": [
+        "Certified Calibration Technician (CCT) from ASQ",
+        "ISO/IEC 17025 Standard",
+        "Metrology Principles",
+        "Fluke MET/CAL Software",
+        "Measurement Uncertainty Analysis",
+        "Instrumentation and Control",
+        "Lab Information Management Systems (LIMS)"
+      ]
+    },
+    {
+      "title": "Carbon Capture Engineer",
+      "skills": [
+        "Chemical Process Simulation (Aspen HYSYS)",
+        "Amine Treating Processes",
+        "CO2 Compression and Transportation",
+        "Geological Sequestration Principles",
+        "Membrane Separation Technology",
+        "Process Design and Economics (PED)",
+        "Environmental Regulations (EPA 40 CFR Part 98)"
+      ]
+    },
+    {
+      "title": "Cathodic Protection Engineer",
+      "skills": [
+        "NACE Cathodic Protection (CP) Certification",
+        "Corrosion Engineering",
+        "Impressed Current Cathodic Protection (ICCP) System Design",
+        "Sacrificial Anode System Design",
+        "Soil Resistivity Testing",
+        "Stray Current Analysis",
+        "Pipeline Integrity Management"
+      ]
+    },
+    {
+      "title": "Cellular Network Engineer",
+      "skills": [
+        "5G NR/4G LTE Protocols",
+        "RF Planning and Optimization Tools (Atoll, Planet)",
+        "Drive Testing and Post-Processing (TEMS, NEMO)",
+        "EPC/5G Core Network Architecture",
+        "RAN (Radio Access Network) configuration",
+        "VoLTE/VoNR Call Flows",
+        "Spectrum Analysis"
+      ]
+    },
+    {
+      "title": "Ceramics Engineer",
+      "skills": [
+        "Ceramic Processing (Sintering, Hot Pressing)",
+        "Material Characterization (XRD, SEM, Dilatometry)",
+        "Phase Diagrams",
+        "Glass Science",
+        "Refractory Materials",
+        "Technical Ceramics Application",
+        "Statistical Process Control (SPC)"
+      ]
+    },
+    {
+      "title": "Chemical Engineer – Catalyst Development",
+      "skills": [
+        "Heterogeneous/Homogeneous Catalysis",
+        "Catalyst Characterization Techniques (BET, TPR/TPO)",
+        "Reactor Design",
+        "Kinetic Modeling",
+        "High-Throughput Experimentation",
+        "Process Simulation (Aspen Plus)",
+        "Surface Science"
+      ]
+    },
+    {
+      "title": "Chemical Engineer – Environmental Process",
+      "skills": [
+        "Wastewater Treatment Design",
+        "Air Pollution Control Technologies (Scrubbers, ESPs)",
+        "Solid Waste Management",
+        "Environmental Regulations (RCRA, Clean Air Act)",
+        "Process Simulation for Environmental Systems",
+        "Life Cycle Assessment (LCA)",
+        "HAZOP Studies"
+      ]
+    },
+    {
+      "title": "Chemical Engineer – Process Safety",
+      "skills": [
+        "Certified Safety Professional (CSP)",
+        "Process Hazard Analysis (PHA) Facilitation (HAZOP, LOPA)",
+        "Pressure Relief System Design (API 520/521)",
+        "Safety Instrumented Systems (SIS) - IEC 61511",
+        "Incident Investigation (Root Cause Analysis)",
+        "Management of Change (MOC)",
+        "Process Safety Management (PSM) - OSHA 1910.119"
+      ]
+    },
+    {
+      "title": "Chemical Engineer – Refinery Process",
+      "skills": [
+        "Refinery Unit Operations (Distillation, FCC, Hydrotreating)",
+        "Process Simulation (Aspen HYSYS)",
+        "Heat Exchanger Design and Rating",
+        "Process Optimization",
+        "Troubleshooting Refinery Operations",
+        "P&ID Development",
+        "Process Control Systems (DCS)"
+      ]
+    },
+    {
+      "title": "Chemical Process Design Engineer",
+      "skills": [
+        "Process Simulation (Aspen Plus, HYSYS)",
+        "P&ID and PFD Development",
+        "Equipment Sizing and Specification (Pumps, Vessels, Heat Exchangers)",
+        "Process Economic Analysis",
+        "HAZOP Facilitation",
+        "Relief and Flare System Design",
+        "AutoCAD Plant 3D"
+      ]
+    },
+    {
+      "title": "Chemical Reaction Engineer",
+      "skills": [
+        "Reactor Design (CSTR, PFR, Batch)",
+        "Chemical Kinetics Modeling",
+        "Catalysis",
+        "Thermodynamics",
+        "Mass Transfer",
+        "Computational Fluid Dynamics (CFD) for Reactors",
+        "Process Simulation (Aspen Plus)"
+      ]
+    },
+    {
+      "title": "Civil Engineer – Coastal Engineer",
+      "skills": [
+        "Coastal Modeling Software (Delft3D, MIKE 21)",
+        "Wave Mechanics",
+        "Sediment Transport",
+        "Breakwater and Seawall Design",
+        "Dredging and Beach Nourishment",
+        "Hydrographic Surveying",
+        "Environmental Impact Assessment for Coastal Projects"
+      ]
+    },
+    {
+      "title": "Civil Engineer – Construction Engineer",
+      "skills": [
+        "Project Management Professional (PMP)",
+        "Construction Scheduling (Primavera P6, MS Project)",
+        "Cost Estimation (RSMeans)",
+        "Construction Law and Contracts",
+        "Site Management",
+        "OSHA Construction Safety Standards",
+        "Building Information Modeling (BIM) - Autodesk Revit"
+      ]
+    },
+    {
+      "title": "Civil Engineer – Environmental Engineer",
+      "skills": [
+        "Professional Engineer (P.E.) License",
+        "Water/Wastewater Treatment Plant Design",
+        "Solid Waste Management (Landfill Design)",
+        "Environmental Regulations (Clean Water Act, RCRA)",
+        "Hydrologic and Hydraulic Modeling (HEC-RAS, HEC-HMS)",
+        "Site Remediation",
+        "AutoCAD Civil 3D"
+      ]
+    },
+    {
+      "title": "Civil Engineer – Forensic Engineer",
+      "skills": [
+        "Structural Failure Analysis",
+        "Building Envelope Assessment",
+        "Non-Destructive Testing (NDT)",
+        "Construction Defect Investigation",
+        "Expert Witness Testimony",
+        "Material Science",
+        "Knowledge of Building Codes and Standards"
+      ]
+    },
+    {
+      "title": "Civil Engineer – Geotechnical Engineer",
+      "skills": [
+        "Professional Engineer (P.E.) License",
+        "Soil Mechanics",
+        "Foundation Design (Shallow and Deep)",
+        "Slope Stability Analysis (GeoStudio/SLOPE/W)",
+        "Retaining Wall Design",
+        "Geotechnical Investigation (Boring Logs, CPT)",
+        "GINT/LogPlot"
+      ]
+    },
+    {
+      "title": "Civil Engineer – Hydraulics Engineer",
+      "skills": [
+        "HEC-RAS Modeling",
+        "Stormwater Management (SWMM)",
+        "Culvert and Bridge Hydraulics",
+        "Open Channel Flow",
+        "Hydrology",
+        "GIS for Water Resources",
+        "FEMA Floodplain Mapping"
+      ]
+    },
+    {
+      "title": "Civil Engineer – Municipal Infrastructure Engineer",
+      "skills": [
+        "Water Distribution System Design (WaterGEMS)",
+        "Sanitary Sewer Design (SewerGEMS)",
+        "Stormwater Management and Drainage Design",
+        "Pavement Design",
+        "AutoCAD Civil 3D",
+        "Public Works Standards",
+        "Asset Management"
+      ]
+    },
+    {
+      "title": "Civil Engineer – Structural Engineer",
+      "skills": [
+        "Professional Engineer (P.E.) License",
+        "Structural Analysis Software (RISA-3D, SAP2000, ETABS)",
+        "Building Codes (IBC, ASCE 7)",
+        "Reinforced Concrete Design (ACI 318)",
+        "Structural Steel Design (AISC 360)",
+        "Finite Element Analysis (FEA)",
+        "Autodesk Revit/AutoCAD"
+      ]
+    },
+    {
+      "title": "Civil Engineer – Transportation Engineer",
+      "skills": [
+        "Professional Traffic Operations Engineer (PTOE)",
+        "Highway Capacity Manual (HCM)",
+        "Traffic Modeling Software (Vissim, Synchro)",
+        "Geometric Roadway Design (AutoCAD Civil 3D, MicroStation)",
+        "MUTCD (Manual on Uniform Traffic Control Devices)",
+        "Traffic Signal Design",
+        "Transportation Planning"
+      ]
+    },
+    {
+      "title": "Cleanroom Design Engineer",
+      "skills": [
+        "ISO 14644 standards",
+        "HVAC design for cleanrooms",
+        "HEPA/ULPA filtration systems",
+        "Airflow modeling (CFD)",
+        "Contamination control principles",
+        "Building Management Systems (BMS)",
+        "Knowledge of specific industry requirements (e.g., semiconductor, pharma)"
+      ]
+    },
+    {
+      "title": "Cloud Access Security Broker (CASB) Engineer",
+      "skills": [
+        "CASB Policy Configuration (Netskope, McAfee MVISION)",
+        "Cloud Application Discovery",
+        "Data Loss Prevention (DLP) for Cloud",
+        "API Integration with Cloud Services",
+        "Cloud Security Posture Management (CSPM)",
+        "User and Entity Behavior Analytics (UEBA)",
+        "SaaS Security"
+      ]
+    },
+    {
+      "title": "Cloud Forensics Engineer",
+      "skills": [
+        "GIAC Cloud Forensics Responder (GCFR)",
+        "Cloud Service Provider Logging (AWS CloudTrail, Azure Monitor)",
+        "Snapshot and Volume Analysis in the Cloud",
+        "Memory Forensics of Cloud Instances",
+        "Serverless and Container Forensics",
+        "Identity and Access Management (IAM) Log Analysis",
+        "eDiscovery in the Cloud"
+      ]
+    },
+    {
+      "title": "Cloud Infrastructure Engineer",
+      "skills": [
+        "AWS Certified Solutions Architect/SysOps Administrator",
+        "Azure Administrator Associate",
+        "Google Cloud Professional Cloud Architect",
+        "Infrastructure as Code (Terraform, CloudFormation)",
+        "Containerization (Docker, Kubernetes)",
+        "CI/CD Pipelines (Jenkins, GitLab CI)",
+        "Networking in the Cloud (VPC, VNet)"
+      ]
+    },
+    {
+      "title": "Cloud Penetration Tester",
+      "skills": [
+        "Certified Cloud Security Professional (CCSP)",
+        "AWS/Azure/GCP specific attack vectors",
+        "IAM Misconfiguration Analysis",
+        "Serverless (Lambda) Exploitation",
+        "Container Security Testing (Docker, Kubernetes)",
+        "Cloud Service Enumeration Tools (Pacu, ScoutSuite)",
+        "Post-exploitation techniques in cloud environments"
+      ]
+    },
+    {
+      "title": "Cloud Security Engineer",
+      "skills": [
+        "Certified Cloud Security Professional (CCSP)",
+        "AWS Certified Security - Specialty",
+        "Azure Security Engineer Associate",
+        "Cloud Security Posture Management (CSPM)",
+        "Identity and Access Management (IAM)",
+        "Infrastructure as Code (IaC) Security",
+        "Container and Kubernetes Security"
+      ]
+    },
+    {
+      "title": "Coastal Systems Engineer",
+      "skills": [
+        "Coastal Hydrodynamics",
+        "Sediment Transport Modeling",
+        "Coastal Structures Design (Breakwaters, Jetties)",
+        "Numerical Modeling (Delft3D, MIKE)",
+        "GIS for Coastal Management",
+        "Marine Environmental Engineering",
+        "Port and Harbor Design"
+      ]
+    },
+    {
+      "title": "Combustion Systems Engineer",
+      "skills": [
+        "Combustion Chemistry and Kinetics",
+        "Burner Design",
+        "Computational Fluid Dynamics (CFD) for Combustion",
+        "Emissions Control (NOx, SOx)",
+        "Thermodynamics",
+        "Heat Transfer",
+        "Instrumentation for Combustion Processes"
+      ]
+    },
+    {
+      "title": "Communications Systems Engineer – RF",
+      "skills": [
+        "RF Circuit Design (LNA, PA, Mixers)",
+        "Antenna Theory and Design",
+        "Spectrum Analysis",
+        "Network Analyzers",
+        "ADS/AWR Microwave Office",
+        "Electromagnetic Compatibility (EMC)",
+        "Digital Signal Processing (DSP)"
+      ]
+    },
+    {
+      "title": "Communications Systems Engineer – Satellite",
+      "skills": [
+        "Satellite Link Budget Analysis",
+        "Modulation and Coding Schemes (DVB-S2X)",
+        "VSAT Systems",
+        "RF Engineering for Satellite",
+        "Orbital Mechanics",
+        "Systems Tool Kit (STK)",
+        "Network Management for Satellite Networks"
+      ]
+    },
+    {
+      "title": "Compiler Engineer",
+      "skills": [
+        "LLVM/Clang",
+        "GCC Internals",
+        "Compiler Design Principles (Lexing, Parsing, Code Generation)",
+        "Static Analysis",
+        "Programming Language Theory",
+        "C++/Assembly Language",
+        "Performance Optimization"
+      ]
+    },
+    {
+      "title": "Compliance Automation Engineer",
+      "skills": [
+        "Policy as Code (Open Policy Agent - OPA)",
+        "Infrastructure as Code (Terraform, CloudFormation)",
+        "Security Content Automation Protocol (SCAP)",
+        "Compliance Frameworks (NIST, CIS, PCI-DSS, SOC 2)",
+        "Scripting (Python, Bash)",
+        "CI/CD Pipeline Security",
+        "Cloud Security Posture Management (CSPM)"
+      ]
+    },
+    {
+      "title": "Composite Materials Engineer",
+      "skills": [
+        "Composite Manufacturing Processes (ATL, AFP, RTM)",
+        "Finite Element Analysis (FEA) of Composites (Abaqus, NASTRAN)",
+        "Laminate Theory",
+        "Non-Destructive Inspection (NDI) of Composites",
+        "CATIA Composite Design Workbench",
+        "Material Characterization",
+        "Damage Tolerance and Repair"
+      ]
+    },
+    {
+      "title": "Computational Fluid Dynamics Engineer",
+      "skills": [
+        "ANSYS Fluent/CFX or STAR-CCM+",
+        "Mesh Generation (HyperMesh, Pointwise)",
+        "Turbulence Modeling",
+        "Heat Transfer and Multiphase Flow",
+        "High-Performance Computing (HPC)",
+        "Scripting (Python, C++) for automation",
+        "Fluid Dynamics Theory"
+      ]
+    },
+    {
+      "title": "Computer Hardware Engineer – Embedded Systems",
+      "skills": [
+        "Embedded C/C++",
+        "Microcontroller Architecture (ARM, RISC-V)",
+        "Real-Time Operating Systems (RTOS) - FreeRTOS, VxWorks",
+        "Communication Protocols (I2C, SPI, UART, CAN)",
+        "PCB Design (Altium, KiCad)",
+        "Firmware Development",
+        "JTAG/SWD Debugging"
+      ]
+    },
+    {
+      "title": "Computer Hardware Engineer – Processor Design",
+      "skills": [
+        "Verilog/SystemVerilog/VHDL",
+        "Computer Architecture",
+        "Logic Design and Synthesis",
+        "Design Verification",
+        "Static Timing Analysis (STA)",
+        "Cadence or Synopsys EDA Tools",
+        "ASIC/FPGA Design Flow"
+      ]
+    },
+    {
+      "title": "Computer Network Engineer – Data Center",
+      "skills": [
+        "Cisco Certified Network Professional (CCNP) Data Center",
+        "BGP/OSPF Routing Protocols",
+        "Spine-Leaf Architecture",
+        "VXLAN/EVPN",
+        "Network Automation (Python, Ansible)",
+        "Cisco Nexus/Arista Switches",
+        "Network Security (Firewalls, ACLs)"
+      ]
+    },
+    {
+      "title": "Computer Security Engineer – Cryptography",
+      "skills": [
+        "Applied Cryptography (Symmetric, Asymmetric, Hashing)",
+        "Public Key Infrastructure (PKI)",
+        "Hardware Security Modules (HSMs)",
+        "Cryptographic Protocol Analysis",
+        "Post-Quantum Cryptography",
+        "FIPS 140-2 Standards",
+        "Implementation of Crypto Libraries (OpenSSL)"
+      ]
+    },
+    {
+      "title": "Computer Vision Engineer",
+      "skills": [
+        "OpenCV",
+        "Deep Learning for Vision (CNNs, Transformers)",
+        "PyTorch/TensorFlow",
+        "Image Processing Techniques",
+        "Simultaneous Localization and Mapping (SLAM)",
+        "3D Reconstruction",
+        "Camera Calibration"
+      ]
+    },
+    {
+      "title": "Construction Traffic Engineer",
+      "skills": [
+        "Temporary Traffic Control Plan Design",
+        "MUTCD Part 6",
+        "Traffic Modeling for Work Zones (Vissim)",
+        "Road Safety Audits",
+        "AutoCAD/MicroStation",
+        "State and Local Transportation Agency Standards",
+        "Permitting Processes"
+      ]
+    },
+    {
+      "title": "Container Security Engineer",
+      "skills": [
+        "Certified Kubernetes Security Specialist (CKS)",
+        "Docker Security Best Practices",
+        "Container Runtime Security (Falco, Aqua Security)",
+        "Container Image Scanning (Trivy, Clair)",
+        "Kubernetes Network Policies",
+        "Service Mesh Security (Istio)",
+        "Secrets Management in Kubernetes (Vault)"
+      ]
+    },
+    {
+      "title": "Control Systems Cybersecurity Engineer",
+      "skills": [
+        "Global Industrial Cyber Security Professional (GICSP)",
+        "ISA/IEC 62443 Standards",
+        "ICS/SCADA Protocols (Modbus, DNP3, Profinet)",
+        "Purdue Model for ICS Security",
+        "Network Security Monitoring for OT (Nozomi, Dragos)",
+        "PLC Security",
+        "ICS Penetration Testing"
+      ]
+    },
+    {
+      "title": "Control Systems Engineer",
+      "skills": [
+        "PLC Programming (Ladder Logic, FBD)",
+        "HMI/SCADA Development (Ignition, Wonderware)",
+        "Control Theory (PID controllers)",
+        "MATLAB/Simulink",
+        "Instrumentation and Process Control",
+        "Industrial Networking (EtherNet/IP, Profibus)",
+        "Distributed Control Systems (DCS)"
+      ]
+    },
+    {
+      "title": "Corrosion Control Engineer",
+      "skills": [
+        "NACE Certified Corrosion Specialist",
+        "Cathodic Protection Design",
+        "Protective Coatings (NACE CIP)",
+        "Materials Selection for Corrosive Environments",
+        "Failure Analysis of Corroded Components",
+        "Corrosion Monitoring Techniques",
+        "Electrochemistry"
+      ]
+    },
+    {
+      "title": "Crash Safety Engineer – Automotive",
+      "skills": [
+        "LS-DYNA/Abaqus for Crash Simulation",
+        "HyperMesh/ANSA for Meshing",
+        "FMVSS/NCAP Regulations",
+        "Occupant Protection Systems (Airbags, Seatbelts)",
+        "Vehicle Structures for Crashworthiness",
+        "Data Analysis of Crash Tests",
+        "Biomechanics of Impact"
+      ]
+    },
+    {
+      "title": "Cryptographic Systems Engineer",
+      "skills": [
+        "Public Key Infrastructure (PKI) management",
+        "Hardware Security Module (HSM) integration",
+        "Key Management Lifecycle",
+        "Cryptographic Algorithm Implementation (AES, RSA, ECC)",
+        "TLS/SSL Protocols",
+        "FIPS 140-2 compliance",
+        "Secure Element and TPM technologies"
+      ]
+    },
+    {
+      "title": "Cryogenic Systems Engineer",
+      "skills": [
+        "Cryogenics and Thermodynamics",
+        "Design of Cryogenic Storage and Transfer Systems",
+        "Vacuum Technology",
+        "Material Properties at Low Temperatures",
+        "Safety in Handling Cryogenic Fluids",
+        "Helium Liquefaction and Refrigeration",
+        "Instrumentation for Cryogenic Systems"
+      ]
+    },
+    {
+      "title": "Cyber Defense Engineer",
+      "skills": [
+        "GIAC Certified Intrusion Analyst (GCIA)",
+        "SIEM (Splunk, QRadar)",
+        "IDS/IPS (Snort, Suricata)",
+        "Endpoint Detection and Response (EDR)",
+        "Network Security Monitoring",
+        "Incident Response",
+        "Threat Hunting"
+      ]
+    },
+    {
+      "title": "Cyber Forensics Engineer",
+      "skills": [
+        "GIAC Certified Forensic Analyst (GCFA)",
+        "EnCase/FTK",
+        "Volatility Framework for Memory Forensics",
+        "Filesystem Analysis (NTFS, ext4)",
+        "Network Forensics (Wireshark)",
+        "Log Analysis",
+        "Chain of Custody Procedures"
+      ]
+    },
+    {
+      "title": "Cyber Physical Systems Security Engineer",
+      "skills": [
+        "ISA/IEC 62443",
+        "Embedded Systems Security",
+        "SCADA/ICS Protocols",
+        "Hardware-in-the-Loop (HIL) Security Testing",
+        "Firmware Reverse Engineering",
+        "Threat Modeling for CPS",
+        "Secure Boot and Trusted Execution Environments"
+      ]
+    },
+    {
+      "title": "Cyber‑Physical Systems Engineer",
+      "skills": [
+        "Embedded Systems Programming (C/C++)",
+        "Control Systems Theory",
+        "Real-Time Operating Systems (RTOS)",
+        "Model-Based Systems Engineering (MBSE) with SysML",
+        "MATLAB/Simulink",
+        "Sensor Integration and Data Fusion",
+        "IoT Protocols (MQTT, CoAP)"
+      ]
+    },
+    {
+      "title": "Cybersecurity Architect",
+      "skills": [
+        "Certified Information Systems Security Professional (CISSP)",
+        "SABSA or TOGAF Frameworks",
+        "Zero Trust Architecture",
+        "Cloud Security Architecture (AWS, Azure)",
+        "Network Security Design",
+        "Identity and Access Management Strategy",
+        "Threat Modeling"
+      ]
+    },
+    {
+      "title": "Cybersecurity Compliance Engineer",
+      "skills": [
+        "NIST Cybersecurity Framework",
+        "ISO 27001 Lead Auditor/Implementer",
+        "PCI DSS for Payment Security",
+        "SOC 2 Audits",
+        "GDPR/CCPA for Data Privacy",
+        "Governance, Risk, and Compliance (GRC) tools",
+        "Security Control Assessment"
+      ]
+    },
+    {
+      "title": "Cybersecurity Engineer – Embedded Systems",
+      "skills": [
+        "Secure Boot and Trusted Execution Environments (TEE)",
+        "Firmware Security Analysis",
+        "Side-Channel Attack Mitigation",
+        "Hardware Security Modules (HSMs)",
+        "JTAG/SWD Debugging Security",
+        "RTOS Security",
+        "Lightweight Cryptography"
+      ]
+    },
+    {
+      "title": "Cybersecurity Incident Response Engineer",
+      "skills": [
+        "GIAC Certified Incident Handler (GCIH)",
+        "Digital Forensics and Incident Response (DFIR)",
+        "Log Analysis (SIEM, EDR logs)",
+        "Malware Analysis (Static and Dynamic)",
+        "Network Traffic Analysis (Wireshark, Zeek)",
+        "Incident Response Playbook Development",
+        "Threat Intelligence Integration"
+      ]
+    },
+    {
+      "title": "Cybersecurity Operations Engineer",
+      "skills": [
+        "Security Information and Event Management (SIEM) Administration",
+        "Intrusion Detection/Prevention System (IDS/IPS) Tuning",
+        "Vulnerability Management (Nessus, Qualys)",
+        "Endpoint Detection and Response (EDR) Management",
+        "Security Orchestration, Automation, and Response (SOAR)",
+        "Log Management",
+        "Firewall and WAF Administration"
+      ]
+    },
+    {
+      "title": "Dam Safety Engineer",
+      "skills": [
+        "Dam Breach Analysis (HEC-RAS)",
+        "Seepage and Slope Stability Analysis (GeoStudio)",
+        "Hydrologic Analysis and Spillway Design",
+        "Structural Analysis of Dams",
+        "Geotechnical Investigation for Dams",
+        "Emergency Action Plan (EAP) Development",
+        "FERC Dam Safety Guidelines"
+      ]
+    },
+    {
+      "title": "Data Center Critical Facilities Engineer",
+      "skills": [
+        "Certified Data Centre Professional (CDCP)",
+        "UPS and Generator Maintenance",
+        "HVAC and CRAC/CRAH systems",
+        "Building Management Systems (BMS)",
+        "Electrical Power Monitoring Systems (EPMS)",
+        "Fire Suppression Systems",
+        "Data Center Infrastructure Management (DCIM)"
+      ]
+    },
+    {
+      "title": "Data Center Infrastructure Engineer",
+      "skills": [
+        "Certified Data Center Professional (CDCP)",
+        "Power Distribution and Cooling",
+        "Structured Cabling (Copper and Fiber)",
+        "Rack and Stack of Network/Server Equipment",
+        "Data Center Infrastructure Management (DCIM)",
+        "Network Engineering (BGP, OSPF)",
+        "Physical Security Systems"
+      ]
+    },
+    {
+      "title": "Data Center Network Engineer",
+      "skills": [
+        "Cisco Certified Network Professional (CCNP) Data Center",
+        "BGP/OSPF",
+        "VXLAN with EVPN",
+        "Spine-Leaf Architecture",
+        "Network Automation (Ansible, Python)",
+        "Cisco ACI or Arista CloudVision",
+        "Network Firewalls (Palo Alto, Fortinet)"
+      ]
+    },
+    {
+      "title": "Data Loss Prevention (DLP) Engineer",
+      "skills": [
+        "DLP Policy Creation and Tuning",
+        "Symantec/Broadcom DLP or Microsoft Purview",
+        "Regular Expressions (Regex)",
+        "Data Classification",
+        "Cloud Access Security Broker (CASB) Integration",
+        "Endpoint DLP Agents",
+        "Insider Threat Programs"
+      ]
+    },
+    {
+      "title": "Data Privacy Engineer",
+      "skills": [
+        "Certified Information Privacy Technologist (CIPT)",
+        "Privacy by Design Principles",
+        "Data Anonymization and Pseudonymization Techniques",
+        "GDPR and CCPA technical implementation",
+        "Data Discovery and Classification",
+        "Privacy Enhancing Technologies (PETs)",
+        "Consent Management Platforms"
+      ]
+    },
+    {
+      "title": "Data Recovery Engineer",
+      "skills": [
+        "Hard Drive Internals and Firmware",
+        "Solid-State Drive (SSD) Data Recovery Techniques",
+        "Filesystem Forensics (NTFS, APFS, ext4)",
+        "Logical and Physical Data Extraction",
+        "RAID Array Reconstruction",
+        "Clean Room Procedures",
+        "Data Recovery Tools (PC-3000, DeepSpar)"
+      ]
+    },
+    {
+      "title": "Database Security Engineer",
+      "skills": [
+        "Database Activity Monitoring (DAM)",
+        "Data Encryption and Masking",
+        "Vulnerability Scanning for Databases",
+        "Secure Configuration for SQL/NoSQL databases",
+        "Access Control and Privilege Management",
+        "SQL Injection Prevention",
+        "Auditing and Logging"
+      ]
+    },
+    {
+      "title": "Deception Technology Engineer",
+      "skills": [
+        "Honeypot Deployment and Management",
+        "Deception Grid Platforms (Attivo, Illusive)",
+        "Threat Intelligence from Deception Events",
+        "Network Traffic Analysis",
+        "Active Directory Deception",
+        "Endpoint Deception",
+        "Incident Response Integration"
+      ]
+    },
+    {
+      "title": "Deep‑Sea Systems Engineer",
+      "skills": [
+        "Remotely Operated Vehicle (ROV) and Autonomous Underwater Vehicle (AUV) systems",
+        "Subsea Connector and Cable Design",
+        "High-Pressure Housing Design",
+        "Sonar and Acoustic Systems",
+        "Marine Robotics",
+        "Subsea Control Systems",
+        "Offshore Operations and Safety"
+      ]
+    },
+    {
+      "title": "Defence Systems Engineer",
+      "skills": [
+        "DoD Architecture Framework (DoDAF)",
+        "Systems Engineering (INCOSE CSEP)",
+        "Requirements Management (DOORS)",
+        "MIL-STD-810 (Environmental Engineering)",
+        "MIL-STD-461 (Electromagnetic Interference)",
+        "Model-Based Systems Engineering (MBSE)",
+        "Risk Management Framework (RMF)"
+      ]
+    },
+    {
+      "title": "Design for Manufacturability Engineer",
+      "skills": [
+        "Geometric Dimensioning & Tolerancing (GD&T)",
+        "Statistical Process Control (SPC)",
+        "Lean Manufacturing/Six Sigma",
+        "CAD Software (SolidWorks, Creo)",
+        "Injection Molding/Casting/Machining Processes",
+        "Failure Modes and Effects Analysis (FMEA)",
+        "Material Science"
+      ]
+    },
+    {
+      "title": "Design Integrity Engineer",
+      "skills": [
+        "Failure Mode and Effects Analysis (FMEA)",
+        "Root Cause Analysis",
+        "Reliability Engineering",
+        "Validation and Verification Testing",
+        "Statistical Analysis",
+        "Quality Management Systems (ISO 9001)",
+        "Material Science"
+      ]
+    },
+    {
+      "title": "Desktop Systems Engineer",
+      "skills": [
+        "Microsoft Endpoint Configuration Manager (MECM/SCCM)",
+        "Microsoft Intune",
+        "Windows Autopilot",
+        "PowerShell Scripting",
+        "Group Policy Management",
+        "Application Packaging and Deployment",
+        "Desktop Imaging"
+      ]
+    },
+    {
+      "title": "DevSecOps Engineer",
+      "skills": [
+        "CI/CD Pipeline Security (Jenkins, GitLab CI)",
+        "Infrastructure as Code (IaC) Security (Terraform, CloudFormation)",
+        "SAST/DAST/SCA Tool Integration",
+        "Container Security (Docker, Kubernetes)",
+        "Secrets Management (HashiCorp Vault)",
+        "Cloud Security (AWS, Azure)",
+        "Policy as Code (Open Policy Agent)"
+      ]
+    },
+    {
+      "title": "Diagnostic Equipment Engineer",
+      "skills": [
+        "Medical Device Troubleshooting",
+        "Schematic Reading and Analysis",
+        "Embedded Systems Diagnostics",
+        "FDA Regulations for Medical Devices",
+        "Test Automation Development",
+        "ISO 13485",
+        "Communication Protocols (CAN, Ethernet)"
+      ]
+    },
+    {
+      "title": "Digital Forensics and Incident Response (DFIR) Engineer",
+      "skills": [
+        "GIAC Certified Forensic Analyst (GCFA)",
+        "EnCase / FTK (Forensic Toolkit)",
+        "Volatility Framework (Memory Forensics)",
+        "SIEM (Splunk, ELK)",
+        "Network Forensics (Wireshark)",
+        "Malware Reverse Engineering (Ghidra, IDA Pro)",
+        "Incident Handling Procedures (NIST 800-61)"
+      ]
+    },
+    {
+      "title": "Digital Forensics Engineer",
+      "skills": [
+        "GIAC Certified Forensic Analyst (GCFA)",
+        "EnCase/FTK",
+        "Volatility for memory analysis",
+        "Filesystem analysis (NTFS, EXT4, APFS)",
+        "Mobile forensics (Cellebrite)",
+        "Log analysis",
+        "Chain of Custody"
+      ]
+    },
+    {
+      "title": "Digital Signal Processing Engineer",
+      "skills": [
+        "MATLAB/Simulink for DSP",
+        "Algorithm Development (Filters, FFTs)",
+        "C/C++ for Embedded DSP",
+        "FPGA/ASIC implementation of DSP algorithms",
+        "Software-Defined Radio (SDR)",
+        "VHDL/Verilog",
+        "Signal Theory"
+      ]
+    },
+    {
+      "title": "Disaster Mitigation Engineer",
+      "skills": [
+        "FEMA Hazard Mitigation Planning",
+        "Seismic Retrofitting",
+        "Floodplain Management",
+        "Structural Hardening Techniques",
+        "Risk Assessment and Analysis",
+        "GIS for Disaster Mapping",
+        "Emergency Response Planning"
+      ]
+    },
+    {
+      "title": "Distributed Systems Reliability Engineer",
+      "skills": [
+        "Site Reliability Engineering (SRE) principles",
+        "Kubernetes",
+        "Prometheus/Grafana for monitoring",
+        "Infrastructure as Code (Terraform)",
+        "Chaos Engineering (Gremlin)",
+        "Service Level Objectives (SLOs)",
+        "Go/Python programming"
+      ]
+    },
+    {
+      "title": "Drilling Systems Engineer",
+      "skills": [
+        "Well Control Certification (IADC, IWCF)",
+        "Drilling Fluid Engineering",
+        "Directional Drilling Planning",
+        "Casing Design",
+        "Drill String Design",
+        "Drilling Simulation Software (Landmark, Schlumberger)",
+        "Managed Pressure Drilling (MPD)"
+      ]
+    },
+    {
+      "title": "Driver Assistance Systems Engineer (ADAS)",
+      "skills": [
+        "ISO 26262 Functional Safety",
+        "Computer Vision for Automotive",
+        "Sensor Fusion (Radar, LiDAR, Camera)",
+        "Vector CANoe/CANalyzer",
+        "dSPACE HIL Systems",
+        "Control Algorithms for ADAS features",
+        "AUTOSAR"
+      ]
+    },
+    {
+      "title": "Dynamics and Controls Engineer",
+      "skills": [
+        "Control Theory (Classical and Modern)",
+        "MATLAB/Simulink",
+        "State-Space Modeling",
+        "Vibration Analysis",
+        "System Identification",
+        "Real-Time Control Systems",
+        "Robotics Kinematics and Dynamics"
+      ]
+    },
+    {
+      "title": "ECU Software Systems Engineer",
+      "skills": [
+        "Embedded C programming",
+        "AUTOSAR architecture",
+        "CAN/LIN communication protocols",
+        "Vector CANoe/CANalyzer",
+        "ISO 26262 functional safety",
+        "Real-Time Operating Systems (RTOS)",
+        "Model-Based Design (Simulink)"
+      ]
+    },
+    {
+      "title": "Electrical Compliance Engineer",
+      "skills": [
+        "UL/CE/FCC certification processes",
+        "Electromagnetic Compatibility (EMC) testing",
+        "IEC 60601 (Medical Electrical Equipment)",
+        "Low Voltage Directive (LVD)",
+        "RoHS/WEEE compliance",
+        "Product Safety Engineering",
+        "Standards interpretation"
+      ]
+    },
+    {
+      "title": "Electrical Distribution Engineer",
+      "skills": [
+        "Power System Analysis Software (ETAP, SKM)",
+        "Overcurrent Protection and Coordination",
+        "Distribution System Design (Overhead/Underground)",
+        "National Electrical Safety Code (NESC)",
+        "Arc Flash Analysis (NFPA 70E)",
+        "SCADA systems",
+        "Voltage Regulation"
+      ]
+    },
+    {
+      "title": "Electrical Engineer",
+      "skills": [
+        "Professional Engineer (P.E.) License",
+        "AutoCAD Electrical / Revit",
+        "Power System Analysis (ETAP)",
+        "National Electrical Code (NEC)",
+        "PLC Programming",
+        "Circuit Design and Simulation (SPICE)",
+        "Control Systems"
+      ]
+    },
+    {
+      "title": "Electrical Power Systems Engineer",
+      "skills": [
+        "Power flow, short circuit, and stability analysis",
+        "ETAP/SKM/PSSE software",
+        "Protective relaying",
+        "Substation design",
+        "National Electrical Safety Code (NESC)",
+        "Renewable energy integration",
+        "SCADA systems"
+      ]
+    },
+    {
+      "title": "Electromagnetic Compatibility (EMC) Engineer",
+      "skills": [
+        "iNARTE EMC Engineer Certification",
+        "EMC/EMI Test Standards (FCC Part 15, CISPR, MIL-STD-461)",
+        "Spectrum Analyzers and EMI Receivers",
+        "Anechoic Chamber and TEM Cell Testing",
+        "Circuit Design for EMI Mitigation",
+        "RF Shielding and Grounding Techniques",
+        "Electromagnetic Simulation (CST, HFSS)"
+      ]
+    },
+    {
+      "title": "Electronic Design Automation Engineer",
+      "skills": [
+        "EDA Tool Scripting (Tcl, Perl, Python)",
+        "Cadence/Synopsys/Mentor Graphics tool flow",
+        "ASIC/FPGA design methodology",
+        "Digital Logic Design (Verilog/VHDL)",
+        "Static Timing Analysis (STA)",
+        "Design Verification",
+        "Semiconductor Physics"
+      ]
+    },
+    {
+      "title": "Electronic Warfare Engineer",
+      "skills": [
+        "Radar Systems Analysis",
+        "Signal Intelligence (SIGINT)",
+        "Digital RF Memory (DRFM)",
+        "Electronic Attack (EA) and Electronic Protection (EP) techniques",
+        "MATLAB for EW simulation",
+        "Antenna Design",
+        "Digital Signal Processing"
+      ]
+    },
+    {
+      "title": "Electronics Engineer",
+      "skills": [
+        "PCB Design (Altium Designer, Cadence Allegro)",
+        "Analog and Digital Circuit Design",
+        "SPICE Simulation",
+        "Microcontroller Programming (C/C++)",
+        "VHDL/Verilog for FPGAs",
+        "Signal Integrity Analysis",
+        "EMC/EMI Design principles"
+      ]
+    },
+    {
+      "title": "Embedded Control Systems Engineer",
+      "skills": [
+        "Embedded C/C++",
+        "Real-Time Operating Systems (RTOS)",
+        "Control Theory (PID, State-Space)",
+        "MATLAB/Simulink for Model-Based Design",
+        "Communication Protocols (CAN, SPI, I2C)",
+        "Microcontroller Peripherals (ADC, PWM, Timers)",
+        "Hardware-in-the-Loop (HIL) testing"
+      ]
+    },
+    {
+      "title": "Embedded Linux Engineer",
+      "skills": [
+        "Linux Kernel and Device Driver Development",
+        "Yocto Project/Buildroot",
+        "Embedded C/C++",
+        "Cross-compilation Toolchains",
+        "U-Boot (Bootloader)",
+        "Board Support Package (BSP) Development",
+        "Debugging with JTAG/GDB"
+      ]
+    },
+    {
+      "title": "Embedded Security Engineer",
+      "skills": [
+        "Secure Boot and Chain of Trust",
+        "Trusted Execution Environments (e.g., TrustZone)",
+        "Hardware Security Modules (HSMs)",
+        "Side-channel analysis and countermeasures",
+        "Firmware reverse engineering (Ghidra, IDA Pro)",
+        "Lightweight Cryptography",
+        "JTAG/SWD security"
+      ]
+    },
+    {
+      "title": "Embedded Systems Engineer – Automotive",
+      "skills": [
+        "AUTOSAR",
+        "ISO 26262 (Functional Safety)",
+        "CAN/LIN/FlexRay protocols",
+        "Vector CANoe/CANalyzer",
+        "Embedded C",
+        "Real-Time Operating Systems (RTOS)",
+        "Model-Based Development (MATLAB/Simulink)"
+      ]
+    },
+    {
+      "title": "Embedded Systems Reliability Engineer",
+      "skills": [
+        "Hardware Reliability Testing (HALT/HASS)",
+        "Failure Mode and Effects Analysis (FMEA)",
+        "Weibull Analysis",
+        "Environmental Stress Screening (ESS)",
+        "Firmware Validation and Verification",
+        "Fault-tolerant system design",
+        "Root Cause Analysis"
+      ]
+    },
+    {
+      "title": "Emissions Control Engineer",
+      "skills": [
+        "Catalytic Converter Technology",
+        "Exhaust Gas Recirculation (EGR) systems",
+        "Selective Catalytic Reduction (SCR) systems",
+        "On-Board Diagnostics (OBD-II)",
+        "EPA/CARB regulations",
+        "Engine Calibration",
+        "Combustion Analysis"
+      ]
+    },
+    {
+      "title": "Endpoint Detection and Response (EDR) Engineer",
+      "skills": [
+        "EDR Platform Management (CrowdStrike, SentinelOne, Carbon Black)",
+        "Threat Hunting with EDR Data",
+        "Incident Response using EDR",
+        "Malware Analysis",
+        "Host-based Forensics",
+        "Scripting for Automation (Python, PowerShell)",
+        "Operating System Internals (Windows, Linux)"
+      ]
+    },
+    {
+      "title": "Endpoint Security Engineer",
+      "skills": [
+        "Endpoint Detection and Response (EDR) solutions (CrowdStrike, SentinelOne)",
+        "Next-Generation Antivirus (NGAV)",
+        "Host-based Intrusion Prevention Systems (HIPS)",
+        "Application Whitelisting",
+        "Host-based firewall management",
+        "Disk Encryption Technologies",
+        "Vulnerability Management"
+      ]
+    },
+    {
+      "title": "Energy Engineer",
+      "skills": [
+        "Certified Energy Manager (CEM)",
+        "Energy Auditing",
+        "HVAC Systems Optimization",
+        "Building Automation Systems (BAS)",
+        "Renewable Energy Systems (Solar, Wind)",
+        "Measurement and Verification (M&V)",
+        "Energy Modeling Software (e.g., eQUEST, EnergyPlus)"
+      ]
+    },
+    {
+      "title": "Engineering Data Analytics Engineer",
+      "skills": [
+        "Python (Pandas, NumPy, Scikit-learn)",
+        "Data Historians (OSIsoft PI)",
+        "Statistical Process Control (SPC)",
+        "Machine Learning for Predictive Maintenance",
+        "Data Visualization (Tableau, Power BI)",
+        "SQL Databases",
+        "MATLAB"
+      ]
+    },
+    {
+      "title": "Engineering Geologist",
+      "skills": [
+        "Professional Geologist (PG) License",
+        "Geotechnical Site Investigation",
+        "Slope Stability Analysis",
+        "Seismic Hazard Assessment",
+        "Rock Mechanics",
+        "Hydrogeology",
+        "GIS and Remote Sensing"
+      ]
+    },
+    {
+      "title": "Environmental Health & Safety Engineer",
+      "skills": [
+        "Certified Safety Professional (CSP) or CIH",
+        "OSHA regulations",
+        "EPA regulations",
+        "Industrial Hygiene",
+        "Ergonomics",
+        "Incident Investigation",
+        "Hazard Communication (HazCom)"
+      ]
+    },
+    {
+      "title": "Environmental Modeling Engineer",
+      "skills": [
+        "Groundwater Modeling (MODFLOW)",
+        "Surface Water Modeling (HEC-RAS, SWMM)",
+        "Air Dispersion Modeling (AERMOD)",
+        "GIS for Environmental Analysis",
+        "Contaminant Transport Modeling",
+        "Python/R for data analysis",
+        "Environmental Data Management"
+      ]
+    },
+    {
+      "title": "Ergonomics Engineer",
+      "skills": [
+        "Certified Professional Ergonomist (CPE)",
+        "Human Factors Engineering",
+        "Workstation Design",
+        "Biomechanics",
+        "NIOSH Lifting Equation",
+        "Occupational Safety and Health (OSH)",
+        "Task Analysis"
+      ]
+    },
+    {
+      "title": "Ethical Hacking Engineer",
+      "skills": [
+        "Certified Ethical Hacker (CEH)",
+        "Offensive Security Certified Professional (OSCP)",
+        "Penetration Testing Execution Standard (PTES)",
+        "Metasploit Framework",
+        "Burp Suite Professional",
+        "Nmap",
+        "Social Engineering Techniques"
+      ]
+    },
+    {
+      "title": "Exhaust Systems Engineer – Automotive",
+      "skills": [
+        "Computational Fluid Dynamics (CFD) for exhaust flow",
+        "Acoustic analysis for NVH",
+        "Thermodynamics and Heat Transfer",
+        "Catalytic converter and emissions control systems",
+        "CAD (CATIA, SolidWorks)",
+        "FEA for structural durability",
+        "Material science (stainless steels, high-temp alloys)"
+      ]
+    },
+    {
+      "title": "Exploitation Engineer",
+      "skills": [
+        "Offensive Security Certified Professional (OSCP)",
+        "Reverse Engineering (IDA Pro, Ghidra)",
+        "Assembly Language (x86/x64, ARM)",
+        "Fuzzing Techniques (AFL)",
+        "Buffer Overflow and Memory Corruption Exploits",
+        "Operating System Internals",
+        "Debugging (GDB, WinDbg)"
+      ]
+    },
+    {
+      "title": "Facilities Engineer",
+      "skills": [
+        "HVAC Systems Design and Maintenance",
+        "Building Automation Systems (BAS)",
+        "Electrical Power Distribution",
+        "Plumbing and Fire Protection Systems",
+        "AutoCAD/Revit",
+        "Project Management",
+        "Energy Management"
+      ]
+    },
+    {
+      "title": "Facility Systems Engineer",
+      "skills": [
+        "HVAC design and optimization",
+        "Building Management Systems (BMS)",
+        "Power distribution and backup systems (UPS, generators)",
+        "Fire protection systems (NFPA standards)",
+        "AutoCAD/Revit",
+        "Energy efficiency auditing",
+        "Industrial utility systems (compressed air, steam)"
+      ]
+    },
+    {
+      "title": "Failure Analysis Engineer",
+      "skills": [
+        "Root Cause Analysis (RCA) methodologies",
+        "Material characterization (SEM/EDX, FTIR, XRD)",
+        "Metallography",
+        "Non-Destructive Testing (NDT)",
+        "Fractography",
+        "Statistical Analysis (Weibull)",
+        "Mechanical and Electrical Testing"
+      ]
+    },
+    {
+      "title": "Fire Protection Engineer",
+      "skills": [
+        "Professional Engineer (P.E.) in Fire Protection",
+        "NFPA Codes and Standards (NFPA 13, 72, 101)",
+        "Fire Sprinkler System Design (AutoSPRINK, HydraCAD)",
+        "Fire Alarm and Detection System Design",
+        "Smoke Control System Design",
+        "Egress Modeling",
+        "Fire Dynamics Simulation (FDS)"
+      ]
+    },
+    {
+      "title": "Firmware Security Engineer",
+      "skills": [
+        "Firmware Reverse Engineering (Ghidra, IDA Pro)",
+        "UEFI/BIOS Security",
+        "Secure Boot Implementation",
+        "Embedded Systems Security",
+        "JTAG/SWD Debugging",
+        "Side-Channel Analysis",
+        "Threat Modeling for Hardware"
+      ]
+    },
+    {
+      "title": "Firmware Test Engineer",
+      "skills": [
+        "Test Automation Frameworks (Pytest, Robot Framework)",
+        "Embedded C",
+        "JTAG/SWD Debuggers",
+        "Oscilloscopes and Logic Analyzers",
+        "Hardware-in-the-Loop (HIL) testing",
+        "Continuous Integration (CI) for firmware",
+        "Requirements Traceability"
+      ]
+    },
+    {
+      "title": "Flight Controls Engineer",
+      "skills": [
+        "Control Theory (Classical, Modern, Optimal)",
+        "MATLAB/Simulink for control system design",
+        "Aircraft Flight Dynamics",
+        "DO-178C for flight software",
+        "Hardware-in-the-Loop (HIL) simulation",
+        "Actuation Systems",
+        "C/C++ for embedded systems"
+      ]
+    },
+    {
+      "title": "Flight Test Engineer",
+      "skills": [
+        "Test Planning and Execution",
+        "Data Acquisition Systems",
+        "Telemetry Systems",
+        "Aircraft Performance and Handling Qualities",
+        "FAA/EASA Certification Requirements",
+        "MATLAB for data analysis",
+        "Risk Management"
+      ]
+    },
+    {
+      "title": "Food Process Engineer",
+      "skills": [
+        "HACCP (Hazard Analysis and Critical Control Points) certification",
+        "Food preservation techniques (pasteurization, UHT)",
+        "Process design for food manufacturing",
+        "GMP (Good Manufacturing Practices)",
+        "Heat and mass transfer in food processing",
+        "Food rheology",
+        "Packaging technology"
+      ]
+    },
+    {
+      "title": "Forensic Materials Engineer",
+      "skills": [
+        "Failure Analysis",
+        "Scanning Electron Microscopy (SEM) with EDX",
+        "X-ray Diffraction (XRD)",
+        "Metallography",
+        "Non-destructive testing (NDT)",
+        "Fractography",
+        "Root Cause Analysis"
+      ]
+    },
+    {
+      "title": "Fracture Mechanics Engineer",
+      "skills": [
+        "Linear Elastic and Elastic-Plastic Fracture Mechanics",
+        "Finite Element Analysis (FEA) for crack propagation (Abaqus, ANSYS)",
+        "Fatigue Life Prediction",
+        "Damage Tolerance Analysis",
+        "NASGRO software",
+        "Material testing for fracture toughness",
+        "Non-destructive inspection (NDI) methods"
+      ]
+    },
+    {
+      "title": "Fuel Cell Systems Engineer",
+      "skills": [
+        "Electrochemical Engineering",
+        "PEM/SOFC Fuel Cell Technology",
+        "Hydrogen production and storage",
+        "Thermodynamics and Heat Transfer",
+        "System integration and control",
+        "COMSOL/ANSYS for fuel cell modeling",
+        "Balance of Plant (BOP) design"
+      ]
+    },
+    {
+      "title": "Functional Safety Engineer",
+      "skills": [
+        "ISO 26262 (Automotive)",
+        "IEC 61508 (General)",
+        "IEC 61511 (Process Industry)",
+        "Hazard Analysis and Risk Assessment (HARA)",
+        "Fault Tree Analysis (FTA)",
+        "Failure Mode and Effects Analysis (FMEA)",
+        "Certified Functional Safety Professional/Expert"
+      ]
+    },
+    {
+      "title": "Gas Detection Systems Engineer",
+      "skills": [
+        "Sensor technology (catalytic, infrared, electrochemical)",
+        "NFPA codes related to gas detection",
+        "System design and layout for industrial facilities",
+        "Instrumentation and control integration (PLC, DCS)",
+        "Calibration and maintenance procedures",
+        "Hazardous area classifications",
+        "Wireless gas detection systems"
+      ]
+    },
+    {
+      "title": "GCP Cloud Security Engineer",
+      "skills": [
+        "Google Professional Cloud Security Engineer Certification",
+        "Google Cloud IAM",
+        "VPC Service Controls",
+        "Google Cloud Armor",
+        "Security Command Center",
+        "Cloud Data Loss Prevention (DLP) API",
+        "Infrastructure as Code (Terraform) Security"
+      ]
+    },
+    {
+      "title": "Geo‑Informatics Engineer",
+      "skills": [
+        "Geographic Information Systems (GIS) - ArcGIS, QGIS",
+        "Remote Sensing",
+        "Spatial Database Management (PostGIS)",
+        "Geospatial Analysis",
+        "Photogrammetry",
+        "LiDAR data processing",
+        "Python for Geospatial (GDAL, GeoPandas)"
+      ]
+    },
+    {
+      "title": "Geodetic Surveying Engineer",
+      "skills": [
+        "Professional Land Surveyor (PLS) license",
+        "GPS/GNSS surveying",
+        "Geodetic datums and coordinate systems",
+        "Least squares adjustment",
+        "Total station and LiDAR operation",
+        "AutoCAD Civil 3D/Trimble Business Center",
+        "Photogrammetry"
+      ]
+    },
+    {
+      "title": "Geological Engineer",
+      "skills": [
+        "Professional Engineer (P.E.) and/or Professional Geologist (P.G.)",
+        "Rock Mechanics",
+        "Soil Mechanics",
+        "Hydrogeology",
+        "Geophysical Methods",
+        "Slope Stability Analysis",
+        "Tunneling and Underground Construction"
+      ]
+    },
+    {
+      "title": "Geothermal Systems Engineer",
+      "skills": [
+        "Geothermal reservoir modeling",
+        "Thermodynamics and heat transfer",
+        "Drilling engineering for geothermal wells",
+        "Power plant design (binary cycle, flash steam)",
+        "Corrosion and scaling prevention",
+        "Geophysical exploration methods",
+        "Well testing and analysis"
+      ]
+    },
+    {
+      "title": "Global Positioning Systems Engineer",
+      "skills": [
+        "GNSS receiver design",
+        "Signal processing for GPS",
+        "Kalman filtering for navigation",
+        "Inertial Navigation Systems (INS) integration",
+        "RF engineering for satellite signals",
+        "Geodesy and coordinate systems",
+        "RTK and PPP techniques"
+      ]
+    },
+    {
+      "title": "Governance, Risk, and Compliance (GRC) Engineer",
+      "skills": [
+        "GRC Platform Administration (ServiceNow, Archer)",
+        "Control Framework Mapping (NIST, ISO 27001, PCI DSS)",
+        "Risk Assessment Methodologies",
+        "Audit and Evidence Collection",
+        "Policy and Procedure Management",
+        "Security Metrics and Reporting",
+        "Compliance Automation"
+      ]
+    },
+    {
+      "title": "Ground Support Equipment Engineer",
+      "skills": [
+        "Hydraulic and pneumatic systems design",
+        "Mechanical design (CAD - SolidWorks, CATIA)",
+        "Electrical systems for mobile equipment",
+        "Diesel and electric powertrains",
+        "Structural analysis (FEA)",
+        "SAE Aerospace standards",
+        "Reliability and maintainability"
+      ]
+    },
+    {
+      "title": "Hardware Security Engineer",
+      "skills": [
+        "Hardware Security Module (HSM) Management",
+        "Side-Channel Attack (SCA) and Fault Injection (FI) Analysis",
+        "FPGA/ASIC Security Design",
+        "Physical Unclonable Functions (PUFs)",
+        "Secure JTAG/Debug Interfaces",
+        "Anti-Tamper and Anti-Reverse Engineering Techniques",
+        "Hardware Trojans Detection"
+      ]
+    },
+    {
+      "title": "Hardware Test Engineer",
+      "skills": [
+        "Test plan development",
+        "Automated Test Equipment (ATE)",
+        "LabVIEW/TestStand",
+        "Oscilloscopes, logic analyzers, spectrum analyzers",
+        "Python/Perl for test automation",
+        "Signal integrity testing",
+        "Environmental and reliability testing"
+      ]
+    },
+    {
+      "title": "Hazardous Waste Engineer",
+      "skills": [
+        "RCRA regulations",
+        "HAZWOPER certification",
+        "Site characterization and remediation",
+        "Landfill and containment system design",
+        "Chemical compatibility and treatment",
+        "Transportation of Dangerous Goods (TDG) regulations",
+        "Environmental sampling and analysis"
+      ]
+    },
+    {
+      "title": "Heat Exchanger Design Engineer",
+      "skills": [
+        "Heat transfer principles",
+        "Thermodynamics",
+        "HTRI/Aspen EDR software",
+        "TEMA standards for shell and tube exchangers",
+        "Mechanical design for pressure vessels (ASME BPVC)",
+        "Computational Fluid Dynamics (CFD)",
+        "Vibration analysis"
+      ]
+    },
+    {
+      "title": "High‑Voltage Systems Engineer",
+      "skills": [
+        "Substation design",
+        "Transmission line design",
+        "Power system protection",
+        "High voltage testing",
+        "Insulation coordination",
+        "ETAP/PSSE for system analysis",
+        "High voltage direct current (HVDC) systems"
+      ]
+    },
+    {
+      "title": "Highway Engineer",
+      "skills": [
+        "Professional Engineer (P.E.) License",
+        "Geometric Roadway Design (AASHTO Green Book)",
+        "Pavement Design (AASHTO 93/MEPDG)",
+        "AutoCAD Civil 3D/MicroStation/OpenRoads",
+        "Traffic Engineering principles",
+        "Stormwater Drainage Design",
+        "Construction Management"
+      ]
+    },
+    {
+      "title": "Historic Building Conservation Engineer",
+      "skills": [
+        "Non-destructive evaluation of historic materials",
+        "Structural analysis of historic structures",
+        "Knowledge of traditional building materials and techniques",
+        "Building codes for historic preservation",
+        "Laser scanning and photogrammetry",
+        "Material conservation techniques",
+        "Architectural history"
+      ]
+    },
+    {
+      "title": "Home Automation Systems Engineer",
+      "skills": [
+        "Home automation protocols (Zigbee, Z-Wave, Wi-Fi)",
+        "Control4/Crestron programming",
+        "Network design for smart homes",
+        "IoT device integration",
+        "Voice assistant (Alexa, Google Home) integration",
+        "Lighting and HVAC control systems",
+        "Home security systems"
+      ]
+    },
+    {
+      "title": "HVAC Systems Engineer – Commercial",
+      "skills": [
+        "ASHRAE standards",
+        "Load calculation software (Trane TRACE, Carrier HAP)",
+        "Building energy modeling",
+        "Ductwork and piping design",
+        "Building Automation Systems (BAS)",
+        "Revit/AutoCAD MEP",
+        "Energy codes and LEED certification"
+      ]
+    },
+    {
+      "title": "HVAC Systems Engineer – Industrial",
+      "skills": [
+        "Industrial ventilation design (ACGIH standards)",
+        "Process heating and cooling systems",
+        "Dust collection and air pollution control",
+        "HVAC for hazardous locations",
+        "Large-scale refrigeration systems",
+        "Energy recovery systems",
+        "Psychrometrics"
+      ]
+    },
+    {
+      "title": "Hydraulic Engineer",
+      "skills": [
+        "Hydraulic system design",
+        "Fluid Power Society certification (e.g., CHPS)",
+        "Automation Studio or FluidSIM software",
+        "Component selection (pumps, valves, cylinders)",
+        "Schematic reading",
+        "Troubleshooting hydraulic systems",
+        "Contamination control"
+      ]
+    },
+    {
+      "title": "Hydraulic Oil & Fluid Systems Engineer",
+      "skills": [
+        "Fluid power system design",
+        "International Fluid Power Society (IFPS) Certification",
+        "CAD for schematic design (AutoCAD, SolidWorks)",
+        "Hydraulic component sizing (pumps, motors, valves)",
+        "Contamination control (ISO 4406)",
+        "Hydraulic fluid analysis",
+        "System troubleshooting and maintenance"
+      ]
+    },
+    {
+      "title": "Hydroelectric Power Systems Engineer",
+      "skills": [
+        "Hydropower plant design",
+        "Turbine and generator selection",
+        "Hydrology and water resource management",
+        "Dam safety and engineering",
+        "Control and automation of power plants",
+        "Power systems analysis",
+        "Environmental impact assessment"
+      ]
+    },
+    {
+      "title": "Hydrology & Water Resources Engineer",
+      "skills": [
+        "HEC-HMS/HEC-RAS modeling",
+        "GIS for water resources (ArcGIS)",
+        "Groundwater modeling (MODFLOW)",
+        "Statistical hydrology",
+        "Watershed management",
+        "Stormwater management design",
+        "Water rights and regulations"
+      ]
+    },
+    {
+      "title": "IC Design Engineer",
+      "skills": [
+        "Verilog/VHDL",
+        "Synthesis and Place & Route (Cadence/Synopsys)",
+        "Static Timing Analysis (STA)",
+        "Logic Design",
+        "ASIC design flow",
+        "Scripting (Tcl, Perl, Python)",
+        "Semiconductor device physics"
+      ]
+    },
+    {
+      "title": "IC Packaging Engineer",
+      "skills": [
+        "Semiconductor packaging technologies (BGA, QFN, WLCSP)",
+        "Thermal analysis of packages",
+        "Signal and power integrity analysis (HyperLynx, SIwave)",
+        "CAD tools for package design (Cadence APD/SiP)",
+        "Wire bonding and flip-chip processes",
+        "Material science for packaging",
+        "Reliability testing"
+      ]
+    },
+    {
+      "title": "Identity and Access Management (IAM) Engineer",
+      "skills": [
+        "Certified Identity and Access Manager (CIAM)",
+        "IAM Platforms (Okta, Ping Identity, SailPoint, CyberArk)",
+        "Protocols (SAML, OAuth, OIDC, SCIM)",
+        "Directory Services (Active Directory, LDAP)",
+        "Privileged Access Management (PAM)",
+        "Identity Governance and Administration (IGA)",
+        "Multi-Factor Authentication (MFA)"
+      ]
+    },
+    {
+      "title": "Imaging Systems Engineer",
+      "skills": [
+        "Optics design (Zemax)",
+        "Image sensor technology (CMOS, CCD)",
+        "Image processing algorithms",
+        "Camera calibration",
+        "MATLAB/OpenCV for image analysis",
+        "Lighting and illumination techniques",
+        "Machine vision applications"
+      ]
+    },
+    {
+      "title": "Incident Response (IR) Automation Engineer",
+      "skills": [
+        "Security Orchestration, Automation, and Response (SOAR) platforms (Palo Alto Cortex XSOAR, Splunk SOAR)",
+        "Python scripting for security",
+        "API integration",
+        "Playbook development",
+        "Digital Forensics and Incident Response (DFIR) processes",
+        "SIEM technologies",
+        "Threat intelligence feeds"
+      ]
+    },
+    {
+      "title": "Industrial Automation Engineer",
+      "skills": [
+        "PLC Programming (Rockwell, Siemens)",
+        "HMI/SCADA Development (Ignition, FactoryTalk View)",
+        "Robotics Integration (Fanuc, ABB)",
+        "Industrial Networks (EtherNet/IP, PROFINET)",
+        "Motion Control and Drives",
+        "Machine Vision Systems",
+        "Control Panel Design"
+      ]
+    },
+    {
+      "title": "Industrial Control Systems (ICS) Security Engineer",
+      "skills": [
+        "Global Industrial Cyber Security Professional (GICSP)",
+        "ISA/IEC 62443 Standard",
+        "SCADA/DCS/PLC Security",
+        "ICS Protocols (Modbus, DNP3, S7)",
+        "Purdue Enterprise Reference Architecture",
+        "Network Security Monitoring for OT (Nozomi, Dragos)",
+        "ICS Penetration Testing"
+      ]
+    },
+    {
+      "title": "Industrial Control Systems Engineer",
+      "skills": [
+        "PLC/DCS Programming",
+        "SCADA/HMI Design",
+        "Industrial Communication Protocols (Modbus, Profibus)",
+        "Process Instrumentation",
+        "Control Loop Tuning",
+        "ISA Standards",
+        "Functional Safety (IEC 61511)"
+      ]
+    },
+    {
+      "title": "Industrial Engineer",
+      "skills": [
+        "Lean Manufacturing/Six Sigma Certification",
+        "Process Simulation (Arena, FlexSim)",
+        "Facility Layout and Design (AutoCAD)",
+        "Work Measurement and Time Studies",
+        "Supply Chain Management",
+        "Quality Control (SPC)",
+        "Ergonomics"
+      ]
+    },
+    {
+      "title": "Industrial Hygiene Engineer",
+      "skills": [
+        "Certified Industrial Hygienist (CIH)",
+        "Air sampling and analysis",
+        "Noise measurement and control",
+        "Ventilation system design",
+        "Toxicology",
+        "OSHA regulations",
+        "Ergonomics assessment"
+      ]
+    },
+    {
+      "title": "Industrial Process Engineer – Manufacturing",
+      "skills": [
+        "Lean Six Sigma Black Belt",
+        "Statistical Process Control (SPC)",
+        "Value Stream Mapping",
+        "Design of Experiments (DOE)",
+        "Root Cause Analysis",
+        "Process Simulation",
+        "Quality Management Systems (ISO 9001)"
+      ]
+    },
+    {
+      "title": "Industrial Robot Systems Engineer",
+      "skills": [
+        "Robot Programming (FANUC, KUKA, ABB)",
+        "Robotic Simulation Software (ROBOGUIDE, RobotStudio)",
+        "End-of-Arm Tooling (EOAT) Design",
+        "Robot Safety Standards (RIA/ISO 10218)",
+        "PLC Integration",
+        "Machine Vision for Robotic Guidance",
+        "Robotics Operating System (ROS)"
+      ]
+    },
+    {
+      "title": "Industrial Safety Systems Engineer",
+      "skills": [
+        "TÜV Rheinland Functional Safety Engineer Certification",
+        "Safety Instrumented Systems (SIS) - IEC 61511",
+        "Process Hazard Analysis (PHA) - HAZOP, LOPA",
+        "Safety PLC programming",
+        "Machine Safety Standards (ISO 13849, IEC 62061)",
+        "Risk Assessment",
+        "Emergency Shutdown Systems (ESD)"
+      ]
+    },
+    {
+      "title": "Infrastructure Penetration Tester",
+      "skills": [
+        "Offensive Security Certified Professional (OSCP)",
+        "Active Directory Exploitation",
+        "Network Protocol Analysis (Wireshark)",
+        "Metasploit Framework",
+        "Nmap/Masscan",
+        "Vulnerability Scanners (Nessus, OpenVAS)",
+        "PowerShell for Post-Exploitation"
+      ]
+    },
+    {
+      "title": "Infrastructure Resilience Engineer",
+      "skills": [
+        "Risk Assessment",
+        "Disaster Recovery Planning",
+        "Structural Hardening",
+        "Redundant Systems Design",
+        "Cybersecurity for Critical Infrastructure",
+        "Emergency Management",
+        "Supply Chain Analysis"
+      ]
+    },
+    {
+      "title": "Insider Threat Engineer",
+      "skills": [
+        "User and Entity Behavior Analytics (UEBA)",
+        "Data Loss Prevention (DLP)",
+        "Security Information and Event Management (SIEM)",
+        "Log Analysis",
+        "Digital Forensics",
+        "Insider Threat Program Development",
+        "Employee Monitoring Technologies"
+      ]
+    },
+    {
+      "title": "Instrumentation & Control Engineer – Chemical Plant",
+      "skills": [
+        "Certified Automation Professional (CAP)",
+        "DCS/PLC Configuration (Emerson DeltaV, Honeywell Experion)",
+        "Safety Instrumented Systems (SIS) design (IEC 61511)",
+        "Instrumentation Specification (flow, level, pressure, temp)",
+        "Control Loop Tuning",
+        "Hazardous Area Classifications",
+        "P&ID interpretation"
+      ]
+    },
+    {
+      "title": "Instrumentation & Control Engineer – Power Plant",
+      "skills": [
+        "Distributed Control Systems (DCS) for power generation",
+        "Turbine control systems",
+        "Boiler control and instrumentation",
+        "Continuous Emissions Monitoring Systems (CEMS)",
+        "SCADA systems",
+        "Control loop tuning",
+        "ISA standards"
+      ]
+    },
+    {
+      "title": "Instrumentation Engineer",
+      "skills": [
+        "ISA Certified Automation Professional (CAP)",
+        "Instrument Specification and Selection",
+        "P&ID development",
+        "Calibration and Maintenance",
+        "Control Valve Sizing",
+        "Data Acquisition Systems",
+        "PLC/DCS integration"
+      ]
+    },
+    {
+      "title": "Insulation Materials Engineer",
+      "skills": [
+        "Thermal conductivity analysis",
+        "Material science of polymers, foams, and ceramics",
+        "ASTM standards for insulation testing",
+        "Heat transfer modeling",
+        "Acoustic insulation properties",
+        "Fire resistance testing",
+        "Manufacturing processes for insulation"
+      ]
+    },
+    {
+      "title": "Integration Test Engineer",
+      "skills": [
+        "System integration testing",
+        "API testing (Postman, REST Assured)",
+        "Test automation frameworks (Selenium, Cypress)",
+        "Continuous Integration/Continuous Deployment (CI/CD)",
+        "SQL and database testing",
+        "Performance testing (JMeter)",
+        "Defect tracking (Jira)"
+      ]
+    },
+    {
+      "title": "Intelligent Transportation Systems Engineer",
+      "skills": [
+        "Traffic signal control systems",
+        "Connected Vehicle (V2X) technology",
+        "Advanced Traffic Management Systems (ATMS)",
+        "Telecommunications and networking for ITS",
+        "Data analysis for traffic operations",
+        "ITS standards (NTCIP)",
+        "Freeway management systems"
+      ]
+    },
+    {
+      "title": "Interface Systems Engineer",
+      "skills": [
+        "API design and development (REST, GraphQL)",
+        "System integration patterns",
+        "Data mapping and transformation",
+        "Interface control document (ICD) development",
+        "Communication protocols (TCP/IP, serial)",
+        "Software development lifecycle",
+        "Troubleshooting and debugging"
+      ]
+    },
+    {
+      "title": "iOS Security Engineer",
+      "skills": [
+        "iOS Application Reverse Engineering (Hopper, Ghidra)",
+        "Mobile Application Security Verification Standard (MASVS)",
+        "Frida/Objection Toolkit",
+        "OWASP Mobile Top 10",
+        "Secure Coding for iOS (Swift/Objective-C)",
+        "Jailbreaking and Security Bypasses",
+        "iOS Keychain Security"
+      ]
+    },
+    {
+      "title": "IoT Security Engineer",
+      "skills": [
+        "Embedded Systems Security",
+        "Firmware Reverse Engineering",
+        "IoT Communication Protocols (MQTT, CoAP, Zigbee) Security",
+        "Hardware Hacking (JTAG, UART)",
+        "Wireless Security (BLE, LoRaWAN)",
+        "Threat Modeling for IoT",
+        "Cloud platform security for IoT (AWS IoT, Azure IoT Hub)"
+      ]
+    },
+    {
+      "title": "Irrigation Control Systems Engineer",
+      "skills": [
+        "SCADA systems for irrigation",
+        "Variable Frequency Drive (VFD) control",
+        "Soil moisture and weather sensor integration",
+        "PLC programming for pump stations",
+        "Wireless communication for remote control",
+        "Hydraulic modeling",
+        "Energy efficiency in pumping systems"
+      ]
+    },
+    {
+      "title": "IT/OT Convergence Engineer",
+      "skills": [
+        "Purdue Model Architecture",
+        "ISA/IEC 62443 Security Standard",
+        "Industrial Protocols (Modbus, DNP3, PROFINET)",
+        "Network Segmentation (Firewalls, DMZs)",
+        "Data Diodes",
+        "IT Service Management (ITSM) in OT environments",
+        "Risk Assessment for converged networks"
+      ]
+    },
+    {
+      "title": "Jig and Fixture Design Engineer",
+      "skills": [
+        "CAD Software (SolidWorks, CATIA, NX)",
+        "Geometric Dimensioning & Tolerancing (GD&T)",
+        "Manufacturing Processes (Machining, Welding)",
+        "Ergonomics in tool design",
+        "Clamping and locating principles",
+        "Material selection",
+        "Stress Analysis (FEA)"
+      ]
+    },
+    {
+      "title": "Kernel Engineer",
+      "skills": [
+        "C programming",
+        "Assembly language",
+        "Operating system internals (Linux, Windows)",
+        "Device driver development",
+        "Memory management",
+        "Concurrency and synchronization",
+        "Debugging with GDB/WinDbg"
+      ]
+    },
+    {
+      "title": "Laboratory Automation Engineer",
+      "skills": [
+        "Liquid handling robot programming (Tecan, Hamilton)",
+        "LIMS (Laboratory Information Management System) integration",
+        "Instrument control and data acquisition",
+        "Scheduling software for automated workflows",
+        "Python/C# for scripting",
+        "Database management (SQL)",
+        "Robotics and mechatronics"
+      ]
+    },
+    {
+      "title": "Land Development Engineer",
+      "skills": [
+        "Professional Engineer (P.E.) License",
+        "Site grading and earthwork calculations",
+        "Stormwater management and hydrology/hydraulics",
+        "Utility design (water, sewer, storm drain)",
+        "AutoCAD Civil 3D",
+        "Zoning and subdivision regulations",
+        "Erosion and sediment control"
+      ]
+    },
+    {
+      "title": "Laser Systems Engineer",
+      "skills": [
+        "Laser physics",
+        "Optical design software (Zemax, LASCAD)",
+        "Beam diagnostics and measurement",
+        "Laser safety (Certified Laser Safety Officer - CLSO)",
+        "Fiber optics",
+        "Electronics for laser drivers and control",
+        "Laser applications (cutting, welding, medical)"
+      ]
+    },
+    {
+      "title": "Lidar Systems Integration Engineer",
+      "skills": [
+        "LiDAR sensor technology",
+        "Point cloud processing (PCL, CloudCompare)",
+        "Sensor fusion with camera/IMU data",
+        "SLAM algorithms",
+        "C++/Python programming",
+        "Robotics Operating System (ROS)",
+        "Calibration techniques"
+      ]
+    },
+    {
+      "title": "Lighting Systems Engineer – Architectural",
+      "skills": [
+        "Lighting design software (AGi32, DIALux)",
+        "Building codes and energy standards (ASHRAE 90.1)",
+        "LED technology and drivers",
+        "Lighting control systems (DALI, 0-10V)",
+        "Photometry and colorimetry",
+        "Revit/AutoCAD",
+        "Daylighting analysis"
+      ]
+    },
+    {
+      "title": "Linux Systems Engineer",
+      "skills": [
+        "Red Hat Certified Engineer (RHCE)",
+        "Bash/Shell scripting",
+        "Automation with Ansible/Puppet/Chef",
+        "System performance tuning",
+        "Network services (DNS, DHCP, NFS)",
+        "Containerization (Docker, Podman)",
+        "Linux security hardening"
+      ]
+    },
+    {
+      "title": "Load Testing Engineer",
+      "skills": [
+        "Performance testing tools (JMeter, LoadRunner, Gatling)",
+        "Scripting for test scenarios",
+        "Application performance monitoring (APM) tools (Dynatrace, New Relic)",
+        "Analysis of performance metrics (response time, throughput)",
+        "Infrastructure monitoring",
+        "Test data management",
+        "Programming languages (Java, Python)"
+      ]
+    },
+    {
+      "title": "Logistics Engineering Specialist",
+      "skills": [
+        "Supply chain management",
+        "Warehouse design and optimization",
+        "Transportation management systems (TMS)",
+        "Inventory control models",
+        "Simulation modeling for logistics",
+        "Data analysis for logistics",
+        "Lean principles in logistics"
+      ]
+    },
+    {
+      "title": "Low‑Carbon Fuel Systems Engineer",
+      "skills": [
+        "Biofuel production processes",
+        "Hydrogen fuel systems",
+        "Synthetic fuels technology",
+        "Life cycle assessment (LCA)",
+        "Process simulation (Aspen HYSYS)",
+        "Chemical reaction engineering",
+        "Renewable energy integration"
+      ]
+    },
+    {
+      "title": "Machine Design Engineer",
+      "skills": [
+        "CAD (SolidWorks, Inventor, Creo)",
+        "Finite Element Analysis (FEA)",
+        "Geometric Dimensioning & Tolerancing (GD&T)",
+        "Material Selection",
+        "Kinematics and Dynamics of Machinery",
+        "Power Transmission Components (gears, bearings, belts)",
+        "Design for Manufacturing (DFM)"
+      ]
+    },
+    {
+      "title": "Machine Learning Infrastructure Engineer",
+      "skills": [
+        "Kubernetes and Kubeflow",
+        "Cloud platforms (AWS SageMaker, GCP AI Platform)",
+        "Distributed data processing (Spark)",
+        "CI/CD for ML models",
+        "Infrastructure as Code (Terraform)",
+        "Monitoring ML systems",
+        "Python programming"
+      ]
+    },
+    {
+      "title": "Machine Learning Operations (MLOps) Engineer",
+      "skills": [
+        "CI/CD for Machine Learning (Jenkins, GitLab CI, Kubeflow Pipelines)",
+        "Containerization and Orchestration (Docker, Kubernetes)",
+        "Cloud ML Platforms (AWS SageMaker, Azure ML, GCP Vertex AI)",
+        "Model Monitoring and Management",
+        "Infrastructure as Code (Terraform)",
+        "Feature Store Implementation (Feast)",
+        "Python programming"
+      ]
+    },
+    {
+      "title": "Machine Learning Systems Engineer",
+      "skills": [
+        "ML Frameworks (TensorFlow, PyTorch)",
+        "Distributed computing (Spark, Dask)",
+        "GPU programming (CUDA)",
+        "Model optimization and deployment",
+        "Kubernetes/Docker",
+        "Cloud platforms (AWS, Azure, GCP)",
+        "Software engineering principles"
+      ]
+    },
+    {
+      "title": "Machine Safety Engineer",
+      "skills": [
+        "Certified Machinery Safety Expert (CMSE)",
+        "ISO 13849 and IEC 62061 standards",
+        "Risk assessment",
+        "Safety circuit design",
+        "Safety PLC programming",
+        "Lockout/Tagout procedures",
+        "Ergonomics"
+      ]
+    },
+    {
+      "title": "Machine Tool Design Engineer",
+      "skills": [
+        "CAD for machine design (SolidWorks, NX)",
+        "Finite Element Analysis (FEA) for rigidity and vibration",
+        "CNC systems and controls",
+        "Precision engineering and metrology",
+        "Spindle and bearing design",
+        "Material science",
+        "Hydraulic and pneumatic systems"
+      ]
+    },
+    {
+      "title": "Machinery Condition Monitoring Engineer",
+      "skills": [
+        "Vibration analysis (ISO certified)",
+        "Infrared thermography",
+        "Oil analysis",
+        "Ultrasonic testing",
+        "Predictive maintenance (PdM) strategies",
+        "Data acquisition systems",
+        "Root Cause Failure Analysis (RCFA)"
+      ]
+    },
+    {
+      "title": "Macronuclear Plant Systems Engineer",
+      "skills": [
+        "Nuclear reactor theory",
+        "Thermodynamics and fluid flow",
+        "Plant systems and operations",
+        "Nuclear safety and regulations (10 CFR 50)",
+        "Probabilistic Risk Assessment (PRA)",
+        "Materials science for nuclear applications",
+        "Radiation protection"
+      ]
+    },
+    {
+      "title": "Malware Analysis Engineer",
+      "skills": [
+        "GIAC Reverse Engineering Malware (GREM)",
+        "Static analysis (IDA Pro, Ghidra)",
+        "Dynamic analysis (sandboxing, debuggers like x64dbg)",
+        "Assembly language (x86/x64)",
+        "Network traffic analysis for malware C2",
+        "YARA rule creation",
+        "Scripting (Python) for automation"
+      ]
+    },
+    {
+      "title": "Manufacturing Automation Engineer",
+      "skills": [
+        "PLC programming (Allen-Bradley, Siemens)",
+        "Robotics integration (FANUC, KUKA)",
+        "HMI/SCADA development",
+        "Industrial networking",
+        "Machine vision systems",
+        "Motion control",
+        "Lean manufacturing"
+      ]
+    },
+    {
+      "title": "Manufacturing Engineer",
+      "skills": [
+        "Lean Manufacturing/Six Sigma",
+        "CAD/CAM (SolidWorks, Mastercam)",
+        "CNC Machining",
+        "Geometric Dimensioning & Tolerancing (GD&T)",
+        "Process Planning",
+        "Quality Control and Inspection",
+        "Tool and Fixture Design"
+      ]
+    },
+    {
+      "title": "Manufacturing Test Engineer",
+      "skills": [
+        "Automated Test Equipment (ATE) development",
+        "LabVIEW/TestStand",
+        "In-Circuit Test (ICT)",
+        "Functional Test (FCT)",
+        "Test fixture design",
+        "Statistical Process Control (SPC)",
+        "Failure analysis"
+      ]
+    },
+    {
+      "title": "Marine Corrosion Engineer",
+      "skills": [
+        "NACE Marine Corrosion Specialist certification",
+        "Cathodic protection for marine structures",
+        "Protective coatings for marine environments",
+        "Material selection for seawater service",
+        "Corrosion monitoring",
+        "Biofouling and its effects",
+        "Electrochemistry"
+      ]
+    },
+    {
+      "title": "Marine Engineer",
+      "skills": [
+        "USCG Marine Engineering License",
+        "Ship propulsion systems (diesel, gas turbine)",
+        "Auxiliary machinery systems",
+        "Naval architecture principles",
+        "ABS/DNV GL rules and regulations",
+        "Vessel stability and trim",
+        "Marine electrical systems"
+      ]
+    },
+    {
+      "title": "Maritime Cybersecurity Engineer",
+      "skills": [
+        "IMO Maritime Cyber Risk Management Guidelines",
+        "IEC 61162-460 (Maritime Ethernet Security)",
+        "Security of vessel operational technology (OT) systems",
+        "Navigation system security (GPS, ECDIS)",
+        "Satellite communication security",
+        "Vessel network architecture security",
+        "Industrial control systems security"
+      ]
+    },
+    {
+      "title": "Materials & Metallurgical Engineer",
+      "skills": [
+        "Material characterization (SEM, XRD, Tensile Testing)",
+        "Metallography",
+        "Heat treatment of metals",
+        "Failure analysis",
+        "Welding metallurgy",
+        "Corrosion science",
+        "Phase diagrams"
+      ]
+    },
+    {
+      "title": "Materials Engineer",
+      "skills": [
+        "Material Selection",
+        "Characterization techniques (SEM, XRD, tensile testing)",
+        "Metallurgy",
+        "Polymer Science",
+        "Ceramics",
+        "Failure Analysis",
+        "Corrosion"
+      ]
+    },
+    {
+      "title": "Materials Testing Engineer",
+      "skills": [
+        "ASTM standards for material testing",
+        "Tensile, compression, and hardness testing",
+        "Fatigue and fracture mechanics testing",
+        "Non-destructive testing (NDT) methods",
+        "Material characterization (e.g., SEM, XRD)",
+        "Data acquisition systems",
+        "Statistical analysis of test data"
+      ]
+    },
+    {
+      "title": "Mathematical Modeling Engineer",
+      "skills": [
+        "MATLAB/Simulink",
+        "Numerical methods",
+        "Finite Element Analysis (FEA)",
+        "Computational Fluid Dynamics (CFD)",
+        "Statistical modeling (R, Python)",
+        "Optimization algorithms",
+        "System dynamics"
+      ]
+    },
+    {
+      "title": "Mechanical Automotive Applications Engineer",
+      "skills": [
+        "CAD (CATIA, SolidWorks)",
+        "FEA for stress and thermal analysis",
+        "Vehicle dynamics",
+        "Powertrain systems",
+        "Chassis and suspension design",
+        "Geometric Dimensioning & Tolerancing (GD&T)",
+        "Design for Manufacturing (DFM)"
+      ]
+    },
+    {
+      "title": "Mechanical Components Design Engineer",
+      "skills": [
+        "CAD (SolidWorks, Creo)",
+        "Geometric Dimensioning & Tolerancing (GD&T)",
+        "Finite Element Analysis (FEA)",
+        "Material selection",
+        "Design for Manufacturing and Assembly (DFMA)",
+        "Tolerance stack-up analysis",
+        "Failure Modes and Effects Analysis (FMEA)"
+      ]
+    },
+    {
+      "title": "Mechanical Diesel Systems Engineer",
+      "skills": [
+        "Diesel engine principles",
+        "Fuel injection systems",
+        "Turbocharging and aftertreatment systems",
+        "Engine control unit (ECU) calibration",
+        "Thermodynamics and combustion",
+        "Engine performance testing",
+        "Failure analysis"
+      ]
+    },
+    {
+      "title": "Mechanical Engineer",
+      "skills": [
+        "Professional Engineer (P.E.) License",
+        "CAD Software (SolidWorks, AutoCAD, CATIA)",
+        "Finite Element Analysis (FEA) - ANSYS, Abaqus",
+        "Thermodynamics and Heat Transfer",
+        "Fluid Mechanics",
+        "Geometric Dimensioning & Tolerancing (GD&T)",
+        "Machine Design"
+      ]
+    },
+    {
+      "title": "Mechanical Failure Analysis Engineer",
+      "skills": [
+        "Root cause analysis methodologies",
+        "Fractography",
+        "Metallography",
+        "Scanning Electron Microscopy (SEM)",
+        "Non-destructive testing (NDT)",
+        "Finite Element Analysis (FEA) for failure replication",
+        "Material science"
+      ]
+    },
+    {
+      "title": "Mechanical HVAC Design Engineer",
+      "skills": [
+        "Load calculations (Trane TRACE, Carrier HAP)",
+        "Duct and pipe sizing",
+        "ASHRAE standards",
+        "Revit MEP/AutoCAD",
+        "Energy modeling",
+        "Building codes",
+        "Psychrometrics"
+      ]
+    },
+    {
+      "title": "Mechanical Integrity Engineer",
+      "skills": [
+        "API 510/570/653 certifications",
+        "Risk-Based Inspection (RBI)",
+        "Fitness-for-Service (FFS) assessments (API 579)",
+        "Non-destructive testing (NDT) methods",
+        "Corrosion monitoring and mitigation",
+        "Pressure vessel and piping design codes (ASME)",
+        "Welding inspection (CWI)"
+      ]
+    },
+    {
+      "title": "Mechanical Systems Engineer – Aircraft",
+      "skills": [
+        "Aircraft systems (hydraulics, landing gear, flight controls)",
+        "CATIA/NX for design",
+        "Systems engineering principles (V-model)",
+        "ARP4754A",
+        "DO-160 environmental testing",
+        "Requirements management (DOORS)",
+        "Integration and testing"
+      ]
+    },
+    {
+      "title": "Mechanical Systems Engineer – Marine",
+      "skills": [
+        "Propulsion systems (diesel, gas turbine)",
+        "Auxiliary systems (HVAC, bilge, fire)",
+        "Piping and instrumentation diagrams (P&IDs)",
+        "ABS/DNV rules",
+        "Vibration analysis",
+        "CAD for marine systems",
+        "Project management"
+      ]
+    },
+    {
+      "title": "Mechatronics Engineer",
+      "skills": [
+        "PLC Programming",
+        "Embedded Systems (C/C++, microcontrollers)",
+        "Mechanical Design (CAD)",
+        "Control Systems Theory",
+        "Robotics",
+        "Sensors and Actuators",
+        "LabVIEW"
+      ]
+    },
+    {
+      "title": "Medical Device Cybersecurity Engineer",
+      "skills": [
+        "FDA Cybersecurity Guidance",
+        "Threat Modeling for Medical Devices (STRIDE)",
+        "ISO 14971 (Risk Management)",
+        "UL 2900-1 / 2-1 Standards",
+        "Embedded Systems Security",
+        "Wireless Communication Security (BLE, Wi-Fi)",
+        "Software Bill of Materials (SBOM)"
+      ]
+    },
+    {
+      "title": "Medical Device Design Engineer",
+      "skills": [
+        "SolidWorks/Creo",
+        "FDA Design Controls (21 CFR 820.30)",
+        "ISO 13485",
+        "Risk Management (ISO 14971)",
+        "Biocompatible Materials (ISO 10993)",
+        "Geometric Dimensioning & Tolerancing (GD&T)",
+        "Sterilization Processes"
+      ]
+    },
+    {
+      "title": "MEMS Design Engineer",
+      "skills": [
+        "MEMS fabrication processes",
+        "L-Edit/Tanner EDA tools",
+        "COMSOL Multiphysics/CoventorWare",
+        "Solid mechanics and fluid dynamics at micro scale",
+        "Sensor and actuator design",
+        "Semiconductor physics",
+        "Characterization and testing of MEMS devices"
+      ]
+    },
+    {
+      "title": "Metallurgical Engineer",
+      "skills": [
+        "Professional Engineer (P.E.) License",
+        "Metallography and material characterization (SEM, XRD)",
+        "Heat treatment processes",
+        "Failure analysis",
+        "Welding metallurgy",
+        "Corrosion prevention",
+        "Extractive metallurgy"
+      ]
+    },
+    {
+      "title": "Metrology & Precision Engineering Specialist",
+      "skills": [
+        "Coordinate Measuring Machine (CMM) programming",
+        "Geometric Dimensioning & Tolerancing (GD&T)",
+        "Laser interferometry",
+        "Surface profilometry",
+        "Measurement uncertainty analysis",
+        "ISO/IEC 17025",
+        "Calibration procedures"
+      ]
+    },
+    {
+      "title": "Microelectronics Reliability Engineer",
+      "skills": [
+        "Reliability statistics (Weibull analysis)",
+        "Failure analysis techniques (SEM, FIB)",
+        "Accelerated life testing",
+        "Physics of failure",
+        "Semiconductor device physics",
+        "JEDEC standards",
+        "Electrostatic discharge (ESD) protection"
+      ]
+    },
+    {
+      "title": "Microelectromechanical Systems Engineer",
+      "skills": [
+        "MEMS fabrication (photolithography, etching)",
+        "Finite element analysis for MEMS (COMSOL, ANSYS)",
+        "CAD for MEMS (L-Edit)",
+        "Sensor design (accelerometers, gyroscopes)",
+        "Microfluidics",
+        "Characterization and testing",
+        "Semiconductor physics"
+      ]
+    },
+    {
+      "title": "Microwave Systems Engineer – Telecommunications",
+      "skills": [
+        "Microwave link design and path planning (PathLoss)",
+        "RF test equipment (spectrum analyzer, VNA)",
+        "Antenna theory",
+        "Digital modulation schemes",
+        "Interference analysis",
+        "FCC regulations for microwave links",
+        "Network engineering"
+      ]
+    },
+    {
+      "title": "Mineral Processing Systems Engineer",
+      "skills": [
+        "Comminution (crushing and grinding)",
+        "Froth flotation",
+        "Hydrometallurgy and pyrometallurgy",
+        "Process simulation (JKSimMet, Metsim)",
+        "Solid-liquid separation",
+        "Process control in mineral processing",
+        "Plant design"
+      ]
+    },
+    {
+      "title": "Mining Engineer",
+      "skills": [
+        "Professional Engineer (P.E.) License",
+        "Mine planning and design software (Vulcan, Deswik)",
+        "Rock mechanics and ground control",
+        "Ventilation design",
+        "Drilling and blasting",
+        "Mineral economics",
+        "MSHA regulations"
+      ]
+    },
+    {
+      "title": "Mining Equipment Systems Engineer",
+      "skills": [
+        "Heavy machinery design (CAD, FEA)",
+        "Hydraulic systems",
+        "Powertrain engineering",
+        "Automation and control of mining equipment",
+        "Reliability and maintenance engineering",
+        "Material science for wear resistance",
+        "Mine safety regulations"
+      ]
+    },
+    {
+      "title": "Mobile Communications Systems Engineer",
+      "skills": [
+        "4G/5G cellular standards (LTE, NR)",
+        "RF planning and optimization",
+        "Core network architecture (EPC, 5GC)",
+        "Wireless protocols (TCP/IP over wireless)",
+        "Signal processing for communications",
+        "Drive testing and analysis",
+        "Network security"
+      ]
+    },
+    {
+      "title": "Mobile Security Engineer",
+      "skills": [
+        "GIAC Mobile Device Security Analyst (GMOB)",
+        "OWASP Mobile Application Security Verification Standard (MASVS)",
+        "Reverse Engineering (Android/iOS apps)",
+        "Static/Dynamic Application Security Testing (SAST/DAST)",
+        "Frida/Objection for dynamic instrumentation",
+        "Mobile Penetration Testing",
+        "Secure Coding for Mobile Platforms"
+      ]
+    },
+    {
+      "title": "Model Based Systems Engineer",
+      "skills": [
+        "SysML/UML",
+        "MBSE Tools (Cameo Systems Modeler, Sparx EA)",
+        "OMG Certified Systems Modeling Professional (OCSMP)",
+        "Requirements analysis and modeling",
+        "System architecture design",
+        "Verification and validation",
+        "DoDAF/UPDM frameworks"
+      ]
+    },
+    {
+      "title": "Modular Construction Engineer",
+      "skills": [
+        "Design for Manufacturing and Assembly (DfMA)",
+        "Building Information Modeling (BIM) - Revit",
+        "Structural engineering for modular units",
+        "Transportation and logistics planning",
+        "Off-site manufacturing processes",
+        "Building codes for modular construction",
+        "Project management"
+      ]
+    },
+    {
+      "title": "Motion Control Systems Engineer",
+      "skills": [
+        "Servo motor and drive sizing/selection",
+        "Control theory and loop tuning",
+        "PLC/PAC programming for motion control",
+        "Robotics kinematics",
+        "Industrial communication protocols (EtherCAT)",
+        "HMI design",
+        "Mechanical systems integration"
+      ]
+    },
+    {
+      "title": "Naval Architect",
+      "skills": [
+        "Ship and hull design software (Rhino, ShipConstructor)",
+        "Hydrostatics and stability analysis",
+        "Hydrodynamics and resistance prediction",
+        "Structural analysis of ships (FEA)",
+        "Ship systems design",
+        "Classification society rules (ABS, DNV)",
+        "Marine engineering"
+      ]
+    },
+    {
+      "title": "Network Access Control (NAC) Engineer",
+      "skills": [
+        "NAC Solutions (Cisco ISE, Aruba ClearPass, ForeScout)",
+        "802.1X protocol",
+        "RADIUS/TACACS+",
+        "Network device profiling",
+        "Guest and BYOD policies",
+        "Network segmentation",
+        "Switch and wireless controller configuration"
+      ]
+    },
+    {
+      "title": "Network Automation Engineer",
+      "skills": [
+        "Python for Networking (Netmiko, NAPALM)",
+        "Ansible for Network Automation",
+        "REST APIs and NETCONF/YANG",
+        "CI/CD for network changes (GitLab CI, Jenkins)",
+        "Source of Truth (SoT) management (NetBox)",
+        "Data serialization formats (JSON, YAML)",
+        "Network engineering fundamentals (BGP, OSPF)"
+      ]
+    },
+    {
+      "title": "Network Detection and Response (NDR) Engineer",
+      "skills": [
+        "NDR Platform Management (Vectra, Darktrace, ExtraHop)",
+        "Network Traffic Analysis (Wireshark, Zeek/Bro)",
+        "Intrusion Detection Systems (IDS) - Suricata, Snort",
+        "Threat Hunting in Network Data",
+        "Packet Capture (PCAP) Analysis",
+        "Incident Response",
+        "Network Security Monitoring (NSM)"
+      ]
+    },
+    {
+      "title": "Network Forensics Engineer",
+      "skills": [
+        "GIAC Network Forensic Analyst (GNFA)",
+        "Packet Capture (PCAP) analysis with Wireshark/Tshark",
+        "Network flow analysis (NetFlow, IPFIX)",
+        "IDS/IPS log analysis",
+        "Firewall and proxy log analysis",
+        "Zeek (Bro) scripting",
+        "Reconstructing events from network traffic"
+      ]
+    },
+    {
+      "title": "Network Infrastructure Reliability Engineer",
+      "skills": [
+        "Routing protocols (BGP, OSPF)",
+        "Network monitoring and observability (Prometheus, Grafana)",
+        "Automation (Python, Ansible)",
+        "Infrastructure as Code (Terraform)",
+        "Site Reliability Engineering (SRE) principles",
+        "Traffic engineering",
+        "Incident management"
+      ]
+    },
+    {
+      "title": "Network Security Engineer",
+      "skills": [
+        "Cisco Certified CyberOps Professional or CCNP Security",
+        "Palo Alto Networks Certified Network Security Engineer (PCNSE)",
+        "Firewall and Intrusion Prevention System (IPS) management",
+        "VPN technologies (IPsec, SSL)",
+        "Network Access Control (NAC)",
+        "Web Application Firewall (WAF)",
+        "Network traffic analysis"
+      ]
+    },
+    {
+      "title": "Noise, Vibration & Harshness (NVH) Engineer – Automotive",
+      "skills": [
+        "LMS Test.Lab / Brüel & Kjær PULSE",
+        "Signal processing and FFT analysis",
+        "Modal analysis",
+        "Acoustic testing",
+        "Finite Element Analysis (FEA) for NVH",
+        "MATLAB for data analysis",
+        "Psychoacoustics"
+      ]
+    },
+    {
+      "title": "Nuclear Engineer",
+      "skills": [
+        "Professional Engineer (P.E.) License",
+        "Reactor Physics and Neutronics (MCNP, SCALE)",
+        "Thermal-Hydraulics (RELAP5)",
+        "Nuclear Fuel Cycle",
+        "Radiation Shielding and Health Physics",
+        "Nuclear Safety and Licensing (NRC Regulations)",
+        "Probabilistic Risk Assessment (PRA)"
+      ]
+    },
+    {
+      "title": "Nuclear Plant Safety Systems Engineer",
+      "skills": [
+        "Probabilistic Risk Assessment (PRA)",
+        "Deterministic safety analysis",
+        "NRC regulations (10 CFR 50)",
+        "Nuclear plant systems knowledge",
+        "Failure Modes and Effects Analysis (FMEA)",
+        "Reliability engineering",
+        "Thermal-hydraulic analysis codes"
+      ]
+    },
+    {
+      "title": "Nuclear Reactor Thermal‑Hydraulics Engineer",
+      "skills": [
+        "Thermal-hydraulic analysis codes (RELAP, TRACE)",
+        "Computational Fluid Dynamics (CFD)",
+        "Two-phase flow and heat transfer",
+        "Reactor safety analysis",
+        "Subchannel analysis",
+        "Nuclear reactor systems",
+        "Programming/scripting for data analysis"
+      ]
+    },
+    {
+      "title": "Nuclear Systems Licensing Engineer",
+      "skills": [
+        "NRC regulations (10 CFR)",
+        "Regulatory Guide interpretation",
+        "License amendment request (LAR) preparation",
+        "Final Safety Analysis Report (FSAR) maintenance",
+        "Technical specification development",
+        "Communication with regulatory bodies",
+        "Nuclear plant systems knowledge"
+      ]
+    },
+    {
+      "title": "Numerical Analysis Engineer",
+      "skills": [
+        "Finite Element Method (FEM)",
+        "Finite Difference Method (FDM)",
+        "Numerical optimization",
+        "MATLAB/Python (NumPy, SciPy)",
+        "High-performance computing (HPC)",
+        "Algorithm development",
+        "Linear algebra and differential equations"
+      ]
+    },
+    {
+      "title": "Offensive Security Engineer",
+      "skills": [
+        "Offensive Security Certified Professional (OSCP)",
+        "Penetration Testing",
+        "Red Teaming",
+        "Exploit Development",
+        "Reverse Engineering",
+        "Social Engineering",
+        "Metasploit Framework"
+      ]
+    },
+    {
+      "title": "Oil & Gas Production Engineer",
+      "skills": [
+        "Production optimization",
+        "Nodal analysis (PROSPER)",
+        "Artificial lift systems (ESP, gas lift)",
+        "Well testing and analysis",
+        "Sand control",
+        "Workover and completion design",
+        "Production chemistry"
+      ]
+    },
+    {
+      "title": "Oilfield Well Systems Engineer",
+      "skills": [
+        "Well design and construction",
+        "Casing and cementing design",
+        "Drilling fluid engineering",
+        "Well control",
+        "Completion and workover operations",
+        "Well integrity management",
+        "Directional drilling"
+      ]
+    },
+    {
+      "title": "Operational Technology (OT) Security Engineer",
+      "skills": [
+        "Global Industrial Cyber Security Professional (GICSP)",
+        "ISA/IEC 62443 Standard",
+        "SCADA/DCS/PLC Security",
+        "Purdue Model for ICS architecture",
+        "OT Network Monitoring (Nozomi, Dragos)",
+        "Industrial Protocols (Modbus, Profinet, DNP3)",
+        "Asset Inventory and Vulnerability Management in OT"
+      ]
+    },
+    {
+      "title": "Optical Engineer",
+      "skills": [
+        "Optical Design Software (Zemax, Code V)",
+        "Lens Design",
+        "Optical Testing and Metrology (Interferometry)",
+        "Fiber Optics",
+        "Lasers and Electro-Optics",
+        "Thin Film Coatings",
+        "Radiometry and Photometry"
+      ]
+    },
+    {
+      "title": "Optics & Photonics Engineer",
+      "skills": [
+        "Optical design (Zemax, CODE V)",
+        "Laser systems",
+        "Fiber optics",
+        "Photonic integrated circuits (PICs)",
+        "Optical testing and metrology",
+        "Semiconductor physics for optoelectronics",
+        "Image and signal processing"
+      ]
+    },
+    {
+      "title": "Orbital Mechanics Engineer",
+      "skills": [
+        "Systems Tool Kit (STK)",
+        "GMAT (General Mission Analysis Tool)",
+        "Astrodynamics",
+        "Satellite maneuver planning",
+        "Trajectory optimization",
+        "MATLAB/Python for simulations",
+        "Spacecraft attitude dynamics and control"
+      ]
+    },
+    {
+      "title": "Packaging Engineer",
+      "skills": [
+        "Packaging design software (ArtiosCAD, TOPS)",
+        "ISTA/ASTM package testing standards",
+        "Material science (corrugated, plastics, foams)",
+        "Packaging machinery and automation",
+        "Supply chain and logistics",
+        "Graphic design principles",
+        "Sustainable packaging"
+      ]
+    },
+    {
+      "title": "Packaging Systems Reliability Engineer",
+      "skills": [
+        "ISTA transit testing standards",
+        "Package failure analysis",
+        "Material science for packaging",
+        "Environmental stress testing (temperature, humidity, vibration)",
+        "Statistical analysis",
+        "Design of Experiments (DOE)",
+        "CAD for package design"
+      ]
+    },
+    {
+      "title": "Paper and Pulp Engineer",
+      "skills": [
+        "Pulping and bleaching processes",
+        "Papermaking machine operations",
+        "Process control in pulp and paper",
+        "Chemical recovery systems",
+        "Fluid mechanics and fiber suspension",
+        "Environmental control in paper mills",
+        "Quality testing of paper products"
+      ]
+    },
+    {
+      "title": "Pavement Materials Engineer",
+      "skills": [
+        "Asphalt and concrete mix design",
+        "Superpave system",
+        "Material testing (AASHTO/ASTM)",
+        "Pavement evaluation and rehabilitation",
+        "Geotechnical engineering",
+        "Construction quality control",
+        "Pavement management systems"
+      ]
+    },
+    {
+      "title": "Pavement Systems Design Engineer",
+      "skills": [
+        "AASHTO Guide for Design of Pavement Structures",
+        "Pavement ME Design software",
+        "Geotechnical engineering",
+        "Traffic analysis and load forecasting",
+        "Material characterization",
+        "Life-cycle cost analysis",
+        "AutoCAD Civil 3D"
+      ]
+    },
+    {
+      "title": "PCB Design for High Frequency Engineer",
+      "skills": [
+        "Altium Designer/Cadence Allegro",
+        "Signal integrity analysis (HyperLynx)",
+        "Controlled impedance design",
+        "RF and microwave layout techniques",
+        "Transmission line theory",
+        "EMI/EMC design",
+        "Material selection for high-speed boards"
+      ]
+    },
+    {
+      "title": "PCB Design Engineer",
+      "skills": [
+        "Altium Designer, Cadence Allegro, or Mentor Xpedition",
+        "Schematic Capture",
+        "PCB Layout and Routing",
+        "IPC Standards",
+        "Design for Manufacturability (DFM)",
+        "Signal Integrity Analysis",
+        "EMC/EMI Design"
+      ]
+    },
+    {
+      "title": "Penetration Testing Engineer",
+      "skills": [
+        "Offensive Security Certified Professional (OSCP)",
+        "Metasploit Framework",
+        "Burp Suite Professional",
+        "Nmap",
+        "Wireshark",
+        "Scripting (Python, PowerShell)",
+        "Active Directory Exploitation"
+      ]
+    },
+    {
+      "title": "Performance Engineer",
+      "skills": [
+        "Load Testing Tools (JMeter, LoadRunner)",
+        "Application Performance Monitoring (APM) - Dynatrace, New Relic",
+        "Code Profiling",
+        "System and Database Performance Tuning",
+        "Network Analysis",
+        "Capacity Planning",
+        "Scripting for test automation"
+      ]
+    },
+    {
+      "title": "Petroleum Engineer",
+      "skills": [
+        "Professional Engineer (P.E.) License",
+        "Reservoir Simulation (Eclipse, CMG)",
+        "Well Testing Analysis (Saphir)",
+        "Production Engineering (PROSPER)",
+        "Drilling Engineering",
+        "Petrophysics",
+        "Petroleum Economics"
+      ]
+    },
+    {
+      "title": "Petroleum Reservoir Simulation Engineer",
+      "skills": [
+        "Reservoir simulation software (Eclipse, INTERSECT, CMG)",
+        "Reservoir engineering principles",
+        "Geostatistics",
+        "Fluid properties (PVT) analysis",
+        "History matching",
+        "Scripting for workflow automation",
+        "High-performance computing"
+      ]
+    },
+    {
+      "title": "Pharmaceutical Process Engineer",
+      "skills": [
+        "Good Manufacturing Practices (GMP)",
+        "Process Validation (IQ/OQ/PQ)",
+        "Bioreactor and fermenter operation",
+        "Downstream processing (chromatography, filtration)",
+        "Aseptic processing techniques",
+        "Quality by Design (QbD)",
+        "Regulatory affairs (FDA)"
+      ]
+    },
+    {
+      "title": "Photonics Integration Engineer",
+      "skills": [
+        "Photonic Integrated Circuit (PIC) design and testing",
+        "Semiconductor fabrication processes",
+        "Fiber optic alignment and packaging",
+        "Optical test and measurement",
+        "Lumerical/COMSOL for simulation",
+        "High-speed optical communication systems",
+        "Optoelectronic device physics"
+      ]
+    },
+    {
+      "title": "Pipeline Engineer",
+      "skills": [
+        "Pipeline Design and Stress Analysis (CAESAR II)",
+        "ASME B31.4/B31.8 codes",
+        "Pipeline Integrity Management (API 1160)",
+        "Corrosion Control (NACE certification)",
+        "Hydraulic Modeling",
+        "Welding and NDT",
+        "GIS for pipeline routing"
+      ]
+    },
+    {
+      "title": "Pipeline Structural Integrity Engineer",
+      "skills": [
+        "Fitness-for-Service (FFS) - API 579",
+        "Pipeline stress analysis (CAESAR II)",
+        "Corrosion assessment",
+        "Crack and defect analysis",
+        "In-line inspection (ILI) data analysis",
+        "ASME B31.4/B31.8",
+        "Geohazard assessment"
+      ]
+    },
+    {
+      "title": "Plant Reliability Engineer",
+      "skills": [
+        "Certified Reliability Engineer (CRE)",
+        "Root Cause Analysis (RCA)",
+        "Reliability Centered Maintenance (RCM)",
+        "Predictive Maintenance Technologies (Vibration, IR, Oil Analysis)",
+        "Weibull Analysis",
+        "CMMS (Computerized Maintenance Management System)",
+        "FMEA/FMECA"
+      ]
+    },
+    {
+      "title": "Plasma Systems Engineer",
+      "skills": [
+        "Plasma physics",
+        "Vacuum technology",
+        "RF power systems",
+        "Plasma diagnostics",
+        "Plasma etching and deposition processes",
+        "COMSOL Multiphysics for plasma modeling",
+        "High voltage engineering"
+      ]
+    },
+    {
+      "title": "Plastics Engineer",
+      "skills": [
+        "Injection Molding Process and Design",
+        "Moldflow Analysis",
+        "Polymer Science and Material Selection",
+        "Extrusion Processes",
+
+        "Part Design for Plastics",
+        "Tooling Design",
+        "Quality Control in Plastics Manufacturing"
+      ]
+    },
+    {
+      "title": "Pneumatic Systems Engineer – Industrial",
+      "skills": [
+        "Pneumatic circuit design",
+        "Component sizing (cylinders, valves, FRLs)",
+        "ISO standards for pneumatics",
+        "Electro-pneumatics and PLC control",
+        "Vacuum systems",
+        "Energy efficiency in compressed air systems",
+        "System troubleshooting"
+      ]
+    },
+    {
+      "title": "Power Electronics Engineer",
+      "skills": [
+        "Power converter topologies (buck, boost, inverter)",
+        "Control of power electronics",
+        "Magnetic component design (inductors, transformers)",
+        "PCB layout for power electronics",
+        "Simulation tools (SPICE, PLECS, MATLAB/Simulink)",
+        "Thermal management",
+        "Wide-bandgap semiconductors (SiC, GaN)"
+      ]
+    },
+    {
+      "title": "Power Electronics Systems Engineer",
+      "skills": [
+        "Design and simulation of power converters (inverters, rectifiers)",
+        "PLECS/MATLAB Simulink",
+        "Control systems for power electronics",
+        "Magnetic design (inductors, transformers)",
+        "Thermal management",
+        "PCB layout for high power",
+        "IGBT/MOSFET gate drive design"
+      ]
+    },
+    {
+      "title": "Power Grid Modeling Engineer",
+      "skills": [
+        "Power system analysis software (PSSE, PowerWorld)",
+        "Power flow and stability studies",
+        "Transmission planning",
+        "Renewable energy integration modeling",
+        "Electromagnetic transient analysis (PSCAD)",
+        "SCADA data analysis",
+        "Scripting for automation (Python)"
+      ]
+    },
+    {
+      "title": "Power Integrity Engineer",
+      "skills": [
+        "Power Distribution Network (PDN) design",
+        "Decoupling capacitor analysis",
+        "DC drop and AC impedance analysis",
+        "Simulation tools (Sigrity, HyperLynx PI)",
+        "Vector Network Analyzer (VNA) measurements",
+        "PCB layout for power integrity",
+        "VRM modeling"
+      ]
+    },
+    {
+      "title": "Power Plant Engineer",
+      "skills": [
+        "Thermodynamics and Rankine cycle",
+        "Boiler and turbine operations",
+        "Water treatment chemistry",
+        "Electrical generators and switchgear",
+        "Process control and instrumentation",
+        "ASME Boiler and Pressure Vessel Code",
+        "Maintenance and reliability"
+      ]
+    },
+    {
+      "title": "Power Quality Engineer",
+      "skills": [
+        "Power quality monitoring and analysis",
+        "Harmonic analysis and filter design",
+        "Voltage sag and swell mitigation",
+        "Grounding and bonding",
+        "IEEE standards (519, 1159)",
+        "Transient analysis",
+        "Active and passive filters"
+      ]
+    },
+    {
+      "title": "Predictive Maintenance Systems Engineer",
+      "skills": [
+        "Vibration analysis",
+        "Infrared thermography",
+        "Oil analysis",
+        "Machine learning for predictive analytics",
+        "IoT sensor integration",
+        "CMMS data analysis",
+        "Reliability Centered Maintenance (RCM)"
+      ]
+    },
+    {
+      "title": "Pressure Vessel Integrity Engineer",
+      "skills": [
+        "ASME Boiler and Pressure Vessel Code (Section VIII)",
+        "API 510 Pressure Vessel Inspector certification",
+        "Fitness-for-Service assessment (API 579)",
+        "Finite Element Analysis (FEA) for stress analysis",
+        "Non-destructive testing (NDT)",
+        "Corrosion and damage mechanisms",
+        "Welding procedures and inspection"
+      ]
+    },
+    {
+      "title": "Pre‑Stressed Concrete Engineer",
+      "skills": [
+        "PCI Design Handbook knowledge",
+        "Structural analysis of prestressed members",
+        "Post-tensioning and pre-tensioning design",
+        "Concrete mix design",
+        "Corrosion protection of prestressing steel",
+        "Construction and inspection techniques",
+        "Structural design software (ADAPT-PT, RISA)"
+      ]
+    },
+    {
+      "title": "Privacy Enhancing Technology (PET) Engineer",
+      "skills": [
+        "Differential Privacy",
+        "Homomorphic Encryption",
+        "Zero-Knowledge Proofs",
+        "Secure Multi-Party Computation (SMPC)",
+        "Data Anonymization and Pseudonymization",
+        "Federated Learning",
+        "Privacy by Design principles"
+      ]
+    },
+    {
+      "title": "Process Automation Consultant",
+      "skills": [
+        "DCS/PLC systems architecture",
+        "ISA standards (S88, S95)",
+        "Business process analysis",
+        "Project management",
+        "System integration",
+        "SCADA and HMI design",
+        "Functional specification development"
+      ]
+    },
+    {
+      "title": "Process Control Optimization Engineer",
+      "skills": [
+        "Advanced Process Control (APC)",
+        "Model Predictive Control (MPC)",
+        "Control loop tuning and optimization",
+        "Statistical Process Control (SPC)",
+        "Data Historians (OSIsoft PI)",
+        "Process simulation for optimization",
+        "Machine learning for process control"
+      ]
+    },
+    {
+      "title": "Process Equipment Design Engineer",
+      "skills": [
+        "ASME Boiler and Pressure Vessel Code",
+        "CAD for equipment design (SolidWorks, Inventor)",
+        "Finite Element Analysis (FEA) for stress analysis",
+        "Heat exchanger design (HTRI)",
+        "Pump and compressor selection",
+        "Material selection",
+        "P&ID interpretation"
+      ]
+    },
+    {
+      "title": "Process Simulation Engineer",
+      "skills": [
+        "Aspen Plus/HYSYS",
+        "CHEMCAD",
+        "Thermodynamic modeling",
+        "Mass and energy balance",
+        "Process optimization",
+        "Dynamic simulation",
+        "Unit operations design"
+      ]
+    },
+    {
+      "title": "Procurement Engineering Specialist",
+      "skills": [
+        "Technical specification development",
+        "Supplier qualification and auditing",
+        "Cost analysis",
+        "Contract negotiation",
+        "Quality control and inspection",
+        "Supply chain management",
+        "Understanding of manufacturing processes"
+      ]
+    },
+    {
+      "title": "Product Lifecycle Management (PLM) Engineer",
+      "skills": [
+        "PLM software (Teamcenter, Windchill, ENOVIA)",
+        "Bill of Materials (BOM) management",
+        "Change management processes",
+        "CAD data management",
+        "System administration of PLM tools",
+        "Workflow automation",
+        "Data migration"
+      ]
+    },
+    {
+      "title": "Product Packaging Engineer",
+      "skills": [
+        "Packaging materials science",
+        "CAD for packaging design (ArtiosCAD)",
+        "ISTA/ASTM testing standards",
+        "Packaging line automation",
+        "Supply chain logistics",
+        "Graphic design integration",
+        "Sustainability in packaging"
+      ]
+    },
+    {
+      "title": "Product Security Engineer",
+      "skills": [
+        "Threat Modeling (STRIDE, PASTA)",
+        "Secure Development Lifecycle (SDL)",
+        "SAST/DAST/SCA",
+        "Fuzzing",
+        "Firmware/Embedded Systems Security",
+        "Hardware Security",
+        "Security Architecture and Design Review"
+      ]
+    },
+    {
+      "title": "Production Line Integration Engineer",
+      "skills": [
+        "PLC programming and integration",
+        "Robotics integration",
+        "Conveyor and material handling systems",
+        "SCADA/HMI systems",
+        "Network communication between machines",
+        "Lean manufacturing",
+        "Project management"
+      ]
+    },
+    {
+      "title": "Project Controls Engineer",
+      "skills": [
+        "Project scheduling (Primavera P6, MS Project)",
+        "Cost estimation and management",
+        "Earned Value Management (EVM)",
+        "Risk analysis",
+        "Change control",
+        "Reporting and data analysis",
+        "Project Management Professional (PMP) principles"
+      ]
+    },
+    {
+      "title": "Project Engineer",
+      "skills": [
+        "Project Management Professional (PMP)",
+        "Scheduling (MS Project, Primavera P6)",
+        "Budgeting and Cost Control",
+        "Risk Management",
+        "Stakeholder Communication",
+        "Contract Management",
+        "Technical oversight in a specific engineering discipline"
+      ]
+    },
+    {
+      "title": "Propulsion Engineer",
+      "skills": [
+        "Gas Turbine/Jet Engine Design",
+        "Rocket Propulsion",
+        "Computational Fluid Dynamics (CFD)",
+        "Thermodynamics",
+        "Combustion Analysis",
+        "Propulsion Testing",
+        "High-temperature materials"
+      ]
+    },
+    {
+      "title": "Protection and Control Engineer",
+      "skills": [
+        "Protective relay setting and coordination (SEL, GE)",
+        "Power system analysis (short circuits)",
+        "SCADA systems for substations",
+        "IEC 61850 standard",
+        "Commissioning and testing of protection systems",
+        "ASPEN OneLiner / ETAP",
+        "Reading and creating electrical schematics"
+      ]
+    },
+    {
+      "title": "Public Health Engineer",
+      "skills": [
+        "Water supply and treatment",
+        "Wastewater and sanitation systems",
+        "Solid waste management",
+        "Air quality management",
+        "Epidemiology",
+        "Environmental health risk assessment",
+        "Public policy and regulation"
+      ]
+    },
+    {
+      "title": "Pump Systems Engineer",
+      "skills": [
+        "Pump selection and sizing",
+        "Hydraulic system analysis",
+        "Piping design and pressure drop calculations",
+        "Vibration analysis",
+        "Mechanical seal systems",
+        "Motor and drive controls",
+        "API standards for pumps (e.g., API 610)"
+      ]
+    },
+    {
+      "title": "Purple Team Engineer",
+      "skills": [
+        "Red Team Tactics (MITRE ATT&CK)",
+        "Blue Team Defenses (SIEM, EDR, IDS)",
+        "Threat Hunting",
+        "Security Control Validation",
+        "Attack Simulation Platforms",
+        "Incident Response",
+        "Automation and Scripting (Python)"
+      ]
+    },
+    {
+      "title": "Quality Assurance Engineer (Hardware)",
+      "skills": [
+        "Test plan and test case development",
+        "Reliability testing (HALT, HASS)",
+        "Environmental testing",
+        "Failure analysis",
+        "Statistical Process Control (SPC)",
+        "Quality Management Systems (ISO 9001)",
+        "Metrology and measurement tools"
+      ]
+    },
+    {
+      "title": "Quality Engineer",
+      "skills": [
+        "Certified Quality Engineer (CQE)",
+        "Six Sigma (Green/Black Belt)",
+        "Statistical Process Control (SPC)",
+        "Root Cause Analysis (8D, 5 Whys)",
+        "Quality Management Systems (ISO 9001, AS9100)",
+        "Failure Mode and Effects Analysis (FMEA)",
+        "Measurement System Analysis (MSA)"
+      ]
+    },
+    {
+      "title": "Quantum Computing Systems Engineer",
+      "skills": [
+        "Quantum mechanics principles",
+        "Quantum algorithms (Shor's, Grover's)",
+        "Quantum programming languages (Qiskit, Cirq)",
+        "Cryogenic systems",
+        "Microwave engineering for qubit control",
+        "Quantum error correction",
+        "FPGA programming for control hardware"
+      ]
+    },
+    {
+      "title": "Radar Systems Engineer",
+      "skills": [
+        "Radar theory and principles",
+        "Signal processing for radar",
+        "Antenna design for radar",
+        "RF and microwave engineering",
+        "MATLAB for radar simulation",
+        "FPGA for real-time processing",
+        "Electronic warfare concepts"
+      ]
+    },
+    {
+      "title": "Radiation Effects Engineer",
+      "skills": [
+        "Radiation effects on electronics (TID, SEE)",
+        "Radiation transport modeling (MCNP, Geant4)",
+        "Radiation hardening by design",
+        "Testing at radiation facilities",
+        "Space and nuclear environments",
+        "Component selection for radiation environments",
+        "Semiconductor physics"
+      ]
+    },
+    {
+      "title": "Radio Frequency (RF) Engineer",
+      "skills": [
+        "RF circuit design (amplifiers, filters, mixers)",
+        "Antenna design and testing",
+        "Simulation tools (ADS, HFSS)",
+        "Test equipment (spectrum analyzer, network analyzer)",
+        "Electromagnetic theory",
+        "Wireless communication systems",
+        "EMC/EMI"
+      ]
+    },
+    {
+      "title": "Rail Vehicle Engineer",
+      "skills": [
+        "Rolling stock design",
+        "Vehicle dynamics simulation",
+        "Braking systems",
+        "Traction systems",
+        "Structural analysis of rail cars (FEA)",
+        "APTA/AREMA standards",
+        "Crashworthiness"
+      ]
+    },
+    {
+      "title": "Railways Infrastructure Engineer",
+      "skills": [
+        "Track design and alignment",
+        "Railway signaling systems",
+        "Traction power supply",
+        "Geotechnical engineering for rail beds",
+        "AREMA standards",
+        "AutoCAD/MicroStation for rail design",
+        "Construction management"
+      ]
+    },
+    {
+      "title": "Real‑Time Embedded Systems Engineer",
+      "skills": [
+        "Real-Time Operating Systems (RTOS) - VxWorks, FreeRTOS",
+        "Embedded C/C++",
+        "Concurrency and scheduling theory",
+        "Hardware/software integration",
+        "Low-level debugging (JTAG)",
+        "Timing analysis",
+        "Communication protocols (CAN, EtherCAT)"
+      ]
+    },
+    {
+      "title": "Red Team Engineer",
+      "skills": [
+        "Offensive Security Certified Professional (OSCP) or OSEP",
+        "Adversary Emulation",
+        "MITRE ATT&CK Framework",
+        "Custom Tool Development (C#, Python)",
+        "Active Directory Exploitation",
+        "Stealth and Evasion Techniques",
+        "Social Engineering"
+      ]
+    },
+    {
+      "title": "Refrigeration Engineer",
+      "skills": [
+        "Vapor-compression cycle",
+        "Refrigerant properties and regulations",
+        "System design for commercial/industrial refrigeration",
+        "Heat load calculations",
+        "Component selection (compressors, evaporators)",
+        "Control systems for refrigeration",
+        "Energy efficiency"
+      ]
+    },
+    {
+      "title": "Regulatory Affairs Engineer",
+      "skills": [
+        "Knowledge of specific regulations (e.g., FDA, FAA, EPA)",
+        "Technical file and submission preparation",
+        "Standards interpretation (ISO, IEC, ASTM)",
+        "Quality Management Systems (QMS)",
+        "Risk management",
+        "Clinical/performance evaluation",
+        "Post-market surveillance"
+      ]
+    },
+    {
+      "title": "Reinforced Concrete Engineer",
+      "skills": [
+        "ACI 318 code",
+        "Structural analysis software (ETABS, SAP2000)",
+        "Concrete mix design",
+        "Formwork design",
+        "Seismic design of concrete structures",
+        "Rebar detailing",
+        "Post-tensioned concrete design"
+      ]
+    },
+    {
+      "title": "Reliability Analysis Engineer – Electronics",
+      "skills": [
+        "Certified Reliability Engineer (CRE)",
+        "Failure Mode and Effects Analysis (FMEA)",
+        "Mean Time Between Failures (MTBF) calculation",
+        "Accelerated Life Testing (ALT)",
+        "Weibull analysis",
+        "Physics of Failure",
+        "Thermal analysis for electronics"
+      ]
+    },
+    {
+      "title": "Reliability Analysis Engineer – Mechanical",
+      "skills": [
+        "Certified Reliability Engineer (CRE)",
+        "Weibull Analysis",
+        "Root Cause Failure Analysis (RCFA)",
+        "Failure Mode and Effects Analysis (FMEA)",
+        "Reliability Centered Maintenance (RCM)",
+        "Predictive Maintenance (vibration, thermal)",
+        "Fatigue and fracture mechanics"
+      ]
+    },
+    {
+      "title": "Reliability Engineer",
+      "skills": [
+        "Certified Reliability Engineer (CRE)",
+        "Reliability Centered Maintenance (RCM)",
+        "Root Cause Analysis (RCA)",
+        "Failure Mode and Effects Analysis (FMEA)",
+        "Weibull Analysis",
+        "Predictive Maintenance (PdM) technologies",
+        "Asset Management"
+      ]
+    },
+    {
+      "title": "Renewable Energy Systems Engineer – Solar",
+      "skills": [
+        "NABCEP PV Installation Professional Certification",
+        "PVSyst/Helioscope for solar design",
+        "AutoCAD",
+        "National Electrical Code (NEC) Article 690",
+        "Solar inverter technology",
+        "Battery storage systems",
+        "Grid interconnection standards"
+      ]
+    },
+    {
+      "title": "Renewable Energy Systems Engineer – Wind",
+      "skills": [
+        "Wind resource assessment (Windographer, WAsP)",
+        "Wind turbine technology",
+        "Wind farm layout optimization (OpenWind)",
+        "Structural design of turbine foundations",
+        "Grid integration of wind power",
+        "SCADA systems for wind farms",
+        "Aeroelasticity"
+      ]
+    },
+    {
+      "title": "Reservoir Engineer",
+      "skills": [
+        "Reservoir simulation (Eclipse, CMG)",
+        "Decline curve analysis",
+        "Material balance",
+        "Well test analysis",
+        "Enhanced Oil Recovery (EOR)",
+        "PVT analysis",
+        "Petroleum economics"
+      ]
+    },
+    {
+      "title": "Reverse Engineer (Hardware)",
+      "skills": [
+        "Circuit analysis and schematic generation",
+        "Component identification",
+        "PCB de-layering and imaging",
+        "Firmware extraction",
+        "JTAG/UART/SPI bus sniffing",
+        "Side-channel analysis",
+        "Fault injection techniques"
+      ]
+    },
+    {
+      "title": "Reverse Engineer (Software)",
+      "skills": [
+        "GIAC Reverse Engineering Malware (GREM)",
+        "Disassemblers and Decompilers (IDA Pro, Ghidra)",
+        "Debuggers (x64dbg, GDB)",
+        "Assembly Language (x86, ARM)",
+        "Operating System Internals",
+        "Malware Analysis Techniques",
+        "Cryptography Concepts"
+      ]
+    },
+    {
+      "title": "RF & Microwave Component Design Engineer",
+      "skills": [
+        "HFSS/CST Microwave Studio",
+        "ADS/AWR Microwave Office",
+        "Design of passive components (filters, couplers)",
+        "Design of active components (amplifiers, mixers)",
+        "S-parameter analysis",
+        "PCB layout for RF",
+        "Vector Network Analyzer (VNA) operation"
+      ]
+    },
+    {
+      "title": "RF Test Engineer",
+      "skills": [
+        "Spectrum analyzers",
+        "Vector network analyzers (VNA)",
+        "Power meters",
+        "Signal generators",
+        "Test automation (LabVIEW, Python)",
+        "Antenna pattern measurement",
+        "EMC/EMI testing"
+      ]
+    },
+    {
+      "title": "Risk and Compliance Engineer",
+      "skills": [
+        "NIST Risk Management Framework (RMF)",
+        "ISO 27001/27005",
+        "Security control assessment",
+        "Governance, Risk, and Compliance (GRC) tools",
+        "Audit evidence collection",
+        "PCI DSS, SOX, HIPAA",
+        "Threat modeling"
+      ]
+    },
+    {
+      "title": "Robotics Control Systems Engineer",
+      "skills": [
+        "Robot Operating System (ROS)",
+        "Control theory (PID, LQR, MPC)",
+        "Kinematics and dynamics of robots",
+        "C++/Python programming",
+        "MATLAB/Simulink for simulation",
+        "Motion planning algorithms",
+        "Real-time systems"
+      ]
+    },
+    {
+      "title": "Robotics Engineer",
+      "skills": [
+        "Robot Operating System (ROS)",
+        "C++/Python",
+        "Kinematics and Dynamics",
+        "Control Theory",
+        "Computer Vision (OpenCV)",
+        "SLAM (Simultaneous Localization and Mapping)",
+        "PLC Programming for industrial robots"
+      ]
+    },
+    {
+      "title": "Robotics Perception Engineer",
+      "skills": [
+        "Computer Vision (OpenCV)",
+        "Point Cloud Library (PCL)",
+        "Sensor fusion (LiDAR, camera, IMU)",
+        "SLAM algorithms",
+        "Deep learning for perception (PyTorch/TensorFlow)",
+        "C++/Python",
+        "Robot Operating System (ROS)"
+      ]
+    },
+    {
+      "title": "Rotating Equipment Engineer",
+      "skills": [
+        "Vibration analysis",
+        "API standards for rotating equipment (pumps, compressors, turbines)",
+        "Mechanical seals and bearing systems",
+        "Alignment and balancing",
+        "Lubrication analysis",
+        "Root cause failure analysis",
+        "Performance monitoring"
+      ]
+    },
+    {
+      "title": "Safety Instrumented Systems (SIS) Engineer",
+      "skills": [
+        "TÜV Rheinland or CFSE Certification",
+        "IEC 61511 / ISA 84 standards",
+        "Layer of Protection Analysis (LOPA)",
+        "Safety Integrity Level (SIL) calculation",
+        "Safety PLC programming",
+        "Proof testing procedures",
+        "Process Hazard Analysis (PHA)"
+      ]
+    },
+    {
+      "title": "Sanitary Engineer",
+      "skills": [
+        "Wastewater treatment plant design",
+        "Sewer system design",
+        "Water quality modeling",
+        "Sludge treatment and disposal",
+        "Hydraulic design of water systems",
+        "Environmental regulations",
+        "AutoCAD Civil 3D"
+      ]
+    },
+    {
+      "title": "Satellite Communication Systems Engineer",
+      "skills": [
+        "Link budget analysis",
+        "RF and microwave engineering",
+        "Modulation and coding (DVB-S2/S2X)",
+        "VSAT technology",
+        "Satellite payload and transponder operation",
+        "Network management for satellite systems",
+        "Systems Tool Kit (STK)"
+      ]
+    },
+    {
+      "title": "Satellite Payload Systems Engineer",
+      "skills": [
+        "RF payload design (antennas, amplifiers, filters)",
+        "Digital payload processing",
+        "Optical payload design",
+        "System budgeting (power, mass, data rate)",
+        "Payload integration and testing",
+        "Space environment effects",
+        "Requirements management"
+      ]
+    },
+    {
+      "title": "Satellite Systems Integration Engineer",
+      "skills": [
+        "System integration and test planning",
+        "Interface control document (ICD) management",
+        "Environmental testing (thermal, vacuum, vibration)",
+        "Launch vehicle integration",
+        "Ground support equipment (GSE)",
+        "Systems engineering principles",
+        "Troubleshooting complex systems"
+      ]
+    },
+    {
+      "title": "SCADA Security Engineer",
+      "skills": [
+        "Global Industrial Cyber Security Professional (GICSP)",
+        "ISA/IEC 62443",
+        "SCADA protocols (Modbus, DNP3)",
+        "Purdue Model architecture",
+        "Network security in OT environments",
+        "ICS vulnerability assessment",
+        "Incident response for control systems"
+      ]
+    },
+    {
+      "title": "SCADA Systems Engineer – Utility",
+      "skills": [
+        "SCADA software platforms (GE, Schneider, Siemens)",
+        "RTU and PLC programming",
+        "Communication protocols (DNP3, Modbus, IEC 61850)",
+        "HMI design for control rooms",
+        "Network engineering for SCADA",
+        "Data historian configuration",
+        "Cybersecurity for SCADA systems"
+      ]
+    },
+    {
+      "title": "Security Automation Engineer",
+      "skills": [
+        "SOAR platforms (Cortex XSOAR, Splunk Phantom)",
+        "Python/PowerShell scripting",
+        "API integration",
+        "Playbook development for incident response",
+        "CI/CD concepts",
+        "Configuration management (Ansible)",
+        "Threat intelligence automation"
+      ]
+    },
+    {
+      "title": "Security Chaos Engineer",
+      "skills": [
+        "Chaos Engineering principles",
+        "Failure injection techniques",
+        "Security control validation",
+        "Resilience engineering",
+        "Cloud native environments (Kubernetes)",
+        "Observability and monitoring",
+        "Automation and scripting"
+      ]
+    },
+    {
+      "title": "Security Information and Event Management (SIEM) Engineer",
+      "skills": [
+        "SIEM Platform Certification (Splunk, QRadar, Sentinel)",
+        "Log source integration and parsing",
+        "Correlation rule and alert development",
+        "SIEM architecture and maintenance",
+        "Data normalization (Common Event Format)",
+        "Dashboard and report creation",
+        "Scripting for automation (Python)"
+      ]
+    },
+    {
+      "title": "Security Operations Center (SOC) Engineer",
+      "skills": [
+        "GIAC Certified Intrusion Analyst (GCIA)",
+        "SIEM and Log Analysis",
+        "Packet Analysis (Wireshark)",
+        "Endpoint Detection and Response (EDR)",
+        "Intrusion Detection Systems (IDS)",
+        "Incident Triage and Escalation",
+        "Threat Intelligence"
+      ]
+    },
+    {
+      "title": "Security Orchestration, Automation, and Response (SOAR) Engineer",
+      "skills": [
+        "SOAR Platform Certification (Palo Alto Cortex XSOAR, Splunk SOAR)",
+        "Python scripting for integrations and automation",
+        "API utilization (REST)",
+        "Incident response playbook development",
+        "Digital Forensics and Incident Response (DFIR) workflow knowledge",
+        "SIEM integration",
+        "Case management principles"
+      ]
+    },
+    {
+      "title": "Seismic Design & Retrofit Engineer",
+      "skills": [
+        "ASCE 7 and IBC seismic provisions",
+        "Performance-based seismic design",
+        "Nonlinear structural analysis",
+        "Seismic retrofitting techniques (e.g., base isolation)",
+        "Structural analysis software (ETABS, SAP2000)",
+        "Geotechnical earthquake engineering",
+        "Material behavior under seismic loads"
+      ]
+    },
+    {
+      "title": "Semiconductor Process Engineer",
+      "skills": [
+        "Photolithography",
+        "Etching (wet and dry)",
+        "Deposition (CVD, PVD)",
+        "Ion implantation",
+        "Metrology and inspection (SEM, TEM)",
+        "Statistical Process Control (SPC)",
+        "Yield enhancement"
+      ]
+    },
+    {
+      "title": "Semiconductor Process Integration Engineer",
+      "skills": [
+        "Semiconductor device physics",
+        "Process flow development for IC fabrication",
+        "Design of Experiments (DOE)",
+        "Statistical Process Control (SPC)",
+        "Yield analysis",
+        "Integration of different process modules (litho, etch, deposition)",
+        "Failure analysis"
+      ]
+    },
+    {
+      "title": "Sensor Fusion Systems Engineer",
+      "skills": [
+        "Kalman filtering",
+        "Sensor characterization (IMU, GPS, LiDAR, Radar)",
+        "State estimation algorithms",
+        "C++/Python programming",
+        "MATLAB/Simulink for algorithm development",
+        "Real-time systems",
+        "Robotics or automotive applications"
+      ]
+    },
+    {
+      "title": "Sensor Network Engineer – IoT",
+      "skills": [
+        "Wireless protocols (LoRaWAN, Zigbee, BLE)",
+        "IoT platforms (AWS IoT, Azure IoT Hub)",
+        "MQTT/CoAP protocols",
+        "Embedded systems programming",
+        "Low-power device design",
+        "Network security for IoT",
+        "Data management and analytics"
+      ]
+    },
+    {
+      "title": "Service Reliability Engineer",
+      "skills": [
+        "Site Reliability Engineering (SRE) Principles",
+        "Cloud Platforms (AWS, GCP, Azure)",
+        "Infrastructure as Code (Terraform, Ansible)",
+        "Container Orchestration (Kubernetes)",
+        "Monitoring and Observability (Prometheus, Grafana)",
+        "CI/CD Pipelines",
+        "Programming (Go, Python)"
+      ]
+    },
+    {
+      "title": "Ship Hull Structural Engineer",
+      "skills": [
+        "Naval architecture principles",
+        "Finite Element Analysis (FEA) for ship structures",
+        "Classification society rules (ABS, DNV, Lloyd's)",
+        "Fatigue and fracture analysis",
+        "Welding and fabrication of ship structures",
+        "CAD for ship design",
+        "Hydrodynamic loads analysis"
+      ]
+    },
+    {
+      "title": "Signal Integrity Engineer",
+      "skills": [
+        "High-speed digital design",
+        "Simulation tools (HyperLynx, Sigrity)",
+        "Transmission line theory",
+        "S-parameter analysis",
+        "Vector Network Analyzer (VNA) usage",
+        "PCB layout for signal integrity",
+        "EMI/EMC"
+      ]
+    },
+    {
+      "title": "Signal Integrity Engineer – PCB",
+      "skills": [
+        "HyperLynx/Sigrity/ADS for simulation",
+        "Transmission line theory",
+        "S-parameter extraction and analysis",
+        "High-speed interface design (DDR, PCIe)",
+        "Crosstalk and EMI analysis",
+        "PCB stackup design",
+        "Vector Network Analyzer (VNA) measurements"
+      ]
+    },
+    {
+      "title": "Simulation & Modeling Engineer – Mechanical",
+      "skills": [
+        "Finite Element Analysis (FEA) - ANSYS, Abaqus",
+        "Computational Fluid Dynamics (CFD) - Fluent",
+        "Multibody dynamics simulation (Adams)",
+        "MATLAB/Simulink",
+        "CAD software",
+        "Meshing techniques",
+        "Validation and verification of models"
+      ]
+    },
+    {
+      "title": "Site Reliability Engineer (SRE)",
+      "skills": [
+        "Kubernetes",
+        "Prometheus/Grafana",
+        "Infrastructure as Code (Terraform)",
+        "Cloud platforms (AWS, GCP)",
+        "Python/Go programming",
+        "CI/CD (Jenkins, GitLab)",
+        "Distributed systems"
+      ]
+    },
+    {
+      "title": "Site Utilities Engineer – Oil & Gas",
+      "skills": [
+        "Industrial water treatment",
+        "Steam generation and distribution",
+        "Compressed air systems",
+        "Power generation and distribution",
+        "Wastewater management",
+        "Process safety management",
+        "Piping and instrumentation diagrams (P&IDs)"
+      ]
+    },
+    {
+      "title": "Smart Grid Systems Engineer",
+      "skills": [
+        "Advanced Metering Infrastructure (AMI)",
+        "Distribution Automation (DA)",
+        "SCADA systems for utilities",
+        "IEC 61850 standard",
+        "Distributed Energy Resource (DER) integration",
+        "Communication networks for smart grids",
+        "Cybersecurity for smart grids"
+      ]
+    },
+    {
+      "title": "Software Defined Networking (SDN) Security Engineer",
+      "skills": [
+        "SDN architecture (OpenFlow, ONOS)",
+        "Network function virtualization (NFV)",
+        "Micro-segmentation",
+        "Security policy automation",
+        "Threat detection in virtual networks",
+        "Cloud networking security",
+        "Python for network automation"
+      ]
+    },
+    {
+      "title": "Software Engineer in Test (SDET)",
+      "skills": [
+        "Test automation frameworks (Selenium, Cypress, Playwright)",
+        "Programming (Python, Java, C#)",
+        "API testing (REST Assured, Postman)",
+        "CI/CD integration (Jenkins, GitLab)",
+        "Behavior-Driven Development (BDD) - Cucumber",
+        "Performance testing (JMeter)",
+        "SQL"
+      ]
+    },
+    {
+      "title": "Software Security Engineer",
+      "skills": [
+        "Certified Secure Software Lifecycle Professional (CSSLP)",
+        "Static Application Security Testing (SAST)",
+        "Dynamic Application Security Testing (DAST)",
+        "Threat Modeling",
+        "Secure Coding Practices",
+        "Cryptography",
+        "Security Architecture and Design"
+      ]
+    },
+    {
+      "title": "Soil Remediation Systems Engineer",
+      "skills": [
+        "Soil vapor extraction (SVE)",
+        "In-situ chemical oxidation (ISCO)",
+        "Bioremediation",
+        "Groundwater pump and treat systems",
+        "Environmental regulations (RCRA, CERCLA)",
+        "Site characterization",
+        "Process design and modeling"
+      ]
+    },
+    {
+      "title": "Solar Photovoltaic Systems Engineer",
+      "skills": [
+        "NABCEP certification",
+        "PVSyst software",
+        "AutoCAD for system design",
+        "National Electrical Code (NEC)",
+        "PV module and inverter technology",
+        "Energy storage systems",
+        "Grid interconnection standards"
+      ]
+    },
+    {
+      "title": "Solar Thermal Systems Engineer",
+      "skills": [
+        "Concentrated Solar Power (CSP) technology",
+        "Thermodynamics and heat transfer",
+        "Solar field design and optimization",
+        "Thermal energy storage",
+        "Power block integration",
+        "System modeling (SAM, TRNSYS)",
+        "Heliostat and collector technology"
+      ]
+    },
+    {
+      "title": "Solid Waste Engineer",
+      "skills": [
+        "Landfill design and operation",
+        "Waste-to-energy technologies",
+        "Recycling and material recovery facilities (MRFs)",
+        "Composting and anaerobic digestion",
+        "Leachate and gas management",
+        "Environmental regulations (RCRA)",
+        "Geotechnical engineering"
+      ]
+    },
+    {
+      "title": "Sonar Systems Engineer",
+      "skills": [
+        "Underwater acoustics",
+        "Signal processing for sonar",
+        "Transducer design",
+        "Beamforming techniques",
+        "MATLAB for sonar simulation",
+        "Hardware and software integration",
+        "Oceanography"
+      ]
+    },
+    {
+      "title": "Spacecraft Avionics Systems Engineer",
+      "skills": [
+        "Radiation-hardened electronics",
+        "Spacecraft data handling (SpaceWire, MIL-STD-1553)",
+        "FPGA design for space",
+        "Real-time operating systems (RTOS)",
+        "Power distribution systems for spacecraft",
+        "Systems engineering for space environment",
+        "Integration and testing"
+      ]
+    },
+    {
+      "title": "Spacecraft GNC (Guidance, Navigation, and Control) Engineer",
+      "skills": [
+        "Orbital mechanics",
+        "Attitude determination and control systems (ADCS)",
+        "Kalman filtering",
+        "Control theory",
+        "MATLAB/Simulink for GNC simulation",
+        "C/C++ for flight software",
+        "Sensors (star trackers, IMUs) and actuators (reaction wheels)"
+      ]
+    },
+    {
+      "title": "Spacecraft Propulsion Engineer",
+      "skills": [
+        "Chemical and electric propulsion systems",
+        "Rocket engine design",
+        "Propellant management",
+        "Plume analysis",
+        "Thermodynamics and combustion",
+        "Vacuum systems and testing",
+        "Systems Tool Kit (STK)"
+      ]
+    },
+    {
+      "title": "Spacecraft Thermal Control Engineer",
+      "skills": [
+        "Thermal Desktop/SINDA",
+        "Heat transfer in vacuum",
+        "Radiative heat transfer",
+        "Design of thermal control hardware (radiators, heat pipes)",
+        "Thermal analysis and modeling",
+        "Thermal vacuum testing",
+        "Material science for space applications"
+      ]
+    },
+    {
+      "title": "Statistical Process Control Engineer",
+      "skills": [
+        "Control charts (X-bar, R, p, c)",
+        "Process capability analysis (Cp, Cpk)",
+        "Design of Experiments (DOE)",
+        "Minitab or JMP software",
+        "Measurement System Analysis (MSA)",
+        "Six Sigma methodology",
+        "Root cause analysis"
+      ]
+    },
+    {
+      "title": "Storage Engineer",
+      "skills": [
+        "Storage Area Networks (SAN)",
+        "Network Attached Storage (NAS)",
+        "Fibre Channel/iSCSI protocols",
+        "Storage virtualization",
+        "Data replication and disaster recovery",
+        "NetApp/Dell EMC/Pure Storage administration",
+        "Performance tuning"
+      ]
+    },
+    {
+      "title": "Stormwater Engineer",
+      "skills": [
+        "Hydrology and hydraulics (HEC-RAS, HEC-HMS)",
+        "Stormwater modeling software (SWMM, HydroCAD)",
+        "Low Impact Development (LID) and green infrastructure",
+        "Detention/retention basin design",
+        "NPDES permit compliance",
+        "Erosion and sediment control",
+        "AutoCAD Civil 3D"
+      ]
+    },
+    {
+      "title": "Stress Analysis Engineer",
+      "skills": [
+        "Finite Element Analysis (FEA) using ANSYS/Abaqus/NASTRAN",
+        "Solid mechanics",
+        "Fatigue and fracture mechanics",
+        "Material science",
+        "Hand calculations for stress",
+        "CAD software",
+        "Vibration analysis"
+      ]
+    },
+    {
+      "title": "Structural Dynamics Engineer",
+      "skills": [
+        "Vibration analysis",
+        "Modal analysis (testing and FEA)",
+        "Shock and random vibration analysis",
+        "Finite Element Analysis (NASTRAN, Abaqus)",
+        "Signal processing",
+        "MATLAB",
+        "Data acquisition systems"
+      ]
+    },
+    {
+      "title": "Structural Health Monitoring Engineer",
+      "skills": [
+        "Sensor technologies (strain gauges, accelerometers, fiber optics)",
+        "Data acquisition systems",
+        "Signal processing and data analysis",
+        "Non-destructive testing (NDT)",
+        "Finite element modeling for damage detection",
+        "Statistical pattern recognition",
+        "Structural dynamics"
+      ]
+    },
+    {
+      "title": "Structural Integrity Engineer",
+      "skills": [
+        "Finite Element Analysis (FEA)",
+        "Fatigue and Fracture Mechanics",
+        "Fitness-for-Service (FFS)",
+        "Non-Destructive Testing (NDT)",
+        "Material Science",
+        "Corrosion Assessment",
+        "Relevant codes and standards (e.g., API 579, ASME)"
+      ]
+    },
+    {
+      "title": "Structural Reliability Engineer",
+      "skills": [
+        "Probabilistic mechanics",
+        "Reliability theory and statistics",
+        "Finite element analysis",
+        "Monte Carlo simulation",
+        "Risk assessment",
+        "Structural dynamics",
+        "Optimization"
+      ]
+    },
+    {
+      "title": "Structural Vibration Analysis Engineer",
+      "skills": [
+        "Modal analysis (experimental and analytical)",
+        "Finite Element Analysis (FEA) for dynamics",
+        "Signal processing (FFT)",
+        "Vibration testing and data acquisition",
+        "Forced response analysis",
+        "Damping techniques",
+        "MATLAB"
+      ]
+    },
+    {
+      "title": "Subsea Controls Engineer",
+      "skills": [
+        "Subsea Production Control Systems (PCS)",
+        "Hydraulic and electrical power units (HPU/EPU)",
+        "Subsea instrumentation",
+        "Umbilical and connector design",
+        "PLC and control system programming",
+        "API standards (17F, 17D)",
+        " topside control systems integration"
+      ]
+    },
+    {
+      "title": "Subsea Flow Assurance Engineer",
+      "skills": [
+        "Multiphase flow modeling (OLGA, LedaFlow)",
+        "Hydrate, wax, and scale prediction and mitigation",
+        "Thermal analysis of subsea systems",
+        "Pipeline and riser design",
+        "Slug flow analysis",
+        "PVT fluid characterization",
+        "Operability studies"
+      ]
+    },
+    {
+      "title": "Subsea Systems Reliability Engineer",
+      "skills": [
+        "Reliability analysis of subsea components",
+        "FMEA/FMECA",
+        "Fault Tree Analysis (FTA)",
+        "RAM (Reliability, Availability, Maintainability) analysis",
+        "ISO standards for subsea reliability",
+        "Weibull analysis",
+        "Subsea systems knowledge"
+      ]
+    },
+    {
+      "title": "Substation Engineer",
+      "skills": [
+        "Physical substation design (layout, grounding)",
+        "Protection and control design (schematics, wiring)",
+        "SCADA and communications",
+        "Power system equipment specification (transformers, breakers)",
+        "AutoCAD/MicroStation",
+        "NESC/IEEE standards",
+        "Project management"
+      ]
+    },
+    {
+      "title": "Supply Chain Engineer",
+      "skills": [
+        "APICS Certified Supply Chain Professional (CSCP)",
+        "Inventory management and optimization",
+        "Logistics and transportation planning",
+        "Warehouse management systems (WMS)",
+        "Demand forecasting",
+        "Lean and Six Sigma principles",
+        "Data analysis and modeling"
+      ]
+    },
+    {
+      "title": "Sustainability Engineering Consultant",
+      "skills": [
+        "Life Cycle Assessment (LCA)",
+        "LEED or BREEAM accreditation",
+        "Energy modeling",
+        "Renewable energy systems",
+        "Corporate sustainability reporting (GRI)",
+        "Circular economy principles",
+        "Environmental policy and regulation"
+      ]
+    },
+    {
+      "title": "Systems Administrator (Security Focused)",
+      "skills": [
+        "Security hardening of operating systems (CIS Benchmarks)",
+        "Patch management",
+        "Identity and Access Management (IAM)",
+        "Log management and analysis",
+        "Vulnerability scanning and remediation",
+        "Firewall configuration",
+        "Scripting for security automation (PowerShell, Bash)"
+      ]
+    },
+    {
+      "title": "Systems Architect – Aerospace",
+      "skills": [
+        "Model-Based Systems Engineering (MBSE) with SysML",
+        "DoDAF/UAF frameworks",
+        "Requirements analysis and allocation",
+        "Trade studies",
+        "Interface definition",
+        "INCOSE CSEP certification",
+        "ARP4754A"
+      ]
+    },
+    {
+      "title": "Systems Architect – Automotive",
+      "skills": [
+        "AUTOSAR architecture",
+        "In-vehicle networking (CAN, Ethernet)",
+        "Functional safety (ISO 26262)",
+        "Cybersecurity (ISO 21434)",
+        "Model-Based Systems Engineering (MBSE)",
+        "System and software architecture modeling (SysML, UML)",
+        "Requirements engineering"
+      ]
+    },
+    {
+      "title": "Systems Architect – Industrial Automation",
+      "skills": [
+        "ISA-95 standard",
+        "Purdue model",
+        "DCS/SCADA/MES architecture",
+        "Industrial networking (Profinet, EtherNet/IP)",
+        "Cybersecurity for OT (IEC 62443)",
+        "System integration",
+        "High-availability and redundant systems"
+      ]
+    },
+    {
+      "title": "Systems Architect – Maritime",
+      "skills": [
+        "Shipboard systems integration",
+        "Naval combat systems architecture",
+        "Integrated bridge systems",
+        "Maritime communication systems",
+        "Cybersecurity for maritime vessels",
+        "Classification society rules",
+        "Systems engineering principles"
+      ]
+    },
+    {
+      "title": "Systems Architect – Power Systems",
+      "skills": [
+        "Substation and distribution automation",
+        "SCADA/EMS/DMS architecture",
+        "Smart grid technologies",
+        "IEC 61850",
+        "Cybersecurity for power grids (NERC CIP)",
+        "Renewable energy integration",
+        "Network communication design"
+      ]
+    },
+    {
+      "title": "Systems Engineer",
+      "skills": [
+        "INCOSE Certified Systems Engineering Professional (CSEP)",
+        "Requirements Management (DOORS)",
+        "Systems Modeling Language (SysML)",
+        "Model-Based Systems Engineering (MBSE)",
+        "Verification and Validation (V&V)",
+        "Risk Management",
+        "Configuration Management"
+      ]
+    },
+    {
+      "title": "Systems Safety Engineer",
+      "skills": [
+        "Certified Safety Professional (CSP)",
+        "Fault Tree Analysis (FTA)",
+        "Failure Mode and Effects Analysis (FMEA)",
+        "System hazard analysis",
+        "MIL-STD-882E",
+        "Functional safety standards (e.g., IEC 61508)",
+        "Root cause analysis"
+      ]
+    },
+    {
+      "title": "Technical Program Manager (TPM)",
+      "skills": [
+        "Agile",
+        "SCRUM",
+        "Project Management (PMP)",
+        "System design and architecture",
+        "Roadmap planning",
+        "Risk management",
+        "Stakeholder communication",
+        "Cross-functional team leadership"
+      ]
+    },
+    {
+      "title": "Telecommunications Engineer",
+      "skills": [
+        "Network protocols (TCP/IP, BGP, OSPF)",
+        "Fiber optic and microwave transmission",
+        "Voice over IP (VoIP) and SIP",
+        "Wireless technologies (LTE, 5G, Wi-Fi)",
+        "Network design and implementation",
+        "Cisco/Juniper equipment configuration",
+        "Network security"
+      ]
+    },
+    {
+      "title": "Test Automation Engineer",
+      "skills": [
+        "Selenium/Cypress/Playwright",
+        "Python/Java/JavaScript",
+        "API testing frameworks (REST Assured, Postman)",
+        "CI/CD integration (Jenkins)",
+        "Test planning and strategy",
+        "BDD frameworks (Cucumber)",
+        "SQL"
+      ]
+    },
+    {
+      "title": "Textile Engineer",
+      "skills": [
+        "Fiber science",
+        "Yarn and fabric manufacturing processes",
+        "Dyeing and finishing chemistry",
+        "Textile testing and quality control",
+        "Technical textiles",
+        "Weaving and knitting technology",
+        "Sustainable textile production"
+      ]
+    },
+    {
+      "title": "Thermal Management Systems Engineer – Electronics",
+      "skills": [
+        "Heat sink and fan design",
+        "Computational Fluid Dynamics (CFD) for electronics cooling",
+        "Thermal interface materials (TIMs)",
+        "Heat pipe and vapor chamber technology",
+        "Thermal analysis software (Icepak, FloTHERM)",
+        "Infrared thermography",
+        "Reliability of electronics"
+      ]
+    },
+    {
+      "title": "Thermal Systems Engineer – HVAC",
+      "skills": [
+        "Thermodynamics and heat transfer",
+        "Fluid mechanics",
+        "HVAC system design",
+        "Building energy modeling",
+        "Psychrometrics",
+        "ASHRAE standards",
+        "Revit/AutoCAD"
+      ]
+    },
+    {
+      "title": "Thermal Systems Engineer – Power Plants",
+      "skills": [
+        "Rankine cycle analysis",
+        "Boiler and turbine thermal performance",
+        "Heat exchanger design and analysis",
+        "Thermodynamic modeling",
+        "Plant efficiency optimization",
+        "ASME performance test codes",
+        "Computational Fluid Dynamics (CFD)"
+      ]
+    },
+    {
+      "title": "Thermodynamics & Energy Systems Engineer",
+      "skills": [
+        "Thermodynamic cycle analysis",
+        "Heat and mass transfer",
+        "Energy conversion systems",
+        "Process simulation (Aspen)",
+        "Renewable energy technologies",
+        "Energy efficiency and auditing",
+        "Computational Fluid Dynamics (CFD)"
+      ]
+    },
+    {
+      "title": "Threat and Vulnerability Management Engineer",
+      "skills": [
+        "Vulnerability Scanning Tools (Nessus, Qualys, Rapid7)",
+        "Vulnerability Prioritization (CVSS, EPSS)",
+        "Patch Management Processes",
+        "Web Application Scanning",
+        "Threat Intelligence Feeds",
+        "Asset Management",
+        "Reporting and Metrics"
+      ]
+    },
+    {
+      "title": "Threat Hunting Engineer",
+      "skills": [
+        "GIAC Certified Cyber Threat Hunter (GCFA or GCTI)",
+        "MITRE ATT&CK Framework",
+        "Endpoint Detection and Response (EDR) query languages",
+        "SIEM query languages (Splunk SPL, KQL)",
+        "Network traffic analysis (Zeek, Wireshark)",
+        "Hypothesis-driven investigation",
+        "Threat intelligence analysis"
+      ]
+    },
+    {
+      "title": "Threat Intelligence Engineer",
+      "skills": [
+        "GIAC Cyber Threat Intelligence (GCTI)",
+        "Analysis of threat actor TTPs",
+        "Open-Source Intelligence (OSINT)",
+        "Malware analysis",
+        "Threat intelligence platforms (TIPs)",
+        "YARA and Snort rule creation",
+        "MITRE ATT&CK Framework"
+      ]
+    },
+    {
+      "title": "Tire Systems Performance Engineer",
+      "skills": [
+        "Vehicle dynamics",
+        "Tire mechanics and modeling",
+        "Data acquisition and analysis",
+        "Finite Element Analysis (FEA) for tires",
+        "Material science of rubber compounds",
+        "Subjective vehicle evaluation",
+        "Homologation and regulatory testing"
+      ]
+    },
+    {
+      "title": "Tool and Die Engineer",
+      "skills": [
+        "CAD/CAM software",
+        "Stamping die design",
+        "Injection mold design",
+        "CNC machining",
+        "Geometric Dimensioning & Tolerancing (GD&T)",
+        "Material selection for tooling",
+        "Heat treatment"
+      ]
+    },
+    {
+      "title": "Tooling Engineer",
+      "skills": [
+        "CAD (SolidWorks, CATIA, NX)",
+        "Jig and fixture design",
+        "Mold design for plastics/casting",
+        "Die design for stamping/forging",
+        "Geometric Dimensioning & Tolerancing (GD&T)",
+        "CAM and CNC programming",
+        "Manufacturing processes"
+      ]
+    },
+    {
+      "title": "Traffic Engineer",
+      "skills": [
+        "Professional Traffic Operations Engineer (PTOE)",
+        "Traffic analysis software (Synchro, Vissim)",
+        "Highway Capacity Manual (HCM)",
+        "Manual on Uniform Traffic Control Devices (MUTCD)",
+        "Traffic signal design",
+        "Geometric design of roads",
+        "Transportation planning"
+      ]
+    },
+    {
+      "title": "Traffic Simulation Systems Engineer",
+      "skills": [
+        "Traffic modeling software (Vissim, Aimsun, Corsim)",
+        "Microsimulation and macrosimulation",
+        "Traffic flow theory",
+        "Data analysis and calibration",
+        "Scripting for model customization (Python, VAP)",
+        "Transportation planning",
+        "GIS"
+      ]
+    },
+    {
+      "title": "Transformer Engineering Specialist",
+      "skills": [
+        "Transformer design and theory",
+        "IEEE standards for transformers",
+        "Magnetic circuit analysis",
+        "Insulation design",
+        "Thermal modeling",
+        "Testing and diagnostics (DGA, SFRA)",
+        "Manufacturing processes"
+      ]
+    },
+    {
+      "title": "Transmission Line Engineer",
+      "skills": [
+        "PLS-CADD software",
+        "Structural analysis of towers",
+        "Conductor selection and sag-tension calculations",
+        "Insulation coordination",
+        "Right-of-way and permitting",
+        "NESC standards",
+        "Geotechnical engineering for foundations"
+      ]
+    },
+    {
+      "title": "Transportation Engineer",
+      "skills": [
+        "Professional Engineer (P.E.) License",
+        "Traffic Engineering (PTOE certification)",
+        "Transportation Planning",
+        "Highway Design (AutoCAD Civil 3D, MicroStation)",
+        "Traffic Simulation (Vissim, Synchro)",
+        "Highway Capacity Manual (HCM)",
+        "MUTCD"
+      ]
+    },
+    {
+      "title": "Trust and Safety Engineer",
+      "skills": [
+        "Content moderation systems",
+        "Machine learning for abuse detection",
+        "Policy enforcement automation",
+        "Data analysis for trend identification",
+        "User behavior modeling",
+        "Spam and fraud detection techniques",
+        "Platform regulation and compliance"
+      ]
+    },
+    {
+      "title": "Tunneling Engineer",
+      "skills": [
+        "Tunnel Boring Machine (TBM) technology",
+        "Sequential Excavation Method (SEM) / New Austrian Tunneling Method (NATM)",
+        "Ground control and support systems",
+        "Geotechnical investigation for tunneling",
+        "Ventilation design for tunnels",
+        "Structural analysis of tunnel linings",
+        "Construction management"
+      ]
+    },
+    {
+      "title": "Turbomachinery Design Engineer",
+      "skills": [
+        "Aerodynamics/hydrodynamics of turbines and compressors",
+        "Computational Fluid Dynamics (CFD)",
+        "Finite Element Analysis (FEA) for stress and vibration",
+        "Rotor dynamics",
+
+        "CAD for complex geometries",
+        "Blade design",
+        "Material science for high temperatures/speeds"
+      ]
+    },
+    {
+      "title": "UI/UX Engineer",
+      "skills": [
+        "HTML/CSS/JavaScript",
+        "React/Angular/Vue.js frameworks",
+        "Figma/Sketch/Adobe XD",
+        "User research and usability testing",
+        "Wireframing and prototyping",
+        "Interaction design",
+        "Accessibility standards (WCAG)"
+      ]
+    },
+    {
+      "title": "Ultrasonic Systems Engineer",
+      "skills": [
+        "Ultrasonic physics and wave propagation",
+        "Transducer design and fabrication",
+        "Signal processing for ultrasonic signals",
+        "Non-destructive testing (NDT) applications",
+        "Medical ultrasound imaging",
+        "High-Intensity Focused Ultrasound (HIFU)",
+        "Simulation software (COMSOL, Field II)"
+      ]
+    },
+    {
+      "title": "Underwater Acoustics Engineer",
+      "skills": [
+        "Sonar equation and principles",
+        "Acoustic signal processing",
+        "Transducer design",
+        "Ocean acoustic propagation modeling",
+        "MATLAB for acoustic analysis",
+        "Data acquisition systems",
+        "Marine hardware and systems"
+      ]
+    },
+    {
+      "title": "Unmanned Aerial Systems Engineer",
+      "skills": [
+        "UAS aerodynamics and flight dynamics",
+        "Autopilot systems (Pixhawk, ArduPilot)",
+        "GCS (Ground Control Station) software",
+        "Payload integration (cameras, sensors)",
+        "FAA regulations (Part 107)",
+        "Communication links and data telemetry",
+        "Robotics Operating System (ROS)"
+      ]
+    },
+    {
+      "title": "Urban Infrastructure Resilience Engineer",
+      "skills": [
+        "Risk assessment for urban systems",
+        "Climate change adaptation strategies",
+        "Critical infrastructure protection",
+        "Disaster response and recovery planning",
+        "GIS for urban analysis",
+        "Network analysis (transportation, utilities)",
+        "Sustainable urban design"
+      ]
+    },
+    {
+      "title": "User and Entity Behavior Analytics (UEBA) Engineer",
+      "skills": [
+        "UEBA Platform Management (Exabeam, Securonix)",
+        "Machine Learning for anomaly detection",
+        "Insider Threat Detection",
+        "Log data integration (AD, VPN, Proxy)",
+        "Threat Hunting",
+        "Statistical analysis",
+        "Incident response"
+      ]
+    },
+    {
+      "title": "Utility Network Engineer – Smart Grids",
+      "skills": [
+        "SCADA systems",
+        "Distribution automation",
+        "Advanced Metering Infrastructure (AMI)",
+        "Communication protocols (DNP3, IEC 61850)",
+        "Cybersecurity for utilities (NERC CIP)",
+        "GIS for utilities",
+        "Network modeling"
+      ]
+    },
+    {
+      "title": "Validation Engineer (Pharma/Biotech)",
+      "skills": [
+        "Good Manufacturing Practices (GMP)",
+        "Installation/Operational/Performance Qualification (IQ/OQ/PQ)",
+        "Process validation",
+        "Cleaning validation",
+        "Computer system validation (CSV)",
+        "FDA regulations (21 CFR Part 11)",
+        "Statistical analysis"
+      ]
+    },
+    {
+      "title": "Vehicle Dynamics Engineer",
+      "skills": [
+        "Multibody dynamics simulation (CarSim, Adams Car)",
+        "Suspension and steering system design",
+        "Tire mechanics",
+        "Control systems for vehicle stability (ESC, ABS)",
+        "Data acquisition and analysis",
+        "Subjective vehicle evaluation",
+        "MATLAB/Simulink"
+      ]
+    },
+    {
+      "title": "Vehicle Network Engineer",
+      "skills": [
+        "CAN, LIN, FlexRay, Automotive Ethernet protocols",
+        "Vector CANoe/CANalyzer",
+        "Network architecture design",
+        "Diagnostics (UDS, DoIP)",
+        "Cybersecurity for vehicle networks",
+        "Gateway ECU configuration",
+        "Signal database management"
+      ]
+    },
+    {
+      "title": "Verification and Validation (V&V) Engineer",
+      "skills": [
+        "Test plan and procedure development",
+        "Requirements analysis and traceability",
+        "Automated and manual testing",
+        "System integration testing",
+        "Defect tracking and management",
+        "Configuration management",
+        "Specific industry standards (e.g., DO-178C, ISO 26262)"
+      ]
+    },
+    {
+      "title": "Vibration Analysis Engineer – Aerospace",
+      "skills": [
+        "Modal testing and analysis",
+        "Finite Element Analysis (FEA) for dynamic response",
+        "Random vibration and shock analysis",
+        "Aeroelasticity",
+        "Data acquisition and signal processing",
+        "NASTRAN/PATRAN",
+        "Flutter analysis"
+      ]
+    },
+    {
+      "title": "Virtual Reality Systems Engineer",
+      "skills": [
+        "Game engines (Unreal Engine, Unity)",
+        "C++/C# programming",
+        "3D modeling and graphics pipelines",
+        "VR hardware integration (Oculus, Vive)",
+        "Computer vision for tracking",
+        "Haptics technology",
+        "User interface design for VR"
+      ]
+    },
+    {
+      "title": "Virtualization Engineer",
+      "skills": [
+        "VMware Certified Professional (VCP)",
+        "VMware vSphere/ESXi",
+        "Microsoft Hyper-V",
+        "Virtual networking (vSwitch, NSX)",
+        "Storage virtualization (vSAN)",
+        "Automation (PowerCLI, Ansible)",
+        "Backup and disaster recovery"
+      ]
+    },
+    {
+      "title": "Viscoelastic Materials Engineer",
+      "skills": [
+        "Dynamic Mechanical Analysis (DMA)",
+        "Rheology",
+        "Polymer science",
+        "Time-temperature superposition principle",
+        "Creep and stress relaxation testing",
+        "Finite element analysis of viscoelastic materials",
+        "Applications in damping, seals, and biomaterials"
+      ]
+    },
+    {
+      "title": "Voice/VoIP Engineer",
+      "skills": [
+        "Cisco Certified Collaboration Professional (CCNP)",
+        "Session Initiation Protocol (SIP)",
+        "Call Manager (CUCM) administration",
+        "Session Border Controllers (SBCs)",
+        "Quality of Service (QoS)",
+        "Voice gateways",
+        "Troubleshooting call quality issues"
+      ]
+    },
+    {
+      "title": "Vulnerability Assessment Engineer",
+      "skills": [
+        "Vulnerability scanners (Nessus, Qualys, OpenVAS)",
+        "Web application scanners (Burp Suite, OWASP ZAP)",
+        "Common Vulnerability Scoring System (CVSS)",
+        "Patch management processes",
+        "Security configuration assessment",
+        "Threat intelligence",
+        "Reporting and remediation tracking"
+      ]
+    },
+    {
+      "title": "Vulnerability Researcher",
+      "skills": [
+        "Reverse Engineering (IDA Pro, Ghidra)",
+        "Fuzzing (AFL, LibFuzzer)",
+        "Exploit Development",
+        "Static and Dynamic Code Analysis",
+        "Assembly Language (x86, ARM)",
+        "Operating System Internals",
+        "Protocol Analysis"
+      ]
+    },
+    {
+      "title": "Waste‑to‑Energy Systems Engineer",
+      "skills": [
+        "Incineration and combustion technology",
+        "Gasification and pyrolysis",
+        "Boiler and steam turbine systems",
+        "Air pollution control systems",
+        "Solid waste management",
+        "Energy recovery and power generation",
+        "Environmental regulations"
+      ]
+    },
+    {
+      "title": "Wastewater Engineer",
+      "skills": [
+        "Wastewater treatment process design (activated sludge, MBR)",
+        "Collection system design",
+        "Hydraulic modeling",
+        "Nutrient removal technologies",
+        "Biosolids management",
+        "State and EPA regulations",
+        "AutoCAD Civil 3D"
+      ]
+    },
+    {
+      "title": "Water Distribution Systems Engineer",
+      "skills": [
+        "Hydraulic modeling software (WaterGEMS, EPANET)",
+        "Water quality modeling",
+        "Pump station design",
+        "Storage tank design",
+        "Pipeline design",
+        "Transient analysis (surge)",
+        "GIS for asset management"
+      ]
+    },
+    {
+      "title": "Water Purification Systems Engineer",
+      "skills": [
+        "Membrane filtration (RO, NF, UF)",
+        "Disinfection technologies (chlorine, UV, ozone)",
+        "Conventional water treatment processes",
+        "Water chemistry",
+        "Process control and instrumentation",
+        "Regulatory compliance (Safe Drinking Water Act)",
+        "Pilot testing and analysis"
+      ]
+    },
+    {
+      "title": "Water Resources Engineer",
+      "skills": [
+        "Professional Engineer (P.E.) License",
+        "Hydrologic and Hydraulic Modeling (HEC-HMS, HEC-RAS)",
+        "GIS (ArcGIS)",
+        "Water Rights and Regulations",
+        "Groundwater Modeling (MODFLOW)",
+        "Dam and Levee Safety",
+        "Stormwater Management"
+      ]
+    },
+    {
+      "title": "Web Application Firewall (WAF) Engineer",
+      "skills": [
+        "WAF administration (Akamai, Cloudflare, F5 BIG-IP ASM, Imperva)",
+        "OWASP Top 10 mitigation",
+        "Regular expression (regex) for rule writing",
+        "HTTP protocol analysis",
+        "Log analysis and tuning",
+        "Bot management",
+        "API security"
+      ]
+    },
+    {
+      "title": "Web Application Penetration Tester",
+      "skills": [
+        "Offensive Security Web Expert (OSWE)",
+        "Burp Suite Professional",
+        "OWASP Top 10",
+        "JavaScript and web framework security",
+        "API testing",
+        "Source code review",
+        "Manual exploitation techniques (SQLi, XSS, CSRF)"
+      ]
+    },
+    {
+      "title": "Welding Engineer",
+      "skills": [
+        "Certified Welding Engineer (CWE)",
+        "Welding processes (SMAW, GMAW, GTAW)",
+        "Welding Procedure Specification (WPS) development",
+        "Welding metallurgy",
+        "Non-destructive testing (NDT)",
+        "AWS/ASME codes",
+        "Robotic welding"
+      ]
+    },
+    {
+      "title": "Well Integrity Engineer – Oil & Gas",
+      "skills": [
+        "Well barrier philosophy",
+        "Annular pressure management",
+        "Corrosion and erosion monitoring",
+        "Cement bond log interpretation",
+        "Risk assessment",
+        "Wellhead and christmas tree maintenance",
+        "Regulatory compliance"
+      ]
+    },
+    {
+      "title": "Wind Turbine Engineer",
+      "skills": [
+        "Aerodynamics and blade design",
+        "Structural dynamics and loads analysis (FAST, Bladed)",
+        "Control systems for pitch and yaw",
+        "Powertrain and gearbox design",
+        "Wind resource assessment",
+        "IEC 61400 standards",
+        "Maintenance and reliability"
+      ]
+    },
+    {
+      "title": "Windows Systems Engineer",
+      "skills": [
+        "Microsoft Certified: Azure Administrator Associate",
+        "Active Directory and Group Policy",
+        "PowerShell scripting",
+        "Windows Server administration",
+        "System Center Configuration Manager (SCCM)",
+        "Hyper-V",
+        "Failover clustering"
+      ]
+    },
+    {
+      "title": "Wireless Communications Engineer – 5G",
+      "skills": [
+        "5G NR standards (3GPP)",
+        "Massive MIMO and beamforming",
+        "Radio Access Network (RAN) architecture",
+        "5G Core Network (5GC)",
+        "RF planning and optimization",
+        "Network slicing",
+        "mmWave technology"
+      ]
+    },
+    {
+      "title": "Wireless Network Engineer",
+      "skills": [
+        "Certified Wireless Network Professional (CWNP)",
+        "Wi-Fi standards (802.11ax/ac/n)",
+        "RF site surveys (Ekahau)",
+        "Wireless LAN controller configuration (Cisco, Aruba)",
+        "Wireless security (WPA3, 802.1X)",
+        "Spectrum analysis",
+        "Troubleshooting wireless connectivity"
+      ]
+    },
+    {
+      "title": "Wireless Security Engineer",
+      "skills": [
+        "Certified Wireless Security Professional (CWSP)",
+        "WPA3 and 802.1X/EAP implementation",
+        "Wireless Intrusion Prevention Systems (WIPS)",
+        "Rogue access point detection",
+        "Packet analysis for wireless networks (Wireshark)",
+        "Penetration testing of Wi-Fi networks (Aircrack-ng)",
+        "Mobile device management (MDM) security"
+      ]
+    },
+    {
+      "title": "Wireless Sensor Network Engineer – Environmental Monitoring",
+      "skills": [
+        "Low-power wireless protocols (LoRaWAN, Zigbee)",
+        "Sensor integration",
+        "Embedded systems programming",
+        "Power management for remote devices",
+        "Data acquisition and telemetry",
+        "IoT platforms",
+        "Network topology design"
+      ]
+    },
+    {
+      "title": "Wood & Timber Structural Engineer",
+      "skills": [
+        "National Design Specification (NDS) for Wood Construction",
+        "Engineered wood products (glulam, CLT)",
+        "Timber frame design",
+        "Connection design for wood structures",
+        "Wood durability and preservation",
+        "Structural analysis software for timber",
+        "Building codes related to wood construction"
+      ]
+    },
+    {
+      "title": "X‑Ray Imaging Systems Engineer",
+      "skills": [
+        "X-ray physics and generation",
+        "Detector technology (flat-panel, scintillators)",
+        "Image reconstruction algorithms",
+        "Computed Tomography (CT)",
+        "Radiation safety and shielding",
+        "DICOM standard",
+        "Image quality assessment"
+      ]
+    },
+    {
+      "title": "Yield Optimization Engineer – Semiconductor Manufacturing",
+      "skills": [
+        "Statistical process control (SPC)",
+        "Design of Experiments (DOE)",
+        "Data analysis (JMP, Klarity)",
+        "Semiconductor process integration",
+        "Failure analysis and fault isolation",
+        "Metrology and inspection tools",
+        "Defect reduction methodologies"
+      ]
+    },
+    {
+      "title": "Zero Trust Architect",
+      "skills": [
+        "Zero Trust principles (NIST 800-207)",
+        "Identity and Access Management (IAM)",
+        "Micro-segmentation",
+        "Software-Defined Perimeter (SDP)",
+        "Multi-Factor Authentication (MFA)",
+        "Endpoint security",
+        "Continuous monitoring and analytics"
+      ]
+    },
+    {
+      "title": "Zero‑Emission Vehicle Systems Engineer",
+      "skills": [
+        "Battery Electric Vehicle (BEV) architecture",
+        "Hydrogen Fuel Cell Vehicle (FCEV) systems",
+        "Electric motor and powertrain design",
+        "Battery Management Systems (BMS)",
+        "High-voltage systems safety",
+        "Vehicle control units (VCU)",
+        "Charging standards and infrastructure"
+      ]
+    }
+  ]
+}

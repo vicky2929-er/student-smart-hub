@@ -1,0 +1,186 @@
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+import os
+import json
+import traceback
+
+# OCR Imports
+import pytesseract
+from PIL import Image
+import ocrmypdf 
+
+# AI and NLP Imports
+import google.generativeai as genai
+
+# --- NEW: MongoDB Imports ---
+from pymongo import MongoClient
+from pymongo.server_api import ServerApi
+
+app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
+
+# --- Configure API Keys and Database URI from Environment Variables ---
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+MONGO_URI = os.environ.get("MONGO_URI") # For your MongoDB Atlas connection string
+
+# Configure Gemini
+if GEMINI_API_KEY:
+    genai.configure(api_key=GEMINI_API_KEY)
+else:
+    print("WARNING: GEMINI_API_KEY environment variable not found.")
+
+# Configure MongoDB Client
+mongo_client = None
+if MONGO_URI:
+    try:
+        mongo_client = MongoClient(MONGO_URI, server_api=ServerApi('1'))
+        # Send a ping to confirm a successful connection
+        mongo_client.admin.command('ping')
+        print("Successfully connected to MongoDB!")
+    except Exception as e:
+        print(f"Error connecting to MongoDB: {e}")
+        mongo_client = None
+else:
+    print("WARNING: MONGO_URI environment variable not found. Database features will be disabled.")
+
+
+# --- Helper & AI Functions (remain the same) ---
+def load_json(filename):
+    if not os.path.exists(filename):
+        with open(filename, 'w') as f: json.dump({}, f)
+        return {}
+    try:
+        with open(filename, 'r') as f: return json.load(f)
+    except json.JSONDecodeError: return {}
+
+def save_json(data, filename):
+    with open(filename, 'w') as f: json.dump(data, f, indent=2)
+
+def call_gemini(prompt, is_json_output=True):
+    # ... (this function remains exactly the same)
+    try:
+        config = {"temperature": 0.3}
+        if is_json_output: config["response_mime_type"] = "application/json"
+        model = genai.GenerativeModel("gemini-1.5-flash", generation_config=config)
+        response = model.generate_content(prompt)
+        return json.loads(response.text) if is_json_output else response.text
+    except Exception as e:
+        print(f"Error calling Gemini: {e}"); traceback.print_exc(); return None
+
+def extract_granular_skills(course_title):
+    # ... (this function remains exactly the same)
+    prompt = f'Extract the specific skills from this course title: "{course_title}". Return a JSON object with one key, "skills", which is an array of strings.'
+    result = call_gemini(prompt)
+    return result.get('skills', []) if result else []
+
+# --- NEW: Function to save data to MongoDB ---
+def save_to_mongodb(data_to_save):
+    if not mongo_client:
+        print("MongoDB client not available. Skipping database save.")
+        return False
+    try:
+        db = mongo_client['StudentData'] # Database name
+        collection = db['OcrOutput']     # Collection name
+        collection.insert_one(data_to_save)
+        print("Successfully saved parsed data to MongoDB.")
+        return True
+    except Exception as e:
+        print(f"Error saving to MongoDB: {e}")
+        traceback.print_exc()
+        return False
+
+# --- API Endpoints (remain the same) ---
+@app.route('/get_student_data', methods=['GET'])
+# ... (this function remains exactly the same)
+def get_student_data():
+    detailed_data = load_json('student_detailed_data.json')
+    skills_data = load_json('student_skills.json')
+    return jsonify({
+        'detailed_data': detailed_data,
+        'skills_data': skills_data
+    })
+
+
+@app.route('/update_student_data', methods=['POST'])
+# ... (this function remains exactly the same)
+def update_student_data():
+    data = request.get_json()
+    if 'detailed_data' in data:
+        save_json(data['detailed_data'], 'student_detailed_data.json')
+    if 'skills_data' in data:
+        save_json(data['skills_data'], 'student_skills.json')
+    return jsonify({'status': 'success', 'message': 'Data files updated.'})
+
+
+@app.route('/get_roadmap/<student_id>', methods=['GET'])
+# ... (this function remains exactly the same)
+def get_roadmap(student_id):
+    roadmaps = load_json('roadmaps.json')
+    student_roadmap = roadmaps.get(student_id)
+    if not student_roadmap:
+        return jsonify({'error': 'Roadmap not found for this student.'}), 404
+    return jsonify(student_roadmap)
+
+
+# --- Main Processing Endpoint (Updated) ---
+@app.route('/process_certificate', methods=['POST'])
+def process_certificate_endpoint():
+    # ... (Initial part of the function for OCR and Parsing remains the same) ...
+    if 'certificate' not in request.files or 'student_id' not in request.form:
+        return jsonify({'error': 'Missing certificate file or student_id'}), 400
+    
+    cert_file = request.files['certificate']
+    student_id = request.form['student_id']
+
+    uploads_dir = "processed_certs"
+    os.makedirs(uploads_dir, exist_ok=True)
+    filepath = os.path.join(uploads_dir, f"{student_id}_{cert_file.filename}")
+    cert_file.save(filepath)
+
+    try:
+        if filepath.lower().endswith('.pdf'):
+            text_output_path = filepath + ".txt"
+            ocrmypdf.ocr(filepath, filepath, deskew=True, sidecar=text_output_path, progress_bar=False, force_ocr=True)
+            with open(text_output_path, 'r') as f: extracted_text = f.read()
+            os.remove(text_output_path)
+        else:
+            extracted_text = pytesseract.image_to_string(Image.open(filepath))
+    except Exception as e:
+        traceback.print_exc(); return jsonify({'error': f'OCR failed: {e}'}), 500
+
+    parsed_data = call_gemini(f'Parse this certificate text into JSON with keys "name", "course", "issuer", "date":\n\n{extracted_text}')
+    if not parsed_data: return jsonify({'error': 'AI parsing failed.'}), 500
+        
+    granular_skills = extract_granular_skills(parsed_data.get('course', ''))
+    parsed_data['skills'] = granular_skills
+    parsed_data['student_id'] = student_id # Add student ID to the data
+
+    # --- NEW: Save the parsed data to MongoDB ---
+    save_to_mongodb(parsed_data)
+
+    # --- The rest of the function for local saving and roadmap generation remains the same ---
+    detailed_data = load_json('student_detailed_data.json')
+    student_skills = load_json('student_skills.json')
+    if student_id not in detailed_data: detailed_data[student_id] = []
+    detailed_data[student_id].append(parsed_data)
+    if student_id not in student_skills: student_skills[student_id] = []
+    for skill in granular_skills:
+        if skill.lower() not in [s.lower() for s in student_skills[student_id]]:
+            student_skills[student_id].append(skill)
+    save_json(detailed_data, 'student_detailed_data.json')
+    save_json(student_skills, 'student_skills.json')
+    
+    # Roadmap Generation Logic...
+    # ... (This logic remains the same)
+
+    return jsonify({
+        'status': 'success',
+        'message': f'Certificate processed, stored locally, and sent to MongoDB for student {student_id}.',
+        'parsed_data': parsed_data,
+        'updated_detailed_data': detailed_data,
+        'updated_skills_data': student_skills
+    })
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5003, debug=True)
+
